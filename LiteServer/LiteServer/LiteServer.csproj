@@ -11,6 +11,21 @@
     <AssemblyName>LiteServer</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -38,6 +53,9 @@
     <Reference Include="SuperSocket.Common">
       <HintPath>Reference\SuperSocket.Common.dll</HintPath>
     </Reference>
+    <Reference Include="SuperSocket.Facility">
+      <HintPath>Reference\SuperSocket.Facility.dll</HintPath>
+    </Reference>
     <Reference Include="SuperSocket.SocketBase">
       <HintPath>Reference\SuperSocket.SocketBase.dll</HintPath>
     </Reference>
@@ -54,14 +72,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\ClientReceiveFilter.cs" />
+    <Compile Include="Source\ClientSession.cs" />
+    <Compile Include="Source\Common\BaseThread.cs" />
+    <Compile Include="Source\Common\ByteBuffer.cs" />
+    <Compile Include="Source\Common\Const.cs" />
+    <Compile Include="Source\Common\IMessage.cs" />
+    <Compile Include="Source\Common\Protocal.cs" />
+    <Compile Include="Source\GameServer.cs" />
+    <Compile Include="Source\Http\HttpServer.cs" />
+    <Compile Include="Source\Http\HttpService.cs" />
+    <Compile Include="Source\Timer\ConfigTimer.cs" />
+    <Compile Include="Source\Timer\RedisTimer.cs" />
+    <Compile Include="Source\Util\ConfigUtil.cs" />
+    <Compile Include="Source\Util\HttpUtil.cs" />
+    <Compile Include="Source\Util\ServerUtil.cs" />
+    <Compile Include="Source\Util\SocketUtil.cs" />
+    <Compile Include="Source\Util\UserUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <Content Include="Config\log4net.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
