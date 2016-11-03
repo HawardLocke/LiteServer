@@ -10,12 +10,12 @@ namespace LiteServer.Utility
 	{
 		public static void LoadConfig()
 		{
-			Const.RedisHost = GetValue("RedisHost");
+			/*Const.RedisHost = GetValue("RedisHost");
 			Const.RedisPort = Int32.Parse(GetValue("RedisPort"));
 			Const.RedisSaveTime = Int32.Parse(GetValue("RedisSaveTime"));
 
 			Const.WebUrl = GetValue("WebUrl");  //请求的URL
-			Const.ZeromqUri = GetValue("ZeromqUri");    //ZeroMQ
+			Const.ZeromqUri = GetValue("ZeromqUri");    //ZeroMQ*/
 		}
 
 		public static string GetValue(string key)

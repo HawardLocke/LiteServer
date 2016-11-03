@@ -35,7 +35,7 @@ namespace LiteServer.Utility
 		public void Init()
 		{
 			config = new ConfigTimer(); config.Start();
-			redis = new RedisTimer(); redis.Start();
+			//redis = new RedisTimer(); redis.Start();
 			http = new HttpServer(7077); http.Start();
 
 			Const.users = new Dictionary<long, ClientSession>();
@@ -48,7 +48,7 @@ namespace LiteServer.Utility
 		/// </summary>
 		public void Close()
 		{
-			redis.Stop(); redis = null;
+			//redis.Stop(); redis = null;
 			config.Stop(); config = null;
 			http.Stop(); http = null;
 		}
