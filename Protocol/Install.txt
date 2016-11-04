@@ -1,0 +1,10 @@
+dependencies下有依赖的工具
+
+1. cs
+没有额外的安装，记得在你的c#项目中引用google.protobf.dll。
+
+2. lua
+使用python27，
+安装easy_setup, command line : python ez_setup.py
+安装protobuf/python/setup.py, command line : python setup.py install
+然后就可以生成lua
