@@ -50,6 +50,10 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Google.Protobuf, Version=3.1.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference\Google.Protobuf.dll</HintPath>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>Reference\log4net.dll</HintPath>
     </Reference>
@@ -86,6 +90,7 @@
     <Compile Include="Source\GameServer.cs" />
     <Compile Include="Source\Http\HttpServer.cs" />
     <Compile Include="Source\Http\HttpService.cs" />
+    <Compile Include="Source\Protobuf\ProtoLogin.cs" />
     <Compile Include="Source\Timer\ConfigTimer.cs" />
     <Compile Include="Source\Timer\RedisTimer.cs" />
     <Compile Include="Source\Util\ConfigUtil.cs" />
@@ -97,6 +102,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <Content Include="Config\log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\SuperSocket.SocketService.exe.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -117,6 +125,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

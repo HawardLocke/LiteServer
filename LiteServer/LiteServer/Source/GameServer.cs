@@ -21,10 +21,30 @@ namespace LiteServer
 			return base.Setup(rootConfig, config);
 		}
 
+		void testProto()
+		{
+			Login login = new Login
+			{
+				Name = "Foo",
+				Password = "foo@bar",
+				Infos = { new ExtraInfo { Number = 666 } }
+			};
+
+			byte[] bytes = Google.Protobuf.MessageExtensions.ToByteArray(login);
+
+			Login restored = Login.Parser.ParseFrom(bytes);
+
+			Console.WriteLine(restored.Name);
+			Console.WriteLine(restored.Password);
+
+		}
+
 		protected override void OnStarted()
 		{
 			base.OnStarted();
 			ServerUtil.instance.Init();
+
+			testProto();
 
 			this.NewSessionConnected += new SessionHandler<ClientSession>(OnSessionConnected);
 			this.NewRequestReceived += new RequestHandler<ClientSession, BinaryRequestInfo>(OnRequestReceived);
@@ -39,17 +59,11 @@ namespace LiteServer
 			this.NewRequestReceived -= new RequestHandler<ClientSession, BinaryRequestInfo>(OnRequestReceived);
 		}
 
-		/// <summary>
-		/// Session连接
-		/// </summary>
 		void OnSessionConnected(ClientSession session)
 		{
 			SocketUtil.instance.OnSessionConnected(session);
 		}
 
-		/// <summary>
-		/// 数据接收
-		/// </summary>
 		void OnRequestReceived(ClientSession session, BinaryRequestInfo requestInfo)
 		{
 			SocketUtil.instance.OnRequestReceived(session, requestInfo);
