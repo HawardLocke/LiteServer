@@ -92,7 +92,8 @@
     <Compile Include="Source\Http\HttpService.cs" />
     <Compile Include="Source\Network\MessageHandler.cs" />
     <Compile Include="Source\Network\NetworkManager.cs" />
-    <Compile Include="Source\Protobuf\ProtoLogin.cs" />
+    <Compile Include="Source\Protobuf\Login.cs" />
+    <Compile Include="Source\Protobuf\MsgID.cs" />
     <Compile Include="Source\Timer\ConfigTimer.cs" />
     <Compile Include="Source\Timer\RedisTimer.cs" />
     <Compile Include="Source\Util\ConfigUtil.cs" />
