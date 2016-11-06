@@ -6,7 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using LiteServer.Common;
 using LiteServer.Message;
+
+using SuperSocket.SocketBase;
 using SuperSocket.SocketBase.Protocol;
+
 
 namespace LiteServer.Utility
 {
@@ -23,9 +26,6 @@ namespace LiteServer.Utility
 			}
 		}
 
-		/// <summary>
-		/// 发送消息
-		/// </summary>
 		public static void SendMessage(ClientSession session, Protocal protocal, ByteBuffer buffer)
 		{
 			byte[] message = buffer.ToBytes();
@@ -51,30 +51,39 @@ namespace LiteServer.Utility
 			}
 		}
 
-		/// <summary>
-		/// 客户端连接
-		/// </summary>
-		/// <param name="session"></param>
 		public void OnSessionConnected(ClientSession session)
 		{
 			Console.WriteLine("OnSessionConnected--->>>" + session.RemoteEndPoint.Address);
 		}
 
-		/// <summary>
-		/// 数据接收
-		/// </summary>
+		public void OnSessionClosed(ClientSession session, CloseReason reason)
+		{
+			Console.WriteLine("OnSessionClosed--->>>" + session.RemoteEndPoint.Address + ", reason " + reason.ToString());
+		}
+
 		public void OnRequestReceived(ClientSession session, BinaryRequestInfo requestInfo)
 		{
 			ByteBuffer buffer = new ByteBuffer(requestInfo.Body);
 			int commandId = buffer.ReadShort();
-			Protocal c = (Protocal)commandId;
-			string className = "LiteServer.Message." + c;
-			Console.WriteLine("OnRequestReceived--->>>" + className);
+			PBX.MsgID msgId = (PBX.MsgID)commandId;
+			Console.WriteLine("OnRequestReceived : " + msgId);
 
-			Type t = Type.GetType(className);
+			byte[] bytes = buffer.ReadBytes();
+
+			Login loginMsg = Login.Parser.ParseFrom(bytes);
+			Console.WriteLine(loginMsg.Name);
+			Console.WriteLine(loginMsg.Password);
+
+			//Protocal c = (Protocal)commandId;
+			//string className = "LiteServer.Message." + c;
+			//Console.WriteLine("OnRequestReceived--->>>" + className);
+
+			/*Type t = Type.GetType(className);
 			IMessage obj = (IMessage)Activator.CreateInstance(t);
-			if (obj != null) obj.OnMessage(session, buffer);
-			obj = null; t = null;   //释放内存
+			if (obj != null)
+				obj.OnMessage(session, buffer);
+			obj = null;
+			t = null;*/
 		}
 	}
 }

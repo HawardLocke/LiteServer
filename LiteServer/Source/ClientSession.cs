@@ -22,7 +22,6 @@ namespace LiteServer
 		{
 			uid = 0;
 			roomId = -1;
-			UserUtil.Quit(uid);
 			base.OnSessionClosed(reason);
 		}
 

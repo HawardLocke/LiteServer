@@ -12,7 +12,5 @@ namespace LiteServer.Common
 
 		public static string WebUrl;        //HttpUrl
 		public static string ZeromqUri;     //ZeromqUri;
-
-		public static Dictionary<long, ClientSession> users;
 	}
 }

@@ -44,9 +44,8 @@ namespace LiteServer
 			base.OnStarted();
 			ServerUtil.instance.Init();
 
-			testProto();
-
 			this.NewSessionConnected += new SessionHandler<ClientSession>(OnSessionConnected);
+			this.SessionClosed += new SessionHandler<ClientSession, CloseReason>(OnSessionDisconnected);
 			this.NewRequestReceived += new RequestHandler<ClientSession, BinaryRequestInfo>(OnRequestReceived);
 		}
 
@@ -56,12 +55,20 @@ namespace LiteServer
 			ServerUtil.instance.Close();
 
 			this.NewSessionConnected -= new SessionHandler<ClientSession>(OnSessionConnected);
+			this.SessionClosed -= new SessionHandler<ClientSession, CloseReason>(OnSessionDisconnected);
 			this.NewRequestReceived -= new RequestHandler<ClientSession, BinaryRequestInfo>(OnRequestReceived);
 		}
 
 		void OnSessionConnected(ClientSession session)
 		{
+			SessionManager.Instance.Add(1, session);
 			SocketUtil.instance.OnSessionConnected(session);
+		}
+
+		void OnSessionDisconnected(ClientSession session, CloseReason reason)
+		{
+			SessionManager.Instance.Quit(session.uid);
+			SocketUtil.instance.OnSessionClosed(session, reason);
 		}
 
 		void OnRequestReceived(ClientSession session, BinaryRequestInfo requestInfo)

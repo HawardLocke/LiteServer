@@ -87,20 +87,20 @@
     <Compile Include="Source\Common\Const.cs" />
     <Compile Include="Source\Common\IMessage.cs" />
     <Compile Include="Source\Common\Protocal.cs" />
+    <Compile Include="Source\Common\Singleton.cs" />
     <Compile Include="Source\GameServer.cs" />
     <Compile Include="Source\Http\HttpServer.cs" />
     <Compile Include="Source\Http\HttpService.cs" />
     <Compile Include="Source\Network\MessageHandler.cs" />
-    <Compile Include="Source\Network\NetworkManager.cs" />
-    <Compile Include="Source\Protobuf\Login.cs" />
-    <Compile Include="Source\Protobuf\MsgID.cs" />
+    <Compile Include="Source\Network\SessionManager.cs" />
+    <Compile Include="Source\Protocol\Login.cs" />
+    <Compile Include="Source\Protocol\MsgID.cs" />
     <Compile Include="Source\Timer\ConfigTimer.cs" />
     <Compile Include="Source\Timer\RedisTimer.cs" />
     <Compile Include="Source\Util\ConfigUtil.cs" />
     <Compile Include="Source\Util\HttpUtil.cs" />
     <Compile Include="Source\Util\ServerUtil.cs" />
     <Compile Include="Source\Util\SocketUtil.cs" />
-    <Compile Include="Source\Util\UserUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

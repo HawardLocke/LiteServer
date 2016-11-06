@@ -38,7 +38,7 @@ namespace LiteServer.Utility
 			//redis = new RedisTimer(); redis.Start();
 			//http = new HttpServer(7077); http.Start();
 
-			Const.users = new Dictionary<long, ClientSession>();
+			//Const.users = new Dictionary<long, ClientSession>();
 			//var v = RedisUtil.Get("aaa");
 			//Console.WriteLine(v);
 		}
