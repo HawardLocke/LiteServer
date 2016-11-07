@@ -26,14 +26,13 @@ namespace LiteServer.Utility
 			}
 		}
 
-		public static void SendMessage(ClientSession session, Protocal protocal, ByteBuffer buffer)
+		public static void SendMessage(ClientSession session, PBX.MsgID msgId, byte[] message)
 		{
-			byte[] message = buffer.ToBytes();
 			using (MemoryStream ms = new MemoryStream())
 			{
 				ms.Position = 0;
 				BinaryWriter writer = new BinaryWriter(ms);
-				ushort protocalId = (ushort)protocal;
+				ushort protocalId = (ushort)msgId;
 				ushort msglen = (ushort)(message.Length + 2);
 				writer.Write(msglen);
 				writer.Write(protocalId);
@@ -73,6 +72,16 @@ namespace LiteServer.Utility
 			Login loginMsg = Login.Parser.ParseFrom(bytes);
 			Console.WriteLine(loginMsg.Name);
 			Console.WriteLine(loginMsg.Password);
+
+			Login loginRet = new Login
+			{
+				Name = "Locke007back",
+				Password = "666"
+			};
+
+			byte[] bytesRet = Google.Protobuf.MessageExtensions.ToByteArray(loginRet);
+
+			SendMessage(session, PBX.MsgID.Login, bytesRet);
 
 			//Protocal c = (Protocal)commandId;
 			//string className = "LiteServer.Message." + c;
