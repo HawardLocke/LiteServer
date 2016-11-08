@@ -2,7 +2,7 @@
 using System.Text;
 using System.Collections.Generic;
 
-namespace LiteServer.Common
+namespace LiteServer
 {
 	class Const
 	{

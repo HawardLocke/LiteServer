@@ -21,11 +21,13 @@ namespace LiteServer
 			long uid = genUid++;
 			session.uid = uid;
 			sessionMap.Add(uid, session);
+			Console.WriteLine("add session.. total " + sessionMap.Count);
 		}
 
 		public void Remove(long uid)
 		{
 			sessionMap.Remove(uid);
+			Console.WriteLine("remove session.. total " + sessionMap.Count);
 		}
 
 		public ClientSession Get(long uid)

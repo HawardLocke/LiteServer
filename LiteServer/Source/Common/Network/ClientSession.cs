@@ -1,9 +1,11 @@
 ﻿using System;
+using System.IO;
 using System.Text;
 using LiteServer.Utility;
 using SuperSocket.SocketBase;
 using SuperSocket.SocketBase.Command;
 using SuperSocket.SocketBase.Protocol;
+
 
 namespace LiteServer
 {
@@ -30,5 +32,26 @@ namespace LiteServer
 		{
 			this.Send("Unknow request");
 		}
+
+		public void SendMessage(ushort msgId, byte[] bytes)
+		{
+			using (MemoryStream ms = new MemoryStream())
+			{
+				ms.Position = 0;
+				BinaryWriter writer = new BinaryWriter(ms);
+				ushort protocalId = (ushort)msgId;
+				ushort msglen = (ushort)(bytes.Length + 2);
+				writer.Write(msglen);
+				writer.Write(protocalId);
+				writer.Write(bytes);
+				writer.Flush();
+				if (this.Connected)
+				{
+					byte[] array = ms.ToArray();
+					this.Send(array, 0, array.Length);
+				}
+			}
+		}
+
 	}
 }

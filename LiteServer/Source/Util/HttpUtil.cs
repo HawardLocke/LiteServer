@@ -2,7 +2,7 @@
 using System.IO;
 using System.Net;
 using System.Text;
-using LiteServer.Common;
+using LiteServer;
 
 namespace LiteServer.Utility
 {

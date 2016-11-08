@@ -88,7 +88,7 @@
     <Compile Include="Source\Common\Network\ByteBuffer.cs" />
     <Compile Include="Source\Common\Network\ClientReceiveFilter.cs" />
     <Compile Include="Source\Common\Network\ClientSession.cs" />
-    <Compile Include="Source\Common\Network\GameServer.cs" />
+    <Compile Include="Source\Common\Network\LiteAppServer.cs" />
     <Compile Include="Source\Common\Network\MessageHandler.cs" />
     <Compile Include="Source\Common\Network\SessionManager.cs" />
     <Compile Include="Source\Entity\EntityManager.cs" />
@@ -107,7 +107,7 @@
     <Compile Include="Source\Util\HttpUtil.cs" />
     <Compile Include="Source\Util\IMessage.cs" />
     <Compile Include="Source\Util\Protocal.cs" />
-    <Compile Include="Source\Util\ServerUtil.cs" />
+    <Compile Include="Source\Util\AppFacade.cs" />
     <Compile Include="Source\Util\SocketUtil.cs" />
   </ItemGroup>
   <ItemGroup>
