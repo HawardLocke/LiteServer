@@ -47,6 +47,12 @@ namespace LiteServer
 			this.NewSessionConnected += new SessionHandler<ClientSession>(OnSessionConnected);
 			this.SessionClosed += new SessionHandler<ClientSession, CloseReason>(OnSessionDisconnected);
 			this.NewRequestReceived += new RequestHandler<ClientSession, BinaryRequestInfo>(OnRequestReceived);
+
+			Log.Debug(typeof(GameServer), "test log - {0}", "debug");
+			Log.Info(typeof(GameServer), "test log - {0}", "info");
+			Log.Warn(typeof(GameServer), "test log - {0}", "warn");
+			Log.Fatal(typeof(GameServer), "test log - {0}", "fatal");
+			Log.Error(typeof(GameServer), "test log - {0}", "error");
 		}
 
 		protected override void OnStopped()
@@ -61,13 +67,13 @@ namespace LiteServer
 
 		void OnSessionConnected(ClientSession session)
 		{
-			SessionManager.Instance.Add(1, session);
+			SessionManager.Instance.Add(session);
 			SocketUtil.instance.OnSessionConnected(session);
 		}
 
 		void OnSessionDisconnected(ClientSession session, CloseReason reason)
 		{
-			SessionManager.Instance.Quit(session.uid);
+			SessionManager.Instance.Remove(session.uid);
 			SocketUtil.instance.OnSessionClosed(session, reason);
 		}
 

@@ -9,19 +9,15 @@ namespace LiteServer
 {
 	public class ClientSession : AppSession<ClientSession, BinaryRequestInfo>
 	{
-		public int roomId = -1; //房间ID，或者是地图ID
-		public long uid = 0;    //用户ID
+		public long uid = 0;
 
 		protected override void OnSessionStarted()
 		{
-			uid = 0;
-			roomId = -1;
+			
 		}
 
 		protected override void OnSessionClosed(CloseReason reason)
 		{
-			uid = 0;
-			roomId = -1;
 			base.OnSessionClosed(reason);
 		}
 

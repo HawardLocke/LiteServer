@@ -10,35 +10,29 @@ namespace LiteServer
 	{
 		private Dictionary<long, ClientSession> sessionMap = new Dictionary<long,ClientSession>();
 
-		public void Add(long uid, ClientSession session)
+		private long genUid = 1991;
+
+		public void Add(ClientSession session)
 		{
+			if (sessionMap.ContainsValue(session))
+			{
+				return;
+			}
+			long uid = genUid++;
 			session.uid = uid;
 			sessionMap.Add(uid, session);
-		}
-
-		public void Quit(long uid)
-		{
-			sessionMap.Remove(uid);
-		}
-		public bool Exist(long uid)
-		{
-			return sessionMap.ContainsKey(uid);
-		}
-
-		public ClientSession Get(long uid)
-		{
-			Dictionary<long, ClientSession> users = sessionMap;
-			foreach (KeyValuePair<long, ClientSession> u in sessionMap)
-			{
-				if (u.Key != uid) continue;
-				return u.Value;
-			}
-			return null;
 		}
 
 		public void Remove(long uid)
 		{
 			sessionMap.Remove(uid);
+		}
+
+		public ClientSession Get(long uid)
+		{
+			ClientSession session = null;
+			sessionMap.TryGetValue(uid, out session);
+			return session;
 		}
 
 	}
