@@ -8,10 +8,10 @@ using SuperSocket.SocketBase.Protocol;
 
 namespace LiteServer
 {
-	class GameServer : AppServer<ClientSession, BinaryRequestInfo>
+	class LiteServer : AppServer<ClientSession, BinaryRequestInfo>
 	{
 
-		public GameServer()
+		public LiteServer()
 			: base(new DefaultReceiveFilterFactory<ClientReceiveFilter, BinaryRequestInfo>())
 		{
 		}
@@ -48,11 +48,11 @@ namespace LiteServer
 			this.SessionClosed += new SessionHandler<ClientSession, CloseReason>(OnSessionDisconnected);
 			this.NewRequestReceived += new RequestHandler<ClientSession, BinaryRequestInfo>(OnRequestReceived);
 
-			Log.Debug(typeof(GameServer), "test log - {0}", "debug");
-			Log.Info(typeof(GameServer), "test log - {0}", "info");
-			Log.Warn(typeof(GameServer), "test log - {0}", "warn");
-			Log.Fatal(typeof(GameServer), "test log - {0}", "fatal");
-			Log.Error(typeof(GameServer), "test log - {0}", "error");
+			Log.Debug(typeof(LiteServer), "test log - {0}", "debug");
+			Log.Info(typeof(LiteServer), "test log - {0}", "info");
+			Log.Warn(typeof(LiteServer), "test log - {0}", "warn");
+			Log.Fatal(typeof(LiteServer), "test log - {0}", "fatal");
+			Log.Error(typeof(LiteServer), "test log - {0}", "error");
 		}
 
 		protected override void OnStopped()
