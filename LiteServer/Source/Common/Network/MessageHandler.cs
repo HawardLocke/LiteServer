@@ -22,7 +22,7 @@ namespace LiteServer
 			mHandlerMap.Add(msgId, handler);
 		}
 
-		public void HandlerMessage(ClientSession session, BinaryRequestInfo requestInfo)//ClientSession session, ushort msgId, byte[] bytes)
+		public void HandlerMessage(ClientSession session, BinaryRequestInfo requestInfo)
 		{
 			try
 			{

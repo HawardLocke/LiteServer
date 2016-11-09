@@ -37,12 +37,10 @@ namespace LiteServer
 		{
 			using (MemoryStream ms = new MemoryStream())
 			{
-				ms.Position = 0;
 				BinaryWriter writer = new BinaryWriter(ms);
-				ushort protocalId = (ushort)msgId;
-				ushort msglen = (ushort)(bytes.Length + 2);
+				ushort msglen = (ushort)(bytes.Length + sizeof(ushort));
 				writer.Write(msglen);
-				writer.Write(protocalId);
+				writer.Write(msgId);
 				writer.Write(bytes);
 				writer.Flush();
 				if (this.Connected)

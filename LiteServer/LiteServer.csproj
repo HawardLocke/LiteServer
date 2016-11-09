@@ -90,6 +90,7 @@
     <Compile Include="Source\Common\Network\ClientSession.cs" />
     <Compile Include="Source\Common\Network\LiteAppServer.cs" />
     <Compile Include="Source\Common\Network\MessageHandler.cs" />
+    <Compile Include="Source\Common\Network\Packet.cs" />
     <Compile Include="Source\Common\Network\SessionManager.cs" />
     <Compile Include="Source\Entity\EntityManager.cs" />
     <Compile Include="Source\Entity\EntityObject.cs" />
@@ -102,12 +103,12 @@
     <Compile Include="Source\Protocol\MsgID.cs" />
     <Compile Include="Source\Timer\ConfigTimer.cs" />
     <Compile Include="Source\Timer\RedisTimer.cs" />
+    <Compile Include="Source\Util\AppFacade.cs" />
     <Compile Include="Source\Util\ConfigUtil.cs" />
     <Compile Include="Source\Util\Const.cs" />
     <Compile Include="Source\Util\HttpUtil.cs" />
     <Compile Include="Source\Util\IMessage.cs" />
     <Compile Include="Source\Util\Protocal.cs" />
-    <Compile Include="Source\Util\AppFacade.cs" />
     <Compile Include="Source\Util\SocketUtil.cs" />
   </ItemGroup>
   <ItemGroup>
