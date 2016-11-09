@@ -35,18 +35,24 @@ namespace LiteServer
 
 		public void SendMessage(ushort msgId, byte[] bytes)
 		{
+			ByteBuffer buffer = new ByteBuffer();
+			buffer.WriteBytes(bytes);
+			byte[] message = buffer.ToBytes();
+
 			using (MemoryStream ms = new MemoryStream())
 			{
+				ms.Position = 0;
 				BinaryWriter writer = new BinaryWriter(ms);
-				ushort msglen = (ushort)(bytes.Length + sizeof(ushort));
+				ushort msglen = (ushort)(message.Length + sizeof(ushort));
 				writer.Write(msglen);
 				writer.Write(msgId);
-				writer.Write(bytes);
+				writer.Write(message);
 				writer.Flush();
 				if (this.Connected)
 				{
 					byte[] array = ms.ToArray();
 					this.Send(array, 0, array.Length);
+					Console.WriteLine("send msg");
 				}
 			}
 		}

@@ -36,7 +36,7 @@ namespace LiteServer
 		int test_OnLogin(ClientSession session, byte[] bytes)
 		{
 			Login loginMsg = Login.Parser.ParseFrom(bytes);
-			Console.WriteLine("on test_OnLogin");
+			Console.WriteLine("recv on test_OnLogin");
 			Console.WriteLine(loginMsg.Name);
 			Console.WriteLine(loginMsg.Password);
 
