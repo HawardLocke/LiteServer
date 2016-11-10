@@ -8,10 +8,10 @@ using SuperSocket.SocketBase.Protocol;
 
 namespace Lite
 {
-	class LiteAppServer : AppServer<ClientSession, BinaryRequestInfo>
+	class BaseServer : AppServer<ClientSession, BinaryRequestInfo>
 	{
 
-		public LiteAppServer()
+		public BaseServer()
 			: base(new DefaultReceiveFilterFactory<ClientReceiveFilter, BinaryRequestInfo>())
 		{
 		}

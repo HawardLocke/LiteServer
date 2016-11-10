@@ -80,42 +80,46 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Source\Common\BaseThread.cs" />
-    <Compile Include="Source\Common\Framework\IEntity.cs" />
-    <Compile Include="Source\Common\Framework\IManager.cs" />
-    <Compile Include="Source\Common\Framework\Singleton.cs" />
-    <Compile Include="Source\Common\Guid\GuidGenerator.cs" />
-    <Compile Include="Source\Common\Log\Log.cs" />
-    <Compile Include="Source\Common\Network\ByteBuffer.cs" />
-    <Compile Include="Source\Common\Network\ClientReceiveFilter.cs" />
-    <Compile Include="Source\Common\Network\ClientSession.cs" />
-    <Compile Include="Source\Common\Network\LiteAppServer.cs" />
-    <Compile Include="Source\Common\Network\MessageHandler.cs" />
-    <Compile Include="Source\Common\Network\Packet.cs" />
-    <Compile Include="Source\Common\Network\SessionManager.cs" />
-    <Compile Include="Source\Common\Template\TabReader.cs" />
-    <Compile Include="Source\Common\Template\TemplateData.cs" />
-    <Compile Include="Source\Common\Template\TemplateManager.cs" />
-    <Compile Include="Source\Entity\EntityManager.cs" />
-    <Compile Include="Source\Entity\EntityObject.cs" />
-    <Compile Include="Source\Entity\PawnObject.cs" />
-    <Compile Include="Source\Entity\PlayerObject.cs" />
-    <Compile Include="Source\GameServer.cs" />
-    <Compile Include="Source\Http\HttpServer.cs" />
-    <Compile Include="Source\Http\HttpService.cs" />
-    <Compile Include="Source\LoginServer.cs" />
-    <Compile Include="Source\Protocol\Chat.cs" />
-    <Compile Include="Source\Protocol\Login.cs" />
-    <Compile Include="Source\Protocol\MsgID.cs" />
-    <Compile Include="Source\Timer\ConfigTimer.cs" />
-    <Compile Include="Source\Timer\RedisTimer.cs" />
-    <Compile Include="Source\Util\AppFacade.cs" />
-    <Compile Include="Source\Util\ConfigUtil.cs" />
-    <Compile Include="Source\Util\Const.cs" />
-    <Compile Include="Source\Util\HttpUtil.cs" />
-    <Compile Include="Source\Util\IMessage.cs" />
-    <Compile Include="Source\Util\Protocal.cs" />
-    <Compile Include="Source\Util\SocketUtil.cs" />
+    <Compile Include="Source\Framework\Core\IEntity.cs" />
+    <Compile Include="Source\Framework\Core\IManager.cs" />
+    <Compile Include="Source\Framework\Core\Singleton.cs" />
+    <Compile Include="Source\Framework\Entity\EntityManager.cs" />
+    <Compile Include="Source\Framework\Entity\EntityObject.cs" />
+    <Compile Include="Source\Framework\Entity\PawnObject.cs" />
+    <Compile Include="Source\Framework\Entity\PlayerObject.cs" />
+    <Compile Include="Source\Framework\Guid\GuidGenerator.cs" />
+    <Compile Include="Source\Framework\Http\HttpServer.cs" />
+    <Compile Include="Source\Framework\Http\HttpService.cs" />
+    <Compile Include="Source\Framework\Log\Log.cs" />
+    <Compile Include="Source\Framework\Network\BaseServer.cs" />
+    <Compile Include="Source\Framework\Network\ByteBuffer.cs" />
+    <Compile Include="Source\Framework\Network\ClientReceiveFilter.cs" />
+    <Compile Include="Source\Framework\Network\ClientSession.cs" />
+    <Compile Include="Source\Framework\Network\MessageHandler.cs" />
+    <Compile Include="Source\Framework\Network\Packet.cs" />
+    <Compile Include="Source\Framework\Network\SessionManager.cs" />
+    <Compile Include="Source\Framework\Scene\Scene.cs" />
+    <Compile Include="Source\Framework\Scene\SceneManager.cs" />
+    <Compile Include="Source\Framework\Template\TabReader.cs" />
+    <Compile Include="Source\Framework\Template\TemplateData.cs" />
+    <Compile Include="Source\Framework\Template\TemplateManager.cs" />
+    <Compile Include="Source\Framework\Thread\BaseThread.cs" />
+    <Compile Include="Source\Framework\Timer\ConfigTimer.cs" />
+    <Compile Include="Source\Framework\Timer\RedisTimer.cs" />
+    <Compile Include="Source\Logic\GameServer.cs" />
+    <Compile Include="Source\Logic\LoginServer.cs" />
+    <Compile Include="Source\Logic\Protocol\Chat.cs" />
+    <Compile Include="Source\Logic\Protocol\Login.cs" />
+    <Compile Include="Source\Logic\Protocol\MsgID.cs" />
+    <Compile Include="Source\Logic\Template\auto_gen\Npc0_Data.cs" />
+    <Compile Include="Source\Logic\Template\TemplateRegister.cs" />
+    <Compile Include="Source\Logic\Util\AppFacade.cs" />
+    <Compile Include="Source\Logic\Util\ConfigUtil.cs" />
+    <Compile Include="Source\Logic\Util\Const.cs" />
+    <Compile Include="Source\Logic\Util\HttpUtil.cs" />
+    <Compile Include="Source\Logic\Util\IMessage.cs" />
+    <Compile Include="Source\Logic\Util\Protocal.cs" />
+    <Compile Include="Source\Logic\Util\SocketUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -145,6 +149,10 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

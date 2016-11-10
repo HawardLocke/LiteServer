@@ -45,7 +45,14 @@ namespace Lite
 		////
 		public static void Info(string str)
 		{
-			Console.ForegroundColor = ConsoleColor.Green;
+			Console.ForegroundColor = ConsoleColor.DarkGreen;
+			Console.WriteLine(str);
+			Console.ResetColor();
+		}
+
+		public static void Warn(string str)
+		{
+			Console.ForegroundColor = ConsoleColor.Yellow;
 			Console.WriteLine(str);
 			Console.ResetColor();
 		}

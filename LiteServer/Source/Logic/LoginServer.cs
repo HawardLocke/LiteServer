@@ -9,21 +9,16 @@ using System.Threading.Tasks;
 namespace Lite
 {
 
-	class GameServer : LiteAppServer
+	class LoginServer : BaseServer
 	{
 		protected override void OnStarted()
 		{
 			base.OnStarted();
-
-			AppFacade.Instance.Init();
-			TemplateManager.Instance.Init();
 		}
 
 		protected override void OnStopped()
 		{
 			base.OnStopped();
-
-			AppFacade.Instance.Close();
 		}
 
 	}

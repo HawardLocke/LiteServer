@@ -21,22 +21,22 @@ namespace Lite
 		private Dictionary<Type, Data> mDataPoolDic = new Dictionary<Type, Data>();
 		private Dictionary<Type, StrData> mStrDataPoolDic = new Dictionary<Type, StrData>();
 
-		private Dictionary<Type, string> tableList = new Dictionary<Type, string>
-			{
-				//{typeof(Npc0_Data), "Npc0"},
-			};
+		private Dictionary<Type, string> tableList = new Dictionary<Type, string>();
 
+		public void Register(Type type, string filePath)
+		{
+			tableList.Add(type, filePath);
+		}
 
 		public void Init()
 		{
 			Log.Info("--start load teamlate:");
-			string exePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
-			string filePath = exePath.Substring(0, exePath.LastIndexOf('\\')) + "template\\";
+
 			IDictionaryEnumerator itor = tableList.GetEnumerator();
 			while (itor.MoveNext())
 			{
 				Log.Info(string.Format("  load {0}...", itor.Value));
-				LoadRes(itor.Key as Type, filePath + itor.Value as string);
+				LoadRes(itor.Key as Type, itor.Value as string);
 			}
 
 			Log.Info("load teamlate end--");
