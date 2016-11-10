@@ -1,12 +1,9 @@
 
-namespace LiteServer
+namespace Lite
 {
 	public interface IManager
 	{
-
 		void Init();
-
 		void Destroy();
-
 	}
 }

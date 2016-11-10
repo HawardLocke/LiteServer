@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LiteServer
+namespace Lite
 {
 	public interface IMessage
 	{

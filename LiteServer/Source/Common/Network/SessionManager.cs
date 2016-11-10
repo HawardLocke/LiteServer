@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LiteServer
+namespace Lite
 {
 	class SessionManager : Singleton<SessionManager>
 	{
 		private Dictionary<long, ClientSession> sessionMap = new Dictionary<long,ClientSession>();
 
-		private long genUid = 1991;
+
 
 		public void Add(ClientSession session)
 		{
@@ -18,7 +18,7 @@ namespace LiteServer
 			{
 				return;
 			}
-			long uid = genUid++;
+			long uid = GuidGenerator.GetLong();
 			session.uid = uid;
 			sessionMap.Add(uid, session);
 			Console.WriteLine("add session.. total " + sessionMap.Count);

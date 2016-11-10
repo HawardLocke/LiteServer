@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace LiteServer
+namespace Lite
 {
 	abstract class BaseThread
 	{

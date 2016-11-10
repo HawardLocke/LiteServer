@@ -7,7 +7,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace LiteServer {
+namespace Lite {
 
   /// <summary>Holder for reflection information generated from protos/chat.proto</summary>
   public static partial class ChatReflection {
@@ -30,9 +30,9 @@ namespace LiteServer {
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::LiteServer.Test1Msg1), global::LiteServer.Test1Msg1.Parser, new[]{ "Text", "Number", "Bignumber" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::LiteServer.Test1Msg2), global::LiteServer.Test1Msg2.Parser, new[]{ "Text", "Number", "Bignumber" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::LiteServer.Test1Msg3), global::LiteServer.Test1Msg3.Parser, new[]{ "Text", "Number", "Bignumber" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.Test1Msg1), global::Lite.Test1Msg1.Parser, new[]{ "Text", "Number", "Bignumber" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.Test1Msg2), global::Lite.Test1Msg2.Parser, new[]{ "Text", "Number", "Bignumber" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.Test1Msg3), global::Lite.Test1Msg3.Parser, new[]{ "Text", "Number", "Bignumber" }, null, null, null)
           }));
     }
     #endregion
@@ -46,7 +46,7 @@ namespace LiteServer {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::LiteServer.ChatReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Lite.ChatReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -219,7 +219,7 @@ namespace LiteServer {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::LiteServer.ChatReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Lite.ChatReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -392,7 +392,7 @@ namespace LiteServer {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::LiteServer.ChatReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Lite.ChatReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

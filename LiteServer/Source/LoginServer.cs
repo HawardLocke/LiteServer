@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,16 +8,19 @@ using System.Threading.Tasks;
 
 namespace Lite
 {
-	public class PawnObject : EntityObject
+
+	class LoginServer : LiteAppServer
 	{
-		public override void OnSpawn()
+		protected override void OnStarted()
 		{
-			base.OnSpawn();
+			base.OnStarted();
 		}
 
-		public override void OnDestroy()
+		protected override void OnStopped()
 		{
-			base.OnDestroy();
+			base.OnStopped();
 		}
+
 	}
+
 }

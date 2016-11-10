@@ -7,7 +7,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace LiteServer {
+namespace Lite {
 
   /// <summary>Holder for reflection information generated from protos/login.proto</summary>
   public static partial class LoginReflection {
@@ -33,11 +33,11 @@ namespace LiteServer {
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::LiteServer.ExtraInfo), global::LiteServer.ExtraInfo.Parser, new[]{ "Number" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::LiteServer.Login), global::LiteServer.Login.Parser, new[]{ "Name", "Password", "Infos" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::LiteServer.TestMsg1), global::LiteServer.TestMsg1.Parser, new[]{ "Text", "Number", "Bignumber" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::LiteServer.TestMsg2), global::LiteServer.TestMsg2.Parser, new[]{ "Text", "Number", "Bignumber" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::LiteServer.TestMsg3), global::LiteServer.TestMsg3.Parser, new[]{ "Text", "Number", "Bignumber" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.ExtraInfo), global::Lite.ExtraInfo.Parser, new[]{ "Number" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.Login), global::Lite.Login.Parser, new[]{ "Name", "Password", "Infos" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.TestMsg1), global::Lite.TestMsg1.Parser, new[]{ "Text", "Number", "Bignumber" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.TestMsg2), global::Lite.TestMsg2.Parser, new[]{ "Text", "Number", "Bignumber" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.TestMsg3), global::Lite.TestMsg3.Parser, new[]{ "Text", "Number", "Bignumber" }, null, null, null)
           }));
     }
     #endregion
@@ -51,7 +51,7 @@ namespace LiteServer {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::LiteServer.LoginReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Lite.LoginReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -168,7 +168,7 @@ namespace LiteServer {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::LiteServer.LoginReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Lite.LoginReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -219,11 +219,11 @@ namespace LiteServer {
 
     /// <summary>Field number for the "infos" field.</summary>
     public const int InfosFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::LiteServer.ExtraInfo> _repeated_infos_codec
-        = pb::FieldCodec.ForMessage(26, global::LiteServer.ExtraInfo.Parser);
-    private readonly pbc::RepeatedField<global::LiteServer.ExtraInfo> infos_ = new pbc::RepeatedField<global::LiteServer.ExtraInfo>();
+    private static readonly pb::FieldCodec<global::Lite.ExtraInfo> _repeated_infos_codec
+        = pb::FieldCodec.ForMessage(26, global::Lite.ExtraInfo.Parser);
+    private readonly pbc::RepeatedField<global::Lite.ExtraInfo> infos_ = new pbc::RepeatedField<global::Lite.ExtraInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::LiteServer.ExtraInfo> Infos {
+    public pbc::RepeatedField<global::Lite.ExtraInfo> Infos {
       get { return infos_; }
     }
 
@@ -333,7 +333,7 @@ namespace LiteServer {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::LiteServer.LoginReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Lite.LoginReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -506,7 +506,7 @@ namespace LiteServer {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::LiteServer.LoginReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Lite.LoginReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -679,7 +679,7 @@ namespace LiteServer {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::LiteServer.LoginReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Lite.LoginReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

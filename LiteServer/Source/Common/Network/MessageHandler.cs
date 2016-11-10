@@ -8,7 +8,7 @@ using SuperSocket.SocketBase;
 using SuperSocket.SocketBase.Protocol;
 
 
-namespace LiteServer
+namespace Lite
 {
 	using MsgFunc = Func<ClientSession,byte[],int>;
 

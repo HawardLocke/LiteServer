@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LiteServer
+namespace Lite
 {
 
 	public sealed class EntityManager : Singleton<EntityManager>, IManager
@@ -16,16 +16,34 @@ namespace LiteServer
 
 		}
 
-		public void Destroy() { }
+		public void Destroy() 
+		{
+
+		}
+
+		public EntityObject GetEntity(long uid)
+		{
+			EntityObject ent = null;
+			mEntityMap.TryGetValue(uid, out ent);
+			return ent;
+		}
 
 		public EntityObject SpawnEntity()
 		{
-			return null;
+			EntityObject ent = new EntityObject();
+			long uid = GuidGenerator.GetLong();
+			ent.EntityID = uid;
+			mEntityMap.Add(uid, ent);
+			return ent;
 		}
 
-		public void DestroyEntity()
+		public void DestroyEntity(long uid)
 		{
-
+			EntityObject ent = GetEntity(uid);
+			if (ent != null)
+			{
+				mEntityMap.Remove(uid);
+			}
 		}
 
 	}

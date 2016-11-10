@@ -2,9 +2,9 @@
 using System.IO;
 using System.Net;
 using System.Text;
-using LiteServer;
 
-namespace LiteServer.Utility
+
+namespace Lite
 {
 	class HttpUtil
 	{

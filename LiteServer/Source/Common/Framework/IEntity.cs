@@ -1,5 +1,5 @@
 
-namespace LiteServer
+namespace Lite
 {
 	public interface IEntity
 	{

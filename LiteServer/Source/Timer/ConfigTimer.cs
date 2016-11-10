@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LiteServer.Utility;
+using Lite.Utility;
 
-namespace LiteServer.Timer
+namespace Lite.Timer
 {
 	class ConfigTimer
 	{

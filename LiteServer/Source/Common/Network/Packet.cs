@@ -1,6 +1,6 @@
 
 
-namespace LiteServer
+namespace Lite
 {
 	public sealed class Packet
 	{

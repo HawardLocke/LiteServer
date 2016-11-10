@@ -4,14 +4,14 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LiteServer;
-using LiteServer.Message;
+using Lite;
+using Lite.Message;
 
 using SuperSocket.SocketBase;
 using SuperSocket.SocketBase.Protocol;
 
 
-namespace LiteServer.Utility
+namespace Lite.Utility
 {
 	class SocketUtil
 	{

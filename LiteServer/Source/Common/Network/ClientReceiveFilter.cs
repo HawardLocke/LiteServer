@@ -4,7 +4,7 @@ using SuperSocket.Common;
 using SuperSocket.Facility.Protocol;
 using SuperSocket.SocketBase.Protocol;
 
-namespace LiteServer
+namespace Lite
 {
 	class ClientReceiveFilter : FixedHeaderReceiveFilter<BinaryRequestInfo>
 	{

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.IO;
 using System.Text;
-using LiteServer.Utility;
+using Lite.Utility;
 using SuperSocket.SocketBase;
 using SuperSocket.SocketBase.Command;
 using SuperSocket.SocketBase.Protocol;
 
 
-namespace LiteServer
+namespace Lite
 {
 	public class ClientSession : AppSession<ClientSession, BinaryRequestInfo>
 	{
@@ -33,7 +33,7 @@ namespace LiteServer
 			this.Send("Unknow request");
 		}
 
-		public void SendMessage(ushort msgId, byte[] bytes)
+		public void SendPacket(ushort msgId, byte[] bytes)
 		{
 			ByteBuffer buffer = new ByteBuffer();
 			buffer.WriteBytes(bytes);

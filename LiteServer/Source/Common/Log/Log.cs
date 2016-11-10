@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 
 //[assembly: log4net.Config.XmlConfigurator(Watch = true)]
-namespace LiteServer
+namespace Lite
 {
 	class Log
 	{
@@ -40,6 +40,21 @@ namespace LiteServer
 		{
 			log4net.ILog log = log4net.LogManager.GetLogger(type);//MethodBase.GetCurrentMethod().DeclaringType);
 			log.ErrorFormat(str, args);
+		}
+
+		////
+		public static void Info(string str)
+		{
+			Console.ForegroundColor = ConsoleColor.Green;
+			Console.WriteLine(str);
+			Console.ResetColor();
+		}
+
+		public static void Error(string str)
+		{
+			Console.ForegroundColor = ConsoleColor.Red;
+			Console.WriteLine(str);
+			Console.ResetColor();
 		}
 
 	}

@@ -5,10 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace LiteServer
+namespace Lite
 {
-	public abstract class EntityObject : IEntity
+	public class EntityObject : IEntity
 	{
+		private long mEntityID = 0;
+		public long EntityID
+		{
+			get { return mEntityID; }
+			set { mEntityID = value; }
+		}
+
+		private int mSceneID = 0;
+
 		public virtual void OnSpawn()
 		{
 

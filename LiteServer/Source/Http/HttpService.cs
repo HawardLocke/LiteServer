@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace LiteServer.Service
+namespace Lite.Service
 {
 	abstract class HttpService
 	{

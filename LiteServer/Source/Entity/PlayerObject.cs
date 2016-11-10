@@ -5,10 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace LiteServer
+namespace Lite
 {
 	public class PlayerObject : PawnObject
 	{
+		private long mPlayerID = 0;
+		private long mSessionID = 0;
+
 		public override void OnSpawn()
 		{
 			base.OnSpawn();
@@ -18,5 +21,15 @@ namespace LiteServer
 		{
 			base.OnDestroy();
 		}
+
+		public void SendPacket(ushort msgId, byte[] bytes)
+		{
+			ClientSession session = SessionManager.Instance.Get(mSessionID);
+			if (session != null)
+			{
+				session.SendPacket(msgId, bytes);
+			}
+		}
+
 	}
 }

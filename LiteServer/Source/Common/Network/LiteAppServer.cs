@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Text;
-using LiteServer.Timer;
-using LiteServer.Utility;
+using Lite.Timer;
+using Lite.Utility;
 using SuperSocket.SocketBase;
 using SuperSocket.SocketBase.Config;
 using SuperSocket.SocketBase.Protocol;
 
-namespace LiteServer
+namespace Lite
 {
 	class LiteAppServer : AppServer<ClientSession, BinaryRequestInfo>
 	{
@@ -24,7 +24,6 @@ namespace LiteServer
 		protected override void OnStarted()
 		{
 			base.OnStarted();
-			AppFacade.Instance.Init();
 
 			this.NewSessionConnected += new SessionHandler<ClientSession>(OnSessionConnected);
 			this.SessionClosed += new SessionHandler<ClientSession, CloseReason>(OnSessionDisconnected);
@@ -34,26 +33,26 @@ namespace LiteServer
 		protected override void OnStopped()
 		{
 			base.OnStopped();
-			AppFacade.Instance.Close();
 
 			this.NewSessionConnected -= new SessionHandler<ClientSession>(OnSessionConnected);
 			this.SessionClosed -= new SessionHandler<ClientSession, CloseReason>(OnSessionDisconnected);
 			this.NewRequestReceived -= new RequestHandler<ClientSession, BinaryRequestInfo>(OnRequestReceived);
 		}
 
-		void OnSessionConnected(ClientSession session)
+		protected virtual void OnSessionConnected(ClientSession session)
 		{
 			SessionManager.Instance.Add(session);
 		}
 
-		void OnSessionDisconnected(ClientSession session, CloseReason reason)
+		protected virtual void OnSessionDisconnected(ClientSession session, CloseReason reason)
 		{
 			SessionManager.Instance.Remove(session.uid);
 		}
 
-		void OnRequestReceived(ClientSession session, BinaryRequestInfo requestInfo)
+		protected virtual void OnRequestReceived(ClientSession session, BinaryRequestInfo requestInfo)
 		{
 			MessageHandler.Instance.HandlerMessage(session, requestInfo);
 		}
+
 	}
 }

@@ -2,9 +2,9 @@
 using System.IO;
 using System.Text;
 using System.Configuration;
-using LiteServer;
+using Lite;
 
-namespace LiteServer.Utility
+namespace Lite.Utility
 {
 	class ConfigUtil
 	{

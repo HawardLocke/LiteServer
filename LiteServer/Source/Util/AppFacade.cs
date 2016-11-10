@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using LiteServer;
-using LiteServer.Message;
-using LiteServer.Service;
-using LiteServer.Timer;
+using Lite;
+using Lite.Message;
+using Lite.Service;
+using Lite.Timer;
 
-namespace LiteServer
+namespace Lite
 {
 	class AppFacade : Singleton<AppFacade>
 	{
@@ -48,7 +48,7 @@ namespace LiteServer
 
 			byte[] bytesRet = Google.Protobuf.MessageExtensions.ToByteArray(loginRet);
 
-			session.SendMessage((ushort)PBX.MsgID.Login, bytesRet);
+			session.SendPacket((ushort)PBX.MsgID.Login, bytesRet);
 
 			return 0;
 		}

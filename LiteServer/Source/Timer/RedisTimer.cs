@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Text;
 using System.Threading.Tasks;
-using LiteServer;
-using LiteServer.Utility;
+using Lite;
+using Lite.Utility;
 
-namespace LiteServer.Timer
+namespace Lite.Timer
 {
 	class RedisTimer
 	{

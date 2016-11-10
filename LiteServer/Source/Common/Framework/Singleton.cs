@@ -1,7 +1,7 @@
 
 
 
-namespace LiteServer
+namespace Lite
 {
 
 	public class Singleton<T> where T : new()

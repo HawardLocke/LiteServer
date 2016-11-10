@@ -84,7 +84,8 @@
     <Compile Include="Source\Common\Framework\IEntity.cs" />
     <Compile Include="Source\Common\Framework\IManager.cs" />
     <Compile Include="Source\Common\Framework\Singleton.cs" />
-    <Compile Include="Source\Common\Log.cs" />
+    <Compile Include="Source\Common\Guid\GuidGenerator.cs" />
+    <Compile Include="Source\Common\Log\Log.cs" />
     <Compile Include="Source\Common\Network\ByteBuffer.cs" />
     <Compile Include="Source\Common\Network\ClientReceiveFilter.cs" />
     <Compile Include="Source\Common\Network\ClientSession.cs" />
@@ -92,12 +93,17 @@
     <Compile Include="Source\Common\Network\MessageHandler.cs" />
     <Compile Include="Source\Common\Network\Packet.cs" />
     <Compile Include="Source\Common\Network\SessionManager.cs" />
+    <Compile Include="Source\Common\Template\TabReader.cs" />
+    <Compile Include="Source\Common\Template\TemplateData.cs" />
+    <Compile Include="Source\Common\Template\TemplateManager.cs" />
     <Compile Include="Source\Entity\EntityManager.cs" />
     <Compile Include="Source\Entity\EntityObject.cs" />
     <Compile Include="Source\Entity\PawnObject.cs" />
     <Compile Include="Source\Entity\PlayerObject.cs" />
+    <Compile Include="Source\GameServer.cs" />
     <Compile Include="Source\Http\HttpServer.cs" />
     <Compile Include="Source\Http\HttpService.cs" />
+    <Compile Include="Source\LoginServer.cs" />
     <Compile Include="Source\Protocol\Chat.cs" />
     <Compile Include="Source\Protocol\Login.cs" />
     <Compile Include="Source\Protocol\MsgID.cs" />

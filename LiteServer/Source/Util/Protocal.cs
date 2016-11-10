@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LiteServer.Message
+namespace Lite.Message
 {
 	public enum Protocal
 	{
