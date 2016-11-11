@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text;
-using Lite.Timer;
 using Lite.Utility;
 using SuperSocket.SocketBase;
 using SuperSocket.SocketBase.Config;

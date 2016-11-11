@@ -30,16 +30,17 @@ namespace Lite
 
 		public void Init()
 		{
-			Log.Info("--start load teamlate:");
+			Log.Info("loading teamlates...");
 
 			IDictionaryEnumerator itor = tableList.GetEnumerator();
 			while (itor.MoveNext())
 			{
-				Log.Info(string.Format("  load {0}...", itor.Value));
+				string filePath = itor.Value as string;
+				Log.Info(string.Format("load {0}...", filePath.Substring(filePath.LastIndexOf("Template"))));
 				LoadRes(itor.Key as Type, itor.Value as string);
 			}
 
-			Log.Info("load teamlate end--");
+			Log.Info("load teamlate done.");
 		}
 
 		public void Destroy()

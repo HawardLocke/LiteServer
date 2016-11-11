@@ -6,19 +6,47 @@ using Lite;
 
 namespace Lite.Utility
 {
-	class ConfigUtil
+	sealed class ConfigUtil
 	{
+		// timers
+		public static int ServerTickTime = 200;
+		public static int ConfigUpdateTime = 60*1000;
+
+		// redis
+		public static string RedisHost = "127.0.0.1";
+		public static int RedisPort = 8801;
+		public static int RedisSaveTime = 5*60*1000;
+
+		// web
+		public static string WebUrl = "http://127.0.0.1:gate.php";
+		public static string ZeromqUri = "";
+
+
 		public static void LoadConfig()
 		{
-			/*Const.RedisHost = GetValue("RedisHost");
-			Const.RedisPort = Int32.Parse(GetValue("RedisPort"));
-			Const.RedisSaveTime = Int32.Parse(GetValue("RedisSaveTime"));
+			try
+			{
+				Log.Info("loading / updating config...");
 
-			Const.WebUrl = GetValue("WebUrl");  //请求的URL
-			Const.ZeromqUri = GetValue("ZeromqUri");    //ZeroMQ*/
+				ServerTickTime = Int32.Parse(GetValue("ServerTickTime"));
+				ConfigUpdateTime = Int32.Parse(GetValue("ConfigUpdateTime"));
+
+				RedisHost = GetValue("RedisHost");
+				RedisPort = Int32.Parse(GetValue("RedisPort"));
+				RedisSaveTime = Int32.Parse(GetValue("RedisSaveTime"));
+
+				WebUrl = GetValue("WebUrl");
+				ZeromqUri = GetValue("ZeromqUri");
+
+				Log.Info("Load / update config done.");
+			}
+			catch(Exception e)
+			{
+				Log.Error("ConfigUtil : " + e.ToString());
+			}
 		}
 
-		public static string GetValue(string key)
+		static string GetValue(string key)
 		{
 			return ConfigurationManager.AppSettings[key];
 		}

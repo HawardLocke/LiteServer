@@ -4,17 +4,12 @@ using System.Text;
 using Lite;
 using Lite.Message;
 using Lite.Service;
-using Lite.Timer;
+
 
 namespace Lite
 {
 	class AppFacade : Singleton<AppFacade>
 	{
-		static AppFacade server;
-		private RedisTimer redis;
-		private ConfigTimer config;
-		private HttpServer http;
-
 		/*void testProto()
 		{
 			Login login = new Login
@@ -36,9 +31,7 @@ namespace Lite
 		int test_OnLogin(ClientSession session, byte[] bytes)
 		{
 			Login loginMsg = Login.Parser.ParseFrom(bytes);
-			Console.WriteLine("recv on test_OnLogin");
-			Console.WriteLine(loginMsg.Name);
-			Console.WriteLine(loginMsg.Password);
+			Console.WriteLine("recv Login");
 
 			Login loginRet = new Login
 			{
@@ -55,19 +48,13 @@ namespace Lite
 
 		public void Init()
 		{
-			config = new ConfigTimer(); config.Start();
-			//redis = new RedisTimer(); redis.Start();
-			//http = new HttpServer(7077); http.Start();
-			
 			// test
 			MessageHandler.Instance.RegisterHandler((ushort)PBX.MsgID.Login, test_OnLogin);
 		}
 
 		public void Close()
 		{
-			//redis.Stop(); redis = null;
-			config.Stop(); config = null;
-			http.Stop(); http = null;
 		}
+
 	}
 }

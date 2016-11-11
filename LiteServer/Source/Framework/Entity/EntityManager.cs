@@ -21,6 +21,14 @@ namespace Lite
 
 		}
 
+		public void Tick(long dms)
+		{
+			foreach (EntityObject ent in mEntityMap.Values)
+			{
+				
+			}
+		}
+
 		public EntityObject GetEntity(long uid)
 		{
 			EntityObject ent = null;
