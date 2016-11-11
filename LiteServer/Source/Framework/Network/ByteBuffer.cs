@@ -84,7 +84,7 @@ namespace Lite
 		public void WriteString(string v)
 		{
 			byte[] bytes = Encoding.UTF8.GetBytes(v);
-			writer.Write((ushort)bytes.Length);
+			writer.Write((int)bytes.Length);
 			writer.Write(bytes);
 		}
 
@@ -130,7 +130,7 @@ namespace Lite
 
 		public string ReadString()
 		{
-			ushort len = ReadShort();
+			int len = ReadInt();
 			byte[] buffer = new byte[len];
 			buffer = reader.ReadBytes(len);
 			return Encoding.UTF8.GetString(buffer);
