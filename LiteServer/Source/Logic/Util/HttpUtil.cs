@@ -15,7 +15,7 @@ namespace Lite
 		/// </summary>
 		public static string SendRequest(string data)
 		{
-			url = Const.WebUrl;
+			url = ConfigUtil.WebUrl;
 			Encoding encoding = Encoding.UTF8;
 			HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
 			request.Method = "post";

@@ -4,7 +4,7 @@ using System.Text;
 using System.Configuration;
 using Lite;
 
-namespace Lite.Utility
+namespace Lite
 {
 	sealed class ConfigUtil
 	{
@@ -26,7 +26,7 @@ namespace Lite.Utility
 		{
 			try
 			{
-				Log.Info("loading / updating config...");
+				Log.Info("loading/updating config...");
 
 				ServerTickTime = Int32.Parse(GetValue("ServerTickTime"));
 				ConfigUpdateTime = Int32.Parse(GetValue("ConfigUpdateTime"));
@@ -38,7 +38,7 @@ namespace Lite.Utility
 				WebUrl = GetValue("WebUrl");
 				ZeromqUri = GetValue("ZeromqUri");
 
-				Log.Info("Load / update config done.");
+				Log.Info("load/update config done.");
 			}
 			catch(Exception e)
 			{

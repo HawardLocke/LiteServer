@@ -10,9 +10,7 @@ namespace Lite
 	{
 		private Dictionary<long, ClientSession> sessionMap = new Dictionary<long,ClientSession>();
 
-
-
-		public void Add(ClientSession session)
+		public void AddSession(ClientSession session)
 		{
 			if (sessionMap.ContainsValue(session))
 			{
@@ -21,13 +19,13 @@ namespace Lite
 			long uid = GuidGenerator.GetLong();
 			session.uid = uid;
 			sessionMap.Add(uid, session);
-			Console.WriteLine("add session.. total " + sessionMap.Count);
+			Log.Info(string.Format("new session. total {0}.", sessionMap.Count));
 		}
 
-		public void Remove(long uid)
+		public void RemoveSession(long uid)
 		{
 			sessionMap.Remove(uid);
-			Console.WriteLine("remove session.. total " + sessionMap.Count);
+			Log.Info(string.Format("remove session. total {0}.", sessionMap.Count));
 		}
 
 		public ClientSession Get(long uid)

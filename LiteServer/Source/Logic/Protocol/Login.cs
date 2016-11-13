@@ -22,32 +22,31 @@ namespace Lite {
     static LoginReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJwcm90b3MvbG9naW4ucHJvdG8SCkxpdGVTZXJ2ZXIiGwoJRXh0cmFJbmZv",
-            "Eg4KBm51bWJlchgBIAEoBSJNCgVMb2dpbhIMCgRuYW1lGAEgASgJEhAKCHBh",
-            "c3N3b3JkGAIgASgJEiQKBWluZm9zGAMgAygLMhUuTGl0ZVNlcnZlci5FeHRy",
-            "YUluZm8iOwoIVGVzdE1zZzESDAoEdGV4dBgBIAEoCRIOCgZudW1iZXIYAiAB",
-            "KAUSEQoJYmlnbnVtYmVyGAMgASgDIjsKCFRlc3RNc2cyEgwKBHRleHQYASAB",
-            "KAkSDgoGbnVtYmVyGAIgASgFEhEKCWJpZ251bWJlchgDIAEoAyI7CghUZXN0",
-            "TXNnMxIMCgR0ZXh0GAEgASgJEg4KBm51bWJlchgCIAEoBRIRCgliaWdudW1i",
-            "ZXIYAyABKANiBnByb3RvMw=="));
+            "ChJwcm90b3MvbG9naW4ucHJvdG8SBExpdGUiVwoNTG9naW5Sb2xlSW5mbxIN",
+            "CgVpbmRleBgBIAEoBRIKCgJpZBgCIAEoAxIMCgRuYW1lGAMgASgJEg4KBmNh",
+            "cmVlchgEIAEoBRINCgVsZXZlbBgFIAEoBSIxCgxMb2dpblJlcXVlc3QSDwoH",
+            "YWNjb3VudBgBIAEoCRIQCghwYXNzd29yZBgCIAEoCSIfCg1Mb2dpblJlc3Bv",
+            "bnNlEg4KBnJlc3VsdBgBIAEoBSIlChBFbnRlckdhbWVSZXF1ZXN0EhEKCXJv",
+            "bGVJbmRleBgBIAEoBSIjChFFbnRlckdhbWVSZXNwb25zZRIOCgZyZXN1bHQY",
+            "ASABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.ExtraInfo), global::Lite.ExtraInfo.Parser, new[]{ "Number" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.Login), global::Lite.Login.Parser, new[]{ "Name", "Password", "Infos" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.TestMsg1), global::Lite.TestMsg1.Parser, new[]{ "Text", "Number", "Bignumber" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.TestMsg2), global::Lite.TestMsg2.Parser, new[]{ "Text", "Number", "Bignumber" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.TestMsg3), global::Lite.TestMsg3.Parser, new[]{ "Text", "Number", "Bignumber" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.LoginRoleInfo), global::Lite.LoginRoleInfo.Parser, new[]{ "Index", "Id", "Name", "Career", "Level" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.LoginRequest), global::Lite.LoginRequest.Parser, new[]{ "Account", "Password" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.LoginResponse), global::Lite.LoginResponse.Parser, new[]{ "Result" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.EnterGameRequest), global::Lite.EnterGameRequest.Parser, new[]{ "RoleIndex" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.EnterGameResponse), global::Lite.EnterGameResponse.Parser, new[]{ "Result" }, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
-  public sealed partial class ExtraInfo : pb::IMessage<ExtraInfo> {
-    private static readonly pb::MessageParser<ExtraInfo> _parser = new pb::MessageParser<ExtraInfo>(() => new ExtraInfo());
+  public sealed partial class LoginRoleInfo : pb::IMessage<LoginRoleInfo> {
+    private static readonly pb::MessageParser<LoginRoleInfo> _parser = new pb::MessageParser<LoginRoleInfo>(() => new LoginRoleInfo());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<ExtraInfo> Parser { get { return _parser; } }
+    public static pb::MessageParser<LoginRoleInfo> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -60,54 +59,110 @@ namespace Lite {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ExtraInfo() {
+    public LoginRoleInfo() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ExtraInfo(ExtraInfo other) : this() {
-      number_ = other.number_;
+    public LoginRoleInfo(LoginRoleInfo other) : this() {
+      index_ = other.index_;
+      id_ = other.id_;
+      name_ = other.name_;
+      career_ = other.career_;
+      level_ = other.level_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ExtraInfo Clone() {
-      return new ExtraInfo(this);
+    public LoginRoleInfo Clone() {
+      return new LoginRoleInfo(this);
     }
 
-    /// <summary>Field number for the "number" field.</summary>
-    public const int NumberFieldNumber = 1;
-    private int number_;
+    /// <summary>Field number for the "index" field.</summary>
+    public const int IndexFieldNumber = 1;
+    private int index_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Number {
-      get { return number_; }
+    public int Index {
+      get { return index_; }
       set {
-        number_ = value;
+        index_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 2;
+    private long id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 3;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "career" field.</summary>
+    public const int CareerFieldNumber = 4;
+    private int career_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Career {
+      get { return career_; }
+      set {
+        career_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "level" field.</summary>
+    public const int LevelFieldNumber = 5;
+    private int level_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Level {
+      get { return level_; }
+      set {
+        level_ = value;
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as ExtraInfo);
+      return Equals(other as LoginRoleInfo);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ExtraInfo other) {
+    public bool Equals(LoginRoleInfo other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Number != other.Number) return false;
+      if (Index != other.Index) return false;
+      if (Id != other.Id) return false;
+      if (Name != other.Name) return false;
+      if (Career != other.Career) return false;
+      if (Level != other.Level) return false;
       return true;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Number != 0) hash ^= Number.GetHashCode();
+      if (Index != 0) hash ^= Index.GetHashCode();
+      if (Id != 0L) hash ^= Id.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Career != 0) hash ^= Career.GetHashCode();
+      if (Level != 0) hash ^= Level.GetHashCode();
       return hash;
     }
 
@@ -118,28 +173,68 @@ namespace Lite {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Number != 0) {
+      if (Index != 0) {
         output.WriteRawTag(8);
-        output.WriteInt32(Number);
+        output.WriteInt32(Index);
+      }
+      if (Id != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(Id);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Name);
+      }
+      if (Career != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Career);
+      }
+      if (Level != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Level);
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Number != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Number);
+      if (Index != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Index);
+      }
+      if (Id != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Id);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Career != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Career);
+      }
+      if (Level != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Level);
       }
       return size;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ExtraInfo other) {
+    public void MergeFrom(LoginRoleInfo other) {
       if (other == null) {
         return;
       }
-      if (other.Number != 0) {
-        Number = other.Number;
+      if (other.Index != 0) {
+        Index = other.Index;
+      }
+      if (other.Id != 0L) {
+        Id = other.Id;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Career != 0) {
+        Career = other.Career;
+      }
+      if (other.Level != 0) {
+        Level = other.Level;
       }
     }
 
@@ -152,7 +247,23 @@ namespace Lite {
             input.SkipLastField();
             break;
           case 8: {
-            Number = input.ReadInt32();
+            Index = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            Id = input.ReadInt64();
+            break;
+          }
+          case 26: {
+            Name = input.ReadString();
+            break;
+          }
+          case 32: {
+            Career = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            Level = input.ReadInt32();
             break;
           }
         }
@@ -161,10 +272,10 @@ namespace Lite {
 
   }
 
-  public sealed partial class Login : pb::IMessage<Login> {
-    private static readonly pb::MessageParser<Login> _parser = new pb::MessageParser<Login>(() => new Login());
+  public sealed partial class LoginRequest : pb::IMessage<LoginRequest> {
+    private static readonly pb::MessageParser<LoginRequest> _parser = new pb::MessageParser<LoginRequest>(() => new LoginRequest());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Login> Parser { get { return _parser; } }
+    public static pb::MessageParser<LoginRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -177,32 +288,31 @@ namespace Lite {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Login() {
+    public LoginRequest() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Login(Login other) : this() {
-      name_ = other.name_;
+    public LoginRequest(LoginRequest other) : this() {
+      account_ = other.account_;
       password_ = other.password_;
-      infos_ = other.infos_.Clone();
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Login Clone() {
-      return new Login(this);
+    public LoginRequest Clone() {
+      return new LoginRequest(this);
     }
 
-    /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 1;
-    private string name_ = "";
+    /// <summary>Field number for the "account" field.</summary>
+    public const int AccountFieldNumber = 1;
+    private string account_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Name {
-      get { return name_; }
+    public string Account {
+      get { return account_; }
       set {
-        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        account_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -217,41 +327,29 @@ namespace Lite {
       }
     }
 
-    /// <summary>Field number for the "infos" field.</summary>
-    public const int InfosFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Lite.ExtraInfo> _repeated_infos_codec
-        = pb::FieldCodec.ForMessage(26, global::Lite.ExtraInfo.Parser);
-    private readonly pbc::RepeatedField<global::Lite.ExtraInfo> infos_ = new pbc::RepeatedField<global::Lite.ExtraInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Lite.ExtraInfo> Infos {
-      get { return infos_; }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as Login);
+      return Equals(other as LoginRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Login other) {
+    public bool Equals(LoginRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Name != other.Name) return false;
+      if (Account != other.Account) return false;
       if (Password != other.Password) return false;
-      if(!infos_.Equals(other.infos_)) return false;
       return true;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Account.Length != 0) hash ^= Account.GetHashCode();
       if (Password.Length != 0) hash ^= Password.GetHashCode();
-      hash ^= infos_.GetHashCode();
       return hash;
     }
 
@@ -262,42 +360,39 @@ namespace Lite {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Name.Length != 0) {
+      if (Account.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Name);
+        output.WriteString(Account);
       }
       if (Password.Length != 0) {
         output.WriteRawTag(18);
         output.WriteString(Password);
       }
-      infos_.WriteTo(output, _repeated_infos_codec);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Name.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      if (Account.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
       }
       if (Password.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Password);
       }
-      size += infos_.CalculateSize(_repeated_infos_codec);
       return size;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Login other) {
+    public void MergeFrom(LoginRequest other) {
       if (other == null) {
         return;
       }
-      if (other.Name.Length != 0) {
-        Name = other.Name;
+      if (other.Account.Length != 0) {
+        Account = other.Account;
       }
       if (other.Password.Length != 0) {
         Password = other.Password;
       }
-      infos_.Add(other.infos_);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -309,15 +404,11 @@ namespace Lite {
             input.SkipLastField();
             break;
           case 10: {
-            Name = input.ReadString();
+            Account = input.ReadString();
             break;
           }
           case 18: {
             Password = input.ReadString();
-            break;
-          }
-          case 26: {
-            infos_.AddEntriesFrom(input, _repeated_infos_codec);
             break;
           }
         }
@@ -326,10 +417,10 @@ namespace Lite {
 
   }
 
-  public sealed partial class TestMsg1 : pb::IMessage<TestMsg1> {
-    private static readonly pb::MessageParser<TestMsg1> _parser = new pb::MessageParser<TestMsg1>(() => new TestMsg1());
+  public sealed partial class LoginResponse : pb::IMessage<LoginResponse> {
+    private static readonly pb::MessageParser<LoginResponse> _parser = new pb::MessageParser<LoginResponse>(() => new LoginResponse());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<TestMsg1> Parser { get { return _parser; } }
+    public static pb::MessageParser<LoginResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -342,82 +433,54 @@ namespace Lite {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TestMsg1() {
+    public LoginResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TestMsg1(TestMsg1 other) : this() {
-      text_ = other.text_;
-      number_ = other.number_;
-      bignumber_ = other.bignumber_;
+    public LoginResponse(LoginResponse other) : this() {
+      result_ = other.result_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TestMsg1 Clone() {
-      return new TestMsg1(this);
+    public LoginResponse Clone() {
+      return new LoginResponse(this);
     }
 
-    /// <summary>Field number for the "text" field.</summary>
-    public const int TextFieldNumber = 1;
-    private string text_ = "";
+    /// <summary>Field number for the "result" field.</summary>
+    public const int ResultFieldNumber = 1;
+    private int result_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Text {
-      get { return text_; }
+    public int Result {
+      get { return result_; }
       set {
-        text_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "number" field.</summary>
-    public const int NumberFieldNumber = 2;
-    private int number_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Number {
-      get { return number_; }
-      set {
-        number_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "bignumber" field.</summary>
-    public const int BignumberFieldNumber = 3;
-    private long bignumber_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public long Bignumber {
-      get { return bignumber_; }
-      set {
-        bignumber_ = value;
+        result_ = value;
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as TestMsg1);
+      return Equals(other as LoginResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(TestMsg1 other) {
+    public bool Equals(LoginResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Text != other.Text) return false;
-      if (Number != other.Number) return false;
-      if (Bignumber != other.Bignumber) return false;
+      if (Result != other.Result) return false;
       return true;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Text.Length != 0) hash ^= Text.GetHashCode();
-      if (Number != 0) hash ^= Number.GetHashCode();
-      if (Bignumber != 0L) hash ^= Bignumber.GetHashCode();
+      if (Result != 0) hash ^= Result.GetHashCode();
       return hash;
     }
 
@@ -428,48 +491,28 @@ namespace Lite {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Text.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Text);
-      }
-      if (Number != 0) {
-        output.WriteRawTag(16);
-        output.WriteInt32(Number);
-      }
-      if (Bignumber != 0L) {
-        output.WriteRawTag(24);
-        output.WriteInt64(Bignumber);
+      if (Result != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Result);
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Text.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Text);
-      }
-      if (Number != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Number);
-      }
-      if (Bignumber != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Bignumber);
+      if (Result != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Result);
       }
       return size;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(TestMsg1 other) {
+    public void MergeFrom(LoginResponse other) {
       if (other == null) {
         return;
       }
-      if (other.Text.Length != 0) {
-        Text = other.Text;
-      }
-      if (other.Number != 0) {
-        Number = other.Number;
-      }
-      if (other.Bignumber != 0L) {
-        Bignumber = other.Bignumber;
+      if (other.Result != 0) {
+        Result = other.Result;
       }
     }
 
@@ -481,16 +524,8 @@ namespace Lite {
           default:
             input.SkipLastField();
             break;
-          case 10: {
-            Text = input.ReadString();
-            break;
-          }
-          case 16: {
-            Number = input.ReadInt32();
-            break;
-          }
-          case 24: {
-            Bignumber = input.ReadInt64();
+          case 8: {
+            Result = input.ReadInt32();
             break;
           }
         }
@@ -499,10 +534,10 @@ namespace Lite {
 
   }
 
-  public sealed partial class TestMsg2 : pb::IMessage<TestMsg2> {
-    private static readonly pb::MessageParser<TestMsg2> _parser = new pb::MessageParser<TestMsg2>(() => new TestMsg2());
+  public sealed partial class EnterGameRequest : pb::IMessage<EnterGameRequest> {
+    private static readonly pb::MessageParser<EnterGameRequest> _parser = new pb::MessageParser<EnterGameRequest>(() => new EnterGameRequest());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<TestMsg2> Parser { get { return _parser; } }
+    public static pb::MessageParser<EnterGameRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -515,82 +550,54 @@ namespace Lite {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TestMsg2() {
+    public EnterGameRequest() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TestMsg2(TestMsg2 other) : this() {
-      text_ = other.text_;
-      number_ = other.number_;
-      bignumber_ = other.bignumber_;
+    public EnterGameRequest(EnterGameRequest other) : this() {
+      roleIndex_ = other.roleIndex_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TestMsg2 Clone() {
-      return new TestMsg2(this);
+    public EnterGameRequest Clone() {
+      return new EnterGameRequest(this);
     }
 
-    /// <summary>Field number for the "text" field.</summary>
-    public const int TextFieldNumber = 1;
-    private string text_ = "";
+    /// <summary>Field number for the "roleIndex" field.</summary>
+    public const int RoleIndexFieldNumber = 1;
+    private int roleIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Text {
-      get { return text_; }
+    public int RoleIndex {
+      get { return roleIndex_; }
       set {
-        text_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "number" field.</summary>
-    public const int NumberFieldNumber = 2;
-    private int number_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Number {
-      get { return number_; }
-      set {
-        number_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "bignumber" field.</summary>
-    public const int BignumberFieldNumber = 3;
-    private long bignumber_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public long Bignumber {
-      get { return bignumber_; }
-      set {
-        bignumber_ = value;
+        roleIndex_ = value;
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as TestMsg2);
+      return Equals(other as EnterGameRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(TestMsg2 other) {
+    public bool Equals(EnterGameRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Text != other.Text) return false;
-      if (Number != other.Number) return false;
-      if (Bignumber != other.Bignumber) return false;
+      if (RoleIndex != other.RoleIndex) return false;
       return true;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Text.Length != 0) hash ^= Text.GetHashCode();
-      if (Number != 0) hash ^= Number.GetHashCode();
-      if (Bignumber != 0L) hash ^= Bignumber.GetHashCode();
+      if (RoleIndex != 0) hash ^= RoleIndex.GetHashCode();
       return hash;
     }
 
@@ -601,48 +608,28 @@ namespace Lite {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Text.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Text);
-      }
-      if (Number != 0) {
-        output.WriteRawTag(16);
-        output.WriteInt32(Number);
-      }
-      if (Bignumber != 0L) {
-        output.WriteRawTag(24);
-        output.WriteInt64(Bignumber);
+      if (RoleIndex != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(RoleIndex);
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Text.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Text);
-      }
-      if (Number != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Number);
-      }
-      if (Bignumber != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Bignumber);
+      if (RoleIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RoleIndex);
       }
       return size;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(TestMsg2 other) {
+    public void MergeFrom(EnterGameRequest other) {
       if (other == null) {
         return;
       }
-      if (other.Text.Length != 0) {
-        Text = other.Text;
-      }
-      if (other.Number != 0) {
-        Number = other.Number;
-      }
-      if (other.Bignumber != 0L) {
-        Bignumber = other.Bignumber;
+      if (other.RoleIndex != 0) {
+        RoleIndex = other.RoleIndex;
       }
     }
 
@@ -654,16 +641,8 @@ namespace Lite {
           default:
             input.SkipLastField();
             break;
-          case 10: {
-            Text = input.ReadString();
-            break;
-          }
-          case 16: {
-            Number = input.ReadInt32();
-            break;
-          }
-          case 24: {
-            Bignumber = input.ReadInt64();
+          case 8: {
+            RoleIndex = input.ReadInt32();
             break;
           }
         }
@@ -672,10 +651,10 @@ namespace Lite {
 
   }
 
-  public sealed partial class TestMsg3 : pb::IMessage<TestMsg3> {
-    private static readonly pb::MessageParser<TestMsg3> _parser = new pb::MessageParser<TestMsg3>(() => new TestMsg3());
+  public sealed partial class EnterGameResponse : pb::IMessage<EnterGameResponse> {
+    private static readonly pb::MessageParser<EnterGameResponse> _parser = new pb::MessageParser<EnterGameResponse>(() => new EnterGameResponse());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<TestMsg3> Parser { get { return _parser; } }
+    public static pb::MessageParser<EnterGameResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -688,82 +667,54 @@ namespace Lite {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TestMsg3() {
+    public EnterGameResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TestMsg3(TestMsg3 other) : this() {
-      text_ = other.text_;
-      number_ = other.number_;
-      bignumber_ = other.bignumber_;
+    public EnterGameResponse(EnterGameResponse other) : this() {
+      result_ = other.result_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TestMsg3 Clone() {
-      return new TestMsg3(this);
+    public EnterGameResponse Clone() {
+      return new EnterGameResponse(this);
     }
 
-    /// <summary>Field number for the "text" field.</summary>
-    public const int TextFieldNumber = 1;
-    private string text_ = "";
+    /// <summary>Field number for the "result" field.</summary>
+    public const int ResultFieldNumber = 1;
+    private int result_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Text {
-      get { return text_; }
+    public int Result {
+      get { return result_; }
       set {
-        text_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "number" field.</summary>
-    public const int NumberFieldNumber = 2;
-    private int number_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Number {
-      get { return number_; }
-      set {
-        number_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "bignumber" field.</summary>
-    public const int BignumberFieldNumber = 3;
-    private long bignumber_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public long Bignumber {
-      get { return bignumber_; }
-      set {
-        bignumber_ = value;
+        result_ = value;
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as TestMsg3);
+      return Equals(other as EnterGameResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(TestMsg3 other) {
+    public bool Equals(EnterGameResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Text != other.Text) return false;
-      if (Number != other.Number) return false;
-      if (Bignumber != other.Bignumber) return false;
+      if (Result != other.Result) return false;
       return true;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Text.Length != 0) hash ^= Text.GetHashCode();
-      if (Number != 0) hash ^= Number.GetHashCode();
-      if (Bignumber != 0L) hash ^= Bignumber.GetHashCode();
+      if (Result != 0) hash ^= Result.GetHashCode();
       return hash;
     }
 
@@ -774,48 +725,28 @@ namespace Lite {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Text.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Text);
-      }
-      if (Number != 0) {
-        output.WriteRawTag(16);
-        output.WriteInt32(Number);
-      }
-      if (Bignumber != 0L) {
-        output.WriteRawTag(24);
-        output.WriteInt64(Bignumber);
+      if (Result != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Result);
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Text.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Text);
-      }
-      if (Number != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Number);
-      }
-      if (Bignumber != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Bignumber);
+      if (Result != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Result);
       }
       return size;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(TestMsg3 other) {
+    public void MergeFrom(EnterGameResponse other) {
       if (other == null) {
         return;
       }
-      if (other.Text.Length != 0) {
-        Text = other.Text;
-      }
-      if (other.Number != 0) {
-        Number = other.Number;
-      }
-      if (other.Bignumber != 0L) {
-        Bignumber = other.Bignumber;
+      if (other.Result != 0) {
+        Result = other.Result;
       }
     }
 
@@ -827,16 +758,8 @@ namespace Lite {
           default:
             input.SkipLastField();
             break;
-          case 10: {
-            Text = input.ReadString();
-            break;
-          }
-          case 16: {
-            Number = input.ReadInt32();
-            break;
-          }
-          case 24: {
-            Bignumber = input.ReadInt64();
+          case 8: {
+            Result = input.ReadInt32();
             break;
           }
         }

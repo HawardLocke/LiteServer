@@ -21,9 +21,11 @@ namespace Lite
 
 			ConfigUtil.LoadConfig();
 
-			AppFacade.Instance.Init();
+			LiteFacade.Instance.Init();
 			TemplateRegister.RegisterALL();
 			TemplateManager.Instance.Init();
+
+			MsgHandlerManager.Instance.Init();
 
 			// timers
 			this.configTimer = new LoopTimer(ConfigUtil.ConfigUpdateTime, ConfigUtil.LoadConfig);
@@ -38,7 +40,7 @@ namespace Lite
 
 			this.tickTimer.Stop();
 
-			AppFacade.Instance.Close();
+			LiteFacade.Instance.Close();
 		}
 
 		private void Tick(int dms)

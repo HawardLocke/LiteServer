@@ -8,7 +8,7 @@ using Lite.Service;
 
 namespace Lite
 {
-	class AppFacade : Singleton<AppFacade>
+	class LiteFacade : Singleton<LiteFacade>
 	{
 		/*void testProto()
 		{
@@ -28,28 +28,12 @@ namespace Lite
 
 		}*/
 
-		int test_OnLogin(ClientSession session, byte[] bytes)
-		{
-			Login loginMsg = Login.Parser.ParseFrom(bytes);
-			Console.WriteLine("recv Login");
-
-			Login loginRet = new Login
-			{
-				Name = "Locke007back",
-				Password = "666"
-			};
-
-			byte[] bytesRet = Google.Protobuf.MessageExtensions.ToByteArray(loginRet);
-
-			session.SendPacket((ushort)PBX.MsgID.Login, bytesRet);
-
-			return 0;
-		}
+		
 
 		public void Init()
 		{
 			// test
-			MessageHandler.Instance.RegisterHandler((ushort)PBX.MsgID.Login, test_OnLogin);
+			//MessageHandler.Instance.RegisterHandler((ushort)PBX.MsgID.LoginRequest, test_OnLogin);
 		}
 
 		public void Close()

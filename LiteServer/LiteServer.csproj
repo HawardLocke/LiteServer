@@ -57,7 +57,10 @@
     <Reference Include="log4net">
       <HintPath>Reference\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Reference\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="SuperSocket.Common">
       <HintPath>Reference\SuperSocket.Common.dll</HintPath>
     </Reference>
@@ -88,10 +91,10 @@
     <Compile Include="Source\Framework\Entity\EntityObject.cs" />
     <Compile Include="Source\Framework\Entity\PawnObject.cs" />
     <Compile Include="Source\Framework\Entity\PlayerObject.cs" />
-    <Compile Include="Source\Framework\Guid\GuidGenerator.cs" />
+    <Compile Include="Source\Framework\Util\GuidGenerator.cs" />
     <Compile Include="Source\Framework\Http\HttpServer.cs" />
     <Compile Include="Source\Framework\Http\HttpService.cs" />
-    <Compile Include="Source\Framework\Log\Log.cs" />
+    <Compile Include="Source\Framework\Util\Log.cs" />
     <Compile Include="Source\Framework\Network\BaseServer.cs" />
     <Compile Include="Source\Framework\Network\ByteBuffer.cs" />
     <Compile Include="Source\Framework\Network\ClientReceiveFilter.cs" />
@@ -108,14 +111,17 @@
     <Compile Include="Source\Framework\Timer\LoopTimer.cs" />
     <Compile Include="Source\Logic\GameServer.cs" />
     <Compile Include="Source\Logic\LoginServer.cs" />
+    <Compile Include="Source\Logic\MsgHandler\LoginHandler.cs" />
+    <Compile Include="Source\Logic\MsgHandler\MsgHandlerManager.cs" />
+    <Compile Include="Source\Logic\MsgHandler\SceneHandler.cs" />
     <Compile Include="Source\Logic\Protocol\Chat.cs" />
     <Compile Include="Source\Logic\Protocol\Login.cs" />
     <Compile Include="Source\Logic\Protocol\MsgID.cs" />
+    <Compile Include="Source\Logic\Protocol\Scene.cs" />
     <Compile Include="Source\Logic\Template\auto_gen\Npc0_Data.cs" />
     <Compile Include="Source\Logic\Template\TemplateRegister.cs" />
-    <Compile Include="Source\Logic\Util\AppFacade.cs" />
+    <Compile Include="Source\Framework\AppFacade.cs" />
     <Compile Include="Source\Logic\Util\ConfigUtil.cs" />
-    <Compile Include="Source\Logic\Util\Const.cs" />
     <Compile Include="Source\Logic\Util\HttpUtil.cs" />
     <Compile Include="Source\Logic\Util\IMessage.cs" />
     <Compile Include="Source\Logic\Util\Protocal.cs" />

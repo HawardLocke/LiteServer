@@ -40,12 +40,12 @@ namespace Lite
 
 		protected virtual void OnSessionConnected(ClientSession session)
 		{
-			SessionManager.Instance.Add(session);
+			SessionManager.Instance.AddSession(session);
 		}
 
 		protected virtual void OnSessionDisconnected(ClientSession session, CloseReason reason)
 		{
-			SessionManager.Instance.Remove(session.uid);
+			SessionManager.Instance.RemoveSession(session.uid);
 		}
 
 		protected virtual void OnRequestReceived(ClientSession session, BinaryRequestInfo requestInfo)

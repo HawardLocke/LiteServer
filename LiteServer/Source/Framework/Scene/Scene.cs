@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Lite
 {
 
-	class Scene
+	public class Scene
 	{
 		private int mID = 0;
 

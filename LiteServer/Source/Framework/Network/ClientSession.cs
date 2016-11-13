@@ -25,12 +25,17 @@ namespace Lite
 
 		protected override void HandleException(Exception e)
 		{
-			this.Send("Application error: {0}", e.Message);
+			//this.Send("Application error: {0}", e.Message);
 		}
 
 		protected override void HandleUnknownRequest(BinaryRequestInfo requestInfo)
 		{
-			this.Send("Unknow request");
+			//this.Send("Unknow request");
+		}
+
+		public void SendPacket(PBX.MsgID msgId, Google.Protobuf.IMessage msg)
+		{
+			this.SendPacket((ushort)msgId, Google.Protobuf.MessageExtensions.ToByteArray(msg));
 		}
 
 		public void SendPacket(ushort msgId, byte[] bytes)
@@ -52,7 +57,6 @@ namespace Lite
 				{
 					byte[] array = ms.ToArray();
 					this.Send(array, 0, array.Length);
-					Console.WriteLine("send msg");
 				}
 			}
 		}
