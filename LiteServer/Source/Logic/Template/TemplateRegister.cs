@@ -12,7 +12,7 @@ namespace Lite
 		{
 			string exePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
 			string filePath = exePath.Substring(0, exePath.LastIndexOf('\\')+1) + "Template\\";
-			var mgr = TemplateManager.Instance;
+			var mgr = LiteFacade.GetManager<TemplateManager>();
 			mgr.Register(typeof(Npc0_Data), filePath + "Npc0.txt");
 			//...
 		}

@@ -40,17 +40,17 @@ namespace Lite
 
 		protected virtual void OnSessionConnected(ClientSession session)
 		{
-			SessionManager.Instance.AddSession(session);
+			LiteFacade.GetManager<SessionManager>().AddSession(session);
 		}
 
 		protected virtual void OnSessionDisconnected(ClientSession session, CloseReason reason)
 		{
-			SessionManager.Instance.RemoveSession(session.uid);
+			LiteFacade.GetManager<SessionManager>().RemoveSession(session.uid);
 		}
 
 		protected virtual void OnRequestReceived(ClientSession session, BinaryRequestInfo requestInfo)
 		{
-			MessageHandler.Instance.HandlerMessage(session, requestInfo);
+			LiteFacade.GetManager<MessageManager>().HandlerMessage(session, requestInfo);
 		}
 
 	}

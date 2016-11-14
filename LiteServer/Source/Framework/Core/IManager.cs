@@ -1,9 +1,11 @@
 
 namespace Lite
 {
-	public interface IManager
+	public abstract class IManager
 	{
-		void Init();
-		void Destroy();
+		public virtual void Init() { }
+
+		public virtual void Destroy() { }
+
 	}
 }

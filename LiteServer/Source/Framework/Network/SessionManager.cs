@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lite
 {
-	class SessionManager : Singleton<SessionManager>
+	class SessionManager : IManager
 	{
 		private Dictionary<long, ClientSession> sessionMap = new Dictionary<long,ClientSession>();
 

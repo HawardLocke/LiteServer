@@ -11,7 +11,7 @@ namespace Lite
 		void Register();
 	}
 
-	sealed class MsgHandlerManager : Singleton<MsgHandlerManager>, IManager
+	sealed class MsgHandlerManager : Singleton<MsgHandlerManager>
 	{
 		private List<IMsgHandler> mHandlerList = new List<IMsgHandler>();
 		public void Init()

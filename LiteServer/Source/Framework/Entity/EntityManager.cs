@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Lite
 {
 
-	public sealed class EntityManager : Singleton<EntityManager>, IManager
+	public sealed class EntityManager : IManager
 	{
 		private Dictionary<long, EntityObject> mEntityMap = new Dictionary<long, EntityObject>();
 

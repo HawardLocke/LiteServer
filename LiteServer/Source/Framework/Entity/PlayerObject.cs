@@ -24,7 +24,7 @@ namespace Lite
 
 		public void SendPacket(ushort msgId, byte[] bytes)
 		{
-			ClientSession session = SessionManager.Instance.Get(mSessionID);
+			ClientSession session = LiteFacade.GetManager<SessionManager>().Get(mSessionID);
 			if (session != null)
 			{
 				session.SendPacket(msgId, bytes);

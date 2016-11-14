@@ -9,8 +9,8 @@ namespace Lite
 	{
 		public void Register()
 		{
-			MessageHandler.Instance.RegisterHandler((ushort)PBX.MsgID.LoginRequest, OnLoginRequest);
-			MessageHandler.Instance.RegisterHandler((ushort)PBX.MsgID.EnterGameRequest, OnEnterGameRequest);
+			LiteFacade.GetManager<MessageManager>().RegisterHandler((ushort)PBX.MsgID.LoginRequest, OnLoginRequest);
+			LiteFacade.GetManager<MessageManager>().RegisterHandler((ushort)PBX.MsgID.EnterGameRequest, OnEnterGameRequest);
 		}
 
 		int OnLoginRequest(ClientSession session, byte[] bytes)

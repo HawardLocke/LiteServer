@@ -20,11 +20,11 @@ namespace Lite
 			base.OnStarted();
 
 			ConfigUtil.LoadConfig();
-
-			LiteFacade.Instance.Init();
+			// frame work
+			LiteFacade.Instance.Create();
 			TemplateRegister.RegisterALL();
-			TemplateManager.Instance.Init();
-
+			LiteFacade.Instance.Init();
+			// logic
 			MsgHandlerManager.Instance.Init();
 
 			// timers
@@ -40,14 +40,14 @@ namespace Lite
 
 			this.tickTimer.Stop();
 
-			LiteFacade.Instance.Close();
+			LiteFacade.Instance.Destroy();
 		}
 
 		private void Tick(int dms)
 		{
 			//Log.Warn(""+dms);
-			SceneManager.Instance.Tick(dms);
-			EntityManager.Instance.Tick(dms);
+			LiteFacade.GetManager<SceneManager>().Tick(dms);
+			LiteFacade.GetManager<EntityManager>().Tick(dms);
 		}
 
 

@@ -9,18 +9,18 @@ using System.Threading.Tasks;
 namespace Lite
 {
 
-	public class SceneManager : Singleton<SceneManager>, IManager
+	public class SceneManager : IManager
 	{
 		private Dictionary<int, Scene> mSceneMap = new Dictionary<int, Scene>();
 
 		private int genSceneId = 1111;
 
-		public void Init()
+		public override void Init()
 		{
-
+			LoadMainScene();
 		}
 
-		public void Destroy()
+		public override void Destroy()
 		{
 		}
 
@@ -35,6 +35,7 @@ namespace Lite
 		public void AddScene(Scene scene)
 		{
 			int id = GenSceneID();
+			scene.ID = id;
 			mSceneMap.Add(id, scene);
 		}
 
@@ -46,6 +47,12 @@ namespace Lite
 		private int GenSceneID()
 		{
 			return ++genSceneId;
+		}
+
+		private void LoadMainScene()
+		{
+			Scene scene = new Scene();
+			AddScene(scene);
 		}
 
 	}

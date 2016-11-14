@@ -99,7 +99,7 @@
     <Compile Include="Source\Framework\Network\ByteBuffer.cs" />
     <Compile Include="Source\Framework\Network\ClientReceiveFilter.cs" />
     <Compile Include="Source\Framework\Network\ClientSession.cs" />
-    <Compile Include="Source\Framework\Network\MessageHandler.cs" />
+    <Compile Include="Source\Framework\Network\MessageManager.cs" />
     <Compile Include="Source\Framework\Network\Packet.cs" />
     <Compile Include="Source\Framework\Network\SessionManager.cs" />
     <Compile Include="Source\Framework\Scene\Scene.cs" />

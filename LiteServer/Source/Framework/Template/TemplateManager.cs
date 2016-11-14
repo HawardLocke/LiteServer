@@ -12,7 +12,7 @@ namespace Lite
 	using Data = Dictionary<int, TemplateData>;
 	using StrData = Dictionary<string, TemplateData>;
 
-	public class TemplateManager : Singleton<TemplateManager>, IManager
+	public class TemplateManager : IManager
 	{
 		private const int mJsonStartIndex = 5;
 		private const int mColumnStartIndex = 1;
@@ -28,7 +28,7 @@ namespace Lite
 			tableList.Add(type, filePath);
 		}
 
-		public void Init()
+		public override void Init()
 		{
 			Log.Info("loading teamlates...");
 
@@ -43,7 +43,7 @@ namespace Lite
 			Log.Info("load teamlate done.");
 		}
 
-		public void Destroy()
+		public override void Destroy()
 		{
 			foreach (var node in mDataPoolDic)
 				node.Value.Clear();

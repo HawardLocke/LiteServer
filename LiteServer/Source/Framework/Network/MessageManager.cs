@@ -12,7 +12,7 @@ namespace Lite
 {
 	using MsgFunc = Func<ClientSession,byte[],int>;
 
-	class MessageHandler : Singleton<MessageHandler>
+	class MessageManager : IManager
 	{
 		
 		private Dictionary<ushort, MsgFunc> mHandlerMap = new Dictionary<ushort, MsgFunc>();
@@ -39,7 +39,7 @@ namespace Lite
 			}
 			catch(Exception e)
 			{
-				Log.Error(typeof(MessageHandler), e.ToString());
+				Log.Error(typeof(MessageManager), e.ToString());
 			}
 		}
 

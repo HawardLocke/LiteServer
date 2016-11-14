@@ -10,34 +10,35 @@ namespace Lite
 {
 	class LiteFacade : Singleton<LiteFacade>
 	{
-		/*void testProto()
+		private static Dictionary<Type, IManager> managerMap;
+
+		public void Create()
 		{
-			Login login = new Login
-			{
-				Name = "Foo",
-				Password = "foo@bar",
-				Infos = { new ExtraInfo { Number = 666 } }
-			};
-
-			byte[] bytes = Google.Protobuf.MessageExtensions.ToByteArray(login);
-
-			Login restored = Login.Parser.ParseFrom(bytes);
-
-			Console.WriteLine(restored.Name);
-			Console.WriteLine(restored.Password);
-
-		}*/
-
+			managerMap = new Dictionary<Type, IManager>();
+			managerMap.Add(typeof(SessionManager), new SessionManager());
+			managerMap.Add(typeof(EntityManager), new EntityManager());
+			managerMap.Add(typeof(MessageManager), new MessageManager());
+			managerMap.Add(typeof(TemplateManager), new TemplateManager());
+			managerMap.Add(typeof(SceneManager), new SceneManager());
+		}
 		
-
 		public void Init()
 		{
-			// test
-			//MessageHandler.Instance.RegisterHandler((ushort)PBX.MsgID.LoginRequest, test_OnLogin);
+			foreach(var mgr in managerMap.Values)
+			{
+				mgr.Init();
+			}
 		}
 
-		public void Close()
+		public void Destroy()
 		{
+		}
+
+		public static T GetManager<T>() where T : IManager
+		{
+			IManager mgr = null;
+			managerMap.TryGetValue(typeof(T), out mgr);
+			return mgr as T;
 		}
 
 	}
