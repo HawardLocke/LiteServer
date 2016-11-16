@@ -17,7 +17,7 @@ namespace Lite
 				return;
 			}
 			long uid = GuidGenerator.GetLong();
-			session.uid = uid;
+			session.SessionGuid = uid;
 			sessionMap.Add(uid, session);
 			Log.Info(string.Format("new session. total {0}.", sessionMap.Count));
 		}

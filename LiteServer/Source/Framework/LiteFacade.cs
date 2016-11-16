@@ -20,6 +20,7 @@ namespace Lite
 			managerMap.Add(typeof(MessageManager), new MessageManager());
 			managerMap.Add(typeof(TemplateManager), new TemplateManager());
 			managerMap.Add(typeof(SceneManager), new SceneManager());
+			managerMap.Add(typeof(PlayerManager), new PlayerManager());
 		}
 		
 		public void Init()

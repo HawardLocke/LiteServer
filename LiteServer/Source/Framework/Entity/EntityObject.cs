@@ -9,16 +9,21 @@ namespace Lite
 {
 	public class EntityObject : IEntity
 	{
-		private long mEntityID = 0;
-		public long EntityID
+		private int mEntityID = 0;
+		public int EntityID
 		{
 			get { return mEntityID; }
 			set { mEntityID = value; }
 		}
 
 		private int mSceneID = 0;
+		public int SceneID
+		{
+			get { return mSceneID; }
+			set { mSceneID = value; }
+		}
 
-		public virtual void OnSpawn()
+		public virtual void OnCreate()
 		{
 
 		}

@@ -91,10 +91,9 @@
     <Compile Include="Source\Framework\Entity\EntityObject.cs" />
     <Compile Include="Source\Framework\Entity\PawnObject.cs" />
     <Compile Include="Source\Framework\Entity\PlayerObject.cs" />
-    <Compile Include="Source\Framework\Util\GuidGenerator.cs" />
     <Compile Include="Source\Framework\Http\HttpServer.cs" />
     <Compile Include="Source\Framework\Http\HttpService.cs" />
-    <Compile Include="Source\Framework\Util\Log.cs" />
+    <Compile Include="Source\Framework\LiteFacade.cs" />
     <Compile Include="Source\Framework\Network\BaseServer.cs" />
     <Compile Include="Source\Framework\Network\ByteBuffer.cs" />
     <Compile Include="Source\Framework\Network\ClientReceiveFilter.cs" />
@@ -102,6 +101,7 @@
     <Compile Include="Source\Framework\Network\MessageManager.cs" />
     <Compile Include="Source\Framework\Network\Packet.cs" />
     <Compile Include="Source\Framework\Network\SessionManager.cs" />
+    <Compile Include="Source\Framework\Player\PlayerManager.cs" />
     <Compile Include="Source\Framework\Scene\Scene.cs" />
     <Compile Include="Source\Framework\Scene\SceneManager.cs" />
     <Compile Include="Source\Framework\Template\TabReader.cs" />
@@ -109,6 +109,8 @@
     <Compile Include="Source\Framework\Template\TemplateManager.cs" />
     <Compile Include="Source\Framework\Thread\BaseThread.cs" />
     <Compile Include="Source\Framework\Timer\LoopTimer.cs" />
+    <Compile Include="Source\Framework\Util\GuidGenerator.cs" />
+    <Compile Include="Source\Framework\Util\Log.cs" />
     <Compile Include="Source\Logic\GameServer.cs" />
     <Compile Include="Source\Logic\LoginServer.cs" />
     <Compile Include="Source\Logic\MsgHandler\LoginHandler.cs" />
@@ -120,7 +122,6 @@
     <Compile Include="Source\Logic\Protocol\Scene.cs" />
     <Compile Include="Source\Logic\Template\auto_gen\Npc0_Data.cs" />
     <Compile Include="Source\Logic\Template\TemplateRegister.cs" />
-    <Compile Include="Source\Framework\AppFacade.cs" />
     <Compile Include="Source\Logic\Util\ConfigUtil.cs" />
     <Compile Include="Source\Logic\Util\HttpUtil.cs" />
     <Compile Include="Source\Logic\Util\IMessage.cs" />

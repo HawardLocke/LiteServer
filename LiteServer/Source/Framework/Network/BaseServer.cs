@@ -45,7 +45,7 @@ namespace Lite
 
 		protected virtual void OnSessionDisconnected(ClientSession session, CloseReason reason)
 		{
-			LiteFacade.GetManager<SessionManager>().RemoveSession(session.uid);
+			LiteFacade.GetManager<SessionManager>().RemoveSession(session.SessionGuid);
 		}
 
 		protected virtual void OnRequestReceived(ClientSession session, BinaryRequestInfo requestInfo)

@@ -9,32 +9,48 @@ namespace Lite
 	{
 		public void Register()
 		{
-			LiteFacade.GetManager<MessageManager>().RegisterHandler((ushort)PBX.MsgID.LoginRequest, OnLoginRequest);
-			LiteFacade.GetManager<MessageManager>().RegisterHandler((ushort)PBX.MsgID.EnterGameRequest, OnEnterGameRequest);
+			var msgMgr = LiteFacade.GetManager<MessageManager>();
+			msgMgr.RegisterHandler((ushort)PBX.MsgID.cgLogin, OncgLogin);
+			msgMgr.RegisterHandler((ushort)PBX.MsgID.cgEnterGame, OncgEnterGame);
 		}
 
-		int OnLoginRequest(ClientSession session, byte[] bytes)
+		int OncgLogin(ClientSession session, byte[] bytes)
 		{
-			LoginRequest loginMsg = LoginRequest.Parser.ParseFrom(bytes);
+			cgLogin loginMsg = cgLogin.Parser.ParseFrom(bytes);
 			Log.Info(string.Format("recv Login,{0},{1}.", loginMsg.Account, loginMsg.Password));
 
-			LoginResponse loginRet = new LoginResponse
+			gcLoginRet loginRet = new gcLoginRet
 			{
 				Result = 0
 			};
-			session.SendPacket(PBX.MsgID.LoginResponse, loginRet);
+			session.SendPacket(PBX.MsgID.gcLoginRet, loginRet);
 
 			return 0;
 		}
 
-		int OnEnterGameRequest(ClientSession session, byte[] bytes)
+		int OncgEnterGame(ClientSession session, byte[] bytes)
 		{
-			EnterGameRequest recvMsg = EnterGameRequest.Parser.ParseFrom(bytes);
+			cgEnterGame recvMsg = cgEnterGame.Parser.ParseFrom(bytes);
 			Log.Info(string.Format("recv EnterGame,{0}.", recvMsg.RoleIndex));
 
-			EnterGameResponse enterRet = new EnterGameResponse();
+			gcEnterGameRet enterRet = new gcEnterGameRet();
 			enterRet.Result = 0;
-			session.SendPacket(PBX.MsgID.EnterGameResponse, enterRet);
+			session.SendPacket(PBX.MsgID.gcEnterGameRet, enterRet);
+
+			// new player
+			var playerMgr = LiteFacade.GetManager<PlayerManager>();
+			long playerGuid = GuidGenerator.GetLong();
+			session.PlayerGuid = playerGuid;
+			PlayerObject player = new PlayerObject(playerGuid, session.SessionGuid);
+			playerMgr.AddPlayer(player);
+
+			// test : enter default scene
+			var sceneMgr = LiteFacade.GetManager<SceneManager>();
+			var targetScene = sceneMgr.MainScene;
+			targetScene.AddPlayer(playerGuid, player);
+			gcEnterScene enterSceneMsg = new gcEnterScene();
+			enterSceneMsg.SceneId = sceneMgr.MainScene.SceneID;
+			player.SendPacket(PBX.MsgID.gcEnterScene, enterSceneMsg);
 
 			return 0;
 		}

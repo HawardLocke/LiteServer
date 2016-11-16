@@ -11,7 +11,8 @@ namespace Lite
 {
 	public class ClientSession : AppSession<ClientSession, BinaryRequestInfo>
 	{
-		public long uid = 0;
+		public long SessionGuid = 0;
+		public long PlayerGuid = 0;
 
 		protected override void OnSessionStarted()
 		{

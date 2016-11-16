@@ -22,31 +22,33 @@ namespace Lite {
     static LoginReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJwcm90b3MvbG9naW4ucHJvdG8SBExpdGUiVwoNTG9naW5Sb2xlSW5mbxIN",
-            "CgVpbmRleBgBIAEoBRIKCgJpZBgCIAEoAxIMCgRuYW1lGAMgASgJEg4KBmNh",
-            "cmVlchgEIAEoBRINCgVsZXZlbBgFIAEoBSIxCgxMb2dpblJlcXVlc3QSDwoH",
-            "YWNjb3VudBgBIAEoCRIQCghwYXNzd29yZBgCIAEoCSIfCg1Mb2dpblJlc3Bv",
-            "bnNlEg4KBnJlc3VsdBgBIAEoBSIlChBFbnRlckdhbWVSZXF1ZXN0EhEKCXJv",
-            "bGVJbmRleBgBIAEoBSIjChFFbnRlckdhbWVSZXNwb25zZRIOCgZyZXN1bHQY",
-            "ASABKAViBnByb3RvMw=="));
+            "ChJwcm90b3MvbG9naW4ucHJvdG8SBExpdGUiWQoPZ2NMb2dpblJvbGVJbmZv",
+            "Eg0KBWluZGV4GAEgASgFEgoKAmlkGAIgASgDEgwKBG5hbWUYAyABKAkSDgoG",
+            "Y2FyZWVyGAQgASgFEg0KBWxldmVsGAUgASgFIiwKB2NnTG9naW4SDwoHYWNj",
+            "b3VudBgBIAEoCRIQCghwYXNzd29yZBgCIAEoCSIcCgpnY0xvZ2luUmV0Eg4K",
+            "BnJlc3VsdBgBIAEoBSIKCghjZ0xvZ291dCIdCgtnY0xvZ291dFJldBIOCgZy",
+            "ZXN1bHQYASABKAUiIAoLY2dFbnRlckdhbWUSEQoJcm9sZUluZGV4GAEgASgF",
+            "IiAKDmdjRW50ZXJHYW1lUmV0Eg4KBnJlc3VsdBgBIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.LoginRoleInfo), global::Lite.LoginRoleInfo.Parser, new[]{ "Index", "Id", "Name", "Career", "Level" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.LoginRequest), global::Lite.LoginRequest.Parser, new[]{ "Account", "Password" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.LoginResponse), global::Lite.LoginResponse.Parser, new[]{ "Result" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.EnterGameRequest), global::Lite.EnterGameRequest.Parser, new[]{ "RoleIndex" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.EnterGameResponse), global::Lite.EnterGameResponse.Parser, new[]{ "Result" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.gcLoginRoleInfo), global::Lite.gcLoginRoleInfo.Parser, new[]{ "Index", "Id", "Name", "Career", "Level" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.cgLogin), global::Lite.cgLogin.Parser, new[]{ "Account", "Password" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.gcLoginRet), global::Lite.gcLoginRet.Parser, new[]{ "Result" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.cgLogout), global::Lite.cgLogout.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.gcLogoutRet), global::Lite.gcLogoutRet.Parser, new[]{ "Result" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.cgEnterGame), global::Lite.cgEnterGame.Parser, new[]{ "RoleIndex" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.gcEnterGameRet), global::Lite.gcEnterGameRet.Parser, new[]{ "Result" }, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
-  public sealed partial class LoginRoleInfo : pb::IMessage<LoginRoleInfo> {
-    private static readonly pb::MessageParser<LoginRoleInfo> _parser = new pb::MessageParser<LoginRoleInfo>(() => new LoginRoleInfo());
+  public sealed partial class gcLoginRoleInfo : pb::IMessage<gcLoginRoleInfo> {
+    private static readonly pb::MessageParser<gcLoginRoleInfo> _parser = new pb::MessageParser<gcLoginRoleInfo>(() => new gcLoginRoleInfo());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<LoginRoleInfo> Parser { get { return _parser; } }
+    public static pb::MessageParser<gcLoginRoleInfo> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -59,14 +61,14 @@ namespace Lite {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public LoginRoleInfo() {
+    public gcLoginRoleInfo() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public LoginRoleInfo(LoginRoleInfo other) : this() {
+    public gcLoginRoleInfo(gcLoginRoleInfo other) : this() {
       index_ = other.index_;
       id_ = other.id_;
       name_ = other.name_;
@@ -75,8 +77,8 @@ namespace Lite {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public LoginRoleInfo Clone() {
-      return new LoginRoleInfo(this);
+    public gcLoginRoleInfo Clone() {
+      return new gcLoginRoleInfo(this);
     }
 
     /// <summary>Field number for the "index" field.</summary>
@@ -136,11 +138,11 @@ namespace Lite {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as LoginRoleInfo);
+      return Equals(other as gcLoginRoleInfo);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(LoginRoleInfo other) {
+    public bool Equals(gcLoginRoleInfo other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -217,7 +219,7 @@ namespace Lite {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(LoginRoleInfo other) {
+    public void MergeFrom(gcLoginRoleInfo other) {
       if (other == null) {
         return;
       }
@@ -272,10 +274,10 @@ namespace Lite {
 
   }
 
-  public sealed partial class LoginRequest : pb::IMessage<LoginRequest> {
-    private static readonly pb::MessageParser<LoginRequest> _parser = new pb::MessageParser<LoginRequest>(() => new LoginRequest());
+  public sealed partial class cgLogin : pb::IMessage<cgLogin> {
+    private static readonly pb::MessageParser<cgLogin> _parser = new pb::MessageParser<cgLogin>(() => new cgLogin());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<LoginRequest> Parser { get { return _parser; } }
+    public static pb::MessageParser<cgLogin> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -288,21 +290,21 @@ namespace Lite {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public LoginRequest() {
+    public cgLogin() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public LoginRequest(LoginRequest other) : this() {
+    public cgLogin(cgLogin other) : this() {
       account_ = other.account_;
       password_ = other.password_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public LoginRequest Clone() {
-      return new LoginRequest(this);
+    public cgLogin Clone() {
+      return new cgLogin(this);
     }
 
     /// <summary>Field number for the "account" field.</summary>
@@ -329,11 +331,11 @@ namespace Lite {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as LoginRequest);
+      return Equals(other as cgLogin);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(LoginRequest other) {
+    public bool Equals(cgLogin other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -383,7 +385,7 @@ namespace Lite {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(LoginRequest other) {
+    public void MergeFrom(cgLogin other) {
       if (other == null) {
         return;
       }
@@ -417,10 +419,10 @@ namespace Lite {
 
   }
 
-  public sealed partial class LoginResponse : pb::IMessage<LoginResponse> {
-    private static readonly pb::MessageParser<LoginResponse> _parser = new pb::MessageParser<LoginResponse>(() => new LoginResponse());
+  public sealed partial class gcLoginRet : pb::IMessage<gcLoginRet> {
+    private static readonly pb::MessageParser<gcLoginRet> _parser = new pb::MessageParser<gcLoginRet>(() => new gcLoginRet());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<LoginResponse> Parser { get { return _parser; } }
+    public static pb::MessageParser<gcLoginRet> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -433,20 +435,20 @@ namespace Lite {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public LoginResponse() {
+    public gcLoginRet() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public LoginResponse(LoginResponse other) : this() {
+    public gcLoginRet(gcLoginRet other) : this() {
       result_ = other.result_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public LoginResponse Clone() {
-      return new LoginResponse(this);
+    public gcLoginRet Clone() {
+      return new gcLoginRet(this);
     }
 
     /// <summary>Field number for the "result" field.</summary>
@@ -462,11 +464,11 @@ namespace Lite {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as LoginResponse);
+      return Equals(other as gcLoginRet);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(LoginResponse other) {
+    public bool Equals(gcLoginRet other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -507,7 +509,7 @@ namespace Lite {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(LoginResponse other) {
+    public void MergeFrom(gcLoginRet other) {
       if (other == null) {
         return;
       }
@@ -534,10 +536,10 @@ namespace Lite {
 
   }
 
-  public sealed partial class EnterGameRequest : pb::IMessage<EnterGameRequest> {
-    private static readonly pb::MessageParser<EnterGameRequest> _parser = new pb::MessageParser<EnterGameRequest>(() => new EnterGameRequest());
+  public sealed partial class cgLogout : pb::IMessage<cgLogout> {
+    private static readonly pb::MessageParser<cgLogout> _parser = new pb::MessageParser<cgLogout>(() => new cgLogout());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<EnterGameRequest> Parser { get { return _parser; } }
+    public static pb::MessageParser<cgLogout> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -550,20 +552,226 @@ namespace Lite {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public EnterGameRequest() {
+    public cgLogout() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public EnterGameRequest(EnterGameRequest other) : this() {
+    public cgLogout(cgLogout other) : this() {
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public cgLogout Clone() {
+      return new cgLogout(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as cgLogout);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(cgLogout other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(cgLogout other) {
+      if (other == null) {
+        return;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class gcLogoutRet : pb::IMessage<gcLogoutRet> {
+    private static readonly pb::MessageParser<gcLogoutRet> _parser = new pb::MessageParser<gcLogoutRet>(() => new gcLogoutRet());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<gcLogoutRet> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Lite.LoginReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public gcLogoutRet() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public gcLogoutRet(gcLogoutRet other) : this() {
+      result_ = other.result_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public gcLogoutRet Clone() {
+      return new gcLogoutRet(this);
+    }
+
+    /// <summary>Field number for the "result" field.</summary>
+    public const int ResultFieldNumber = 1;
+    private int result_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Result {
+      get { return result_; }
+      set {
+        result_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as gcLogoutRet);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(gcLogoutRet other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Result != other.Result) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Result != 0) hash ^= Result.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Result != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Result);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Result != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Result);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(gcLogoutRet other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Result != 0) {
+        Result = other.Result;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Result = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class cgEnterGame : pb::IMessage<cgEnterGame> {
+    private static readonly pb::MessageParser<cgEnterGame> _parser = new pb::MessageParser<cgEnterGame>(() => new cgEnterGame());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<cgEnterGame> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Lite.LoginReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public cgEnterGame() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public cgEnterGame(cgEnterGame other) : this() {
       roleIndex_ = other.roleIndex_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public EnterGameRequest Clone() {
-      return new EnterGameRequest(this);
+    public cgEnterGame Clone() {
+      return new cgEnterGame(this);
     }
 
     /// <summary>Field number for the "roleIndex" field.</summary>
@@ -579,11 +787,11 @@ namespace Lite {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as EnterGameRequest);
+      return Equals(other as cgEnterGame);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(EnterGameRequest other) {
+    public bool Equals(cgEnterGame other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -624,7 +832,7 @@ namespace Lite {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(EnterGameRequest other) {
+    public void MergeFrom(cgEnterGame other) {
       if (other == null) {
         return;
       }
@@ -651,14 +859,14 @@ namespace Lite {
 
   }
 
-  public sealed partial class EnterGameResponse : pb::IMessage<EnterGameResponse> {
-    private static readonly pb::MessageParser<EnterGameResponse> _parser = new pb::MessageParser<EnterGameResponse>(() => new EnterGameResponse());
+  public sealed partial class gcEnterGameRet : pb::IMessage<gcEnterGameRet> {
+    private static readonly pb::MessageParser<gcEnterGameRet> _parser = new pb::MessageParser<gcEnterGameRet>(() => new gcEnterGameRet());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<EnterGameResponse> Parser { get { return _parser; } }
+    public static pb::MessageParser<gcEnterGameRet> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Lite.LoginReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Lite.LoginReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -667,20 +875,20 @@ namespace Lite {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public EnterGameResponse() {
+    public gcEnterGameRet() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public EnterGameResponse(EnterGameResponse other) : this() {
+    public gcEnterGameRet(gcEnterGameRet other) : this() {
       result_ = other.result_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public EnterGameResponse Clone() {
-      return new EnterGameResponse(this);
+    public gcEnterGameRet Clone() {
+      return new gcEnterGameRet(this);
     }
 
     /// <summary>Field number for the "result" field.</summary>
@@ -696,11 +904,11 @@ namespace Lite {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as EnterGameResponse);
+      return Equals(other as gcEnterGameRet);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(EnterGameResponse other) {
+    public bool Equals(gcEnterGameRet other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -741,7 +949,7 @@ namespace Lite {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(EnterGameResponse other) {
+    public void MergeFrom(gcEnterGameRet other) {
       if (other == null) {
         return;
       }

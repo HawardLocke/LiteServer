@@ -9,12 +9,27 @@ namespace Lite
 {
 	public class PlayerObject : PawnObject
 	{
-		private long mPlayerID = 0;
-		private long mSessionID = 0;
-
-		public override void OnSpawn()
+		private long mPlayerGuid = 0;
+		public long PlayerGuid
 		{
-			base.OnSpawn();
+			get { return mPlayerGuid; }
+		}
+
+		private long mSessionID = 0;
+		public long SessionID
+		{
+			get { return mSessionID; }
+		}
+
+		public PlayerObject(long playerGuid, long sessionId)
+		{
+			mPlayerGuid = playerGuid;
+			mSessionID = sessionId;
+		}
+
+		public override void OnCreate()
+		{
+			base.OnCreate();
 		}
 
 		public override void OnDestroy()
@@ -22,12 +37,21 @@ namespace Lite
 			base.OnDestroy();
 		}
 
-		public void SendPacket(ushort msgId, byte[] bytes)
+		public void SendPacket(PBX.MsgID msgId, Google.Protobuf.IMessage msg)
+		{
+			this.SendPacket((ushort)msgId, Google.Protobuf.MessageExtensions.ToByteArray(msg));
+		}
+
+		private void SendPacket(ushort msgId, byte[] bytes)
 		{
 			ClientSession session = LiteFacade.GetManager<SessionManager>().Get(mSessionID);
 			if (session != null)
 			{
 				session.SendPacket(msgId, bytes);
+			}
+			else
+			{
+				Log.Error("PlayerObject.SendPacket: session is null.");
 			}
 		}
 

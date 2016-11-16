@@ -15,6 +15,12 @@ namespace Lite
 
 		private int genSceneId = 1111;
 
+		private Scene mMainScene;
+		public Scene MainScene
+		{ 
+			get { return mMainScene; }
+		}
+
 		public override void Init()
 		{
 			LoadMainScene();
@@ -32,10 +38,17 @@ namespace Lite
 			}
 		}
 
+		public Scene GetScene(int sceneId)
+		{
+			Scene scene = null;
+			mSceneMap.TryGetValue(genSceneId, out scene);
+			return scene;
+		}
+
 		public void AddScene(Scene scene)
 		{
 			int id = GenSceneID();
-			scene.ID = id;
+			scene.SceneID = id;
 			mSceneMap.Add(id, scene);
 		}
 
@@ -53,6 +66,7 @@ namespace Lite
 		{
 			Scene scene = new Scene();
 			AddScene(scene);
+			mMainScene = scene;
 		}
 
 	}

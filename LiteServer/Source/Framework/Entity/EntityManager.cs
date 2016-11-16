@@ -11,12 +11,14 @@ namespace Lite
 	{
 		private Dictionary<long, EntityObject> mEntityMap = new Dictionary<long, EntityObject>();
 
-		public void Init()
+		private int mEntityIDGen = 1000;
+
+		public override void Init()
 		{
 
 		}
 
-		public void Destroy() 
+		public override void Destroy() 
 		{
 
 		}
@@ -36,13 +38,25 @@ namespace Lite
 			return ent;
 		}
 
-		public EntityObject SpawnEntity()
+		public bool ContainEntity(EntityObject ent)
 		{
-			EntityObject ent = new EntityObject();
-			long uid = GuidGenerator.GetLong();
-			ent.EntityID = uid;
-			mEntityMap.Add(uid, ent);
-			return ent;
+			return mEntityMap.ContainsValue(ent);
+		}
+
+		public void AddEntity(EntityObject ent)
+		{
+			if (ent == null)
+			{
+				Log.Error("EntityManager.AddEntity: entity is null.");
+				return;
+			}
+			if (ContainEntity(ent))
+			{
+				Log.Error("EntityManager.AddEntity: entity Repeated.");
+				return;
+			}
+			ent.EntityID = mEntityIDGen++;
+			mEntityMap.Add(ent.EntityID, ent);
 		}
 
 		public void DestroyEntity(long uid)

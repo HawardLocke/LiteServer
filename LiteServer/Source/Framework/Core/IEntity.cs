@@ -3,7 +3,7 @@ namespace Lite
 {
 	public interface IEntity
 	{
-		void OnSpawn();
+		void OnCreate();
 		void OnDestroy();
 	}
 }

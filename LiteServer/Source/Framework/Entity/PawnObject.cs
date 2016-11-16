@@ -9,9 +9,9 @@ namespace Lite
 {
 	public class PawnObject : EntityObject
 	{
-		public override void OnSpawn()
+		public override void OnCreate()
 		{
-			base.OnSpawn();
+			base.OnCreate();
 		}
 
 		public override void OnDestroy()
