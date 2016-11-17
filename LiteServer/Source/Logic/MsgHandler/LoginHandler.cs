@@ -41,7 +41,8 @@ namespace Lite
 			var playerMgr = LiteFacade.GetManager<PlayerManager>();
 			long playerGuid = GuidGenerator.GetLong();
 			session.PlayerGuid = playerGuid;
-			PlayerObject player = new PlayerObject(playerGuid, session.SessionGuid);
+			int entityId = LiteFacade.GetManager<EntityManager>().GenEntityID();
+			PlayerObject player = new PlayerObject(entityId, playerGuid, session.SessionGuid);
 			playerMgr.AddPlayer(player);
 
 			// test : enter default scene

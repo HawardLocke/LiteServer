@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Lite.Math;
 
 namespace Lite
 {
@@ -13,7 +14,6 @@ namespace Lite
 		public int EntityID
 		{
 			get { return mEntityID; }
-			set { mEntityID = value; }
 		}
 
 		private int mSceneID = 0;
@@ -21,6 +21,19 @@ namespace Lite
 		{
 			get { return mSceneID; }
 			set { mSceneID = value; }
+		}
+
+		private Vector2 mPosition;
+		public Vector2 Position
+		{
+			get { return mPosition; }
+		}
+
+		public EntityObject(int entityId)
+		{
+			mEntityID = entityId;
+			mSceneID = 0;
+			mPosition = Vector2.Zero();
 		}
 
 		public virtual void OnCreate()
@@ -31,6 +44,11 @@ namespace Lite
 		public virtual void OnDestroy()
 		{
 
+		}
+
+		public void SetPosition(float x, float y)
+		{
+			mPosition.Set(x, y);
 		}
 
 

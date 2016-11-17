@@ -94,6 +94,7 @@
     <Compile Include="Source\Framework\Http\HttpServer.cs" />
     <Compile Include="Source\Framework\Http\HttpService.cs" />
     <Compile Include="Source\Framework\LiteFacade.cs" />
+    <Compile Include="Source\Framework\Math\Vector2.cs" />
     <Compile Include="Source\Framework\Network\BaseServer.cs" />
     <Compile Include="Source\Framework\Network\ByteBuffer.cs" />
     <Compile Include="Source\Framework\Network\ClientReceiveFilter.cs" />

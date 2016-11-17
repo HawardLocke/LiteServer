@@ -21,7 +21,8 @@ namespace Lite
 			get { return mSessionID; }
 		}
 
-		public PlayerObject(long playerGuid, long sessionId)
+		public PlayerObject(int entityId, long playerGuid, long sessionId):
+			base(entityId)
 		{
 			mPlayerGuid = playerGuid;
 			mSessionID = sessionId;

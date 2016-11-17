@@ -55,7 +55,6 @@ namespace Lite
 				Log.Error("EntityManager.AddEntity: entity Repeated.");
 				return;
 			}
-			ent.EntityID = mEntityIDGen++;
 			mEntityMap.Add(ent.EntityID, ent);
 		}
 
@@ -66,6 +65,11 @@ namespace Lite
 			{
 				mEntityMap.Remove(uid);
 			}
+		}
+
+		public int GenEntityID()
+		{
+			return mEntityIDGen++;
 		}
 
 	}

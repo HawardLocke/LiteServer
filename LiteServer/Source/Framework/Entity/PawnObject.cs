@@ -9,6 +9,12 @@ namespace Lite
 {
 	public class PawnObject : EntityObject
 	{
+		public PawnObject(int entityId):
+			base(entityId)
+		{
+
+		}
+
 		public override void OnCreate()
 		{
 			base.OnCreate();
