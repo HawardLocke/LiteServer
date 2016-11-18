@@ -39,7 +39,7 @@ namespace Lite
 			}
 			catch(Exception e)
 			{
-				Log.Error(typeof(MessageManager), e.ToString());
+				Log.Error(e.ToString());
 			}
 		}
 

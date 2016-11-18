@@ -62,7 +62,9 @@ namespace Lite
 
 		public void OnPlayerEnter(PlayerObject player)
 		{
+			Log.Info("Player Enter Scene.");
 			gcOtherEnterScene enterMsg = new gcOtherEnterScene();
+			enterMsg.PlayerInfo = new gcPlayerInfo();
 			var playerInfo = enterMsg.PlayerInfo;
 			playerInfo.PlayerGuid = player.PlayerGuid;
 			playerInfo.Name = "zhang_san";

@@ -22,20 +22,21 @@ namespace Lite {
     static SceneReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJwcm90b3Mvc2NlbmUucHJvdG8SBExpdGUiTwoMZ2NQbGF5ZXJJbmZvEhIK",
+            "ChJwcm90b3Mvc2NlbmUucHJvdG8SBExpdGUiZQoMZ2NQbGF5ZXJJbmZvEhIK",
             "CnBsYXllckd1aWQYASABKAMSDAoEbmFtZRgCIAEoCRIOCgZjYXJlZXIYAyAB",
-            "KAUSDQoFbGV2ZWwYBCABKAUiHwoMZ2NFbnRlclNjZW5lEg8KB3NjZW5lSWQY",
-            "ASABKAUiEgoQY2dFbnRlclNjZW5lRG9uZSIgCgtjZ0V4aXRTY2VuZRIRCgly",
-            "b2xlSW5kZXgYASABKAUiIAoOZ2NFeGl0U2NlbmVSZXQSDgoGcmVzdWx0GAEg",
-            "ASgFIjsKEWdjT3RoZXJFbnRlclNjZW5lEiYKCnBsYXllckluZm8YASABKAsy",
-            "Ei5MaXRlLmdjUGxheWVySW5mbyJAChJnY05lYXJieVBsYXllckluZm8SKgoO",
-            "cGxheWVySW5mb0xpc3QYASADKAsyEi5MaXRlLmdjUGxheWVySW5mbyIrCghj",
-            "Z01vdmVUbxIJCgF4GAEgASgCEgkKAXkYAiABKAISCQoBehgDIAEoAiIgCghn",
-            "Y01vdmVUbxIJCgF4GAEgASgCEgkKAXkYAiABKAJiBnByb3RvMw=="));
+            "KAUSDQoFbGV2ZWwYBCABKAUSCQoBeBgFIAEoAhIJCgF5GAYgASgCIh8KDGdj",
+            "RW50ZXJTY2VuZRIPCgdzY2VuZUlkGAEgASgFIhIKEGNnRW50ZXJTY2VuZURv",
+            "bmUiIAoLY2dFeGl0U2NlbmUSEQoJcm9sZUluZGV4GAEgASgFIiAKDmdjRXhp",
+            "dFNjZW5lUmV0Eg4KBnJlc3VsdBgBIAEoBSI7ChFnY090aGVyRW50ZXJTY2Vu",
+            "ZRImCgpwbGF5ZXJJbmZvGAEgASgLMhIuTGl0ZS5nY1BsYXllckluZm8iQAoS",
+            "Z2NOZWFyYnlQbGF5ZXJJbmZvEioKDnBsYXllckluZm9MaXN0GAEgAygLMhIu",
+            "TGl0ZS5nY1BsYXllckluZm8iKwoIY2dNb3ZlVG8SCQoBeBgBIAEoAhIJCgF5",
+            "GAIgASgCEgkKAXoYAyABKAIiIAoIZ2NNb3ZlVG8SCQoBeBgBIAEoAhIJCgF5",
+            "GAIgASgCYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.gcPlayerInfo), global::Lite.gcPlayerInfo.Parser, new[]{ "PlayerGuid", "Name", "Career", "Level" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Lite.gcPlayerInfo), global::Lite.gcPlayerInfo.Parser, new[]{ "PlayerGuid", "Name", "Career", "Level", "X", "Y" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Lite.gcEnterScene), global::Lite.gcEnterScene.Parser, new[]{ "SceneId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Lite.cgEnterSceneDone), global::Lite.cgEnterSceneDone.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Lite.cgExitScene), global::Lite.cgExitScene.Parser, new[]{ "RoleIndex" }, null, null, null),
@@ -78,6 +79,8 @@ namespace Lite {
       name_ = other.name_;
       career_ = other.career_;
       level_ = other.level_;
+      x_ = other.x_;
+      y_ = other.y_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -129,6 +132,28 @@ namespace Lite {
       }
     }
 
+    /// <summary>Field number for the "x" field.</summary>
+    public const int XFieldNumber = 5;
+    private float x_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float X {
+      get { return x_; }
+      set {
+        x_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "y" field.</summary>
+    public const int YFieldNumber = 6;
+    private float y_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Y {
+      get { return y_; }
+      set {
+        y_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as gcPlayerInfo);
@@ -146,6 +171,8 @@ namespace Lite {
       if (Name != other.Name) return false;
       if (Career != other.Career) return false;
       if (Level != other.Level) return false;
+      if (X != other.X) return false;
+      if (Y != other.Y) return false;
       return true;
     }
 
@@ -156,6 +183,8 @@ namespace Lite {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Career != 0) hash ^= Career.GetHashCode();
       if (Level != 0) hash ^= Level.GetHashCode();
+      if (X != 0F) hash ^= X.GetHashCode();
+      if (Y != 0F) hash ^= Y.GetHashCode();
       return hash;
     }
 
@@ -182,6 +211,14 @@ namespace Lite {
         output.WriteRawTag(32);
         output.WriteInt32(Level);
       }
+      if (X != 0F) {
+        output.WriteRawTag(45);
+        output.WriteFloat(X);
+      }
+      if (Y != 0F) {
+        output.WriteRawTag(53);
+        output.WriteFloat(Y);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -198,6 +235,12 @@ namespace Lite {
       }
       if (Level != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Level);
+      }
+      if (X != 0F) {
+        size += 1 + 4;
+      }
+      if (Y != 0F) {
+        size += 1 + 4;
       }
       return size;
     }
@@ -218,6 +261,12 @@ namespace Lite {
       }
       if (other.Level != 0) {
         Level = other.Level;
+      }
+      if (other.X != 0F) {
+        X = other.X;
+      }
+      if (other.Y != 0F) {
+        Y = other.Y;
       }
     }
 
@@ -243,6 +292,14 @@ namespace Lite {
           }
           case 32: {
             Level = input.ReadInt32();
+            break;
+          }
+          case 45: {
+            X = input.ReadFloat();
+            break;
+          }
+          case 53: {
+            Y = input.ReadFloat();
             break;
           }
         }
