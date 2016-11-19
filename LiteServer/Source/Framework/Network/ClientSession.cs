@@ -34,9 +34,16 @@ namespace Lite
 			//this.Send("Unknow request");
 		}
 
-		public void SendPacket(PBX.MsgID msgId, Google.Protobuf.IMessage msg)
+		public void SendPacket(ushort msgId, ProtoBuf.IExtensible msg)
 		{
-			this.SendPacket((ushort)msgId, Google.Protobuf.MessageExtensions.ToByteArray(msg));
+			byte[] data = null;
+			using (var stream = new MemoryStream())
+			{
+				ProtoBuf.Serializer.Serialize(stream, msg);
+				stream.Flush();
+				data = stream.ToArray();
+			}
+			this.SendPacket((ushort)msgId, data);
 		}
 
 		public void SendPacket(ushort msgId, byte[] bytes)
