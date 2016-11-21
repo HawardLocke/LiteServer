@@ -52,7 +52,7 @@ namespace Lite
 			mEntityMgr.AddEntity(entity);
 		}
 
-		public void Broadcast(ushort msgId, ProtoBuf.IExtensible msg)
+		public void Broadcast(PBX.MsgID msgId, Google.Protobuf.IMessage msg)
 		{
 			foreach(var player in mPlayerMap.Values)
 			{
@@ -64,13 +64,13 @@ namespace Lite
 		{
 			Log.Info("Player Enter Scene.");
 			gcOtherEnterScene enterMsg = new gcOtherEnterScene();
-			var playerInfo = new gcPlayerInfo();
-			playerInfo.playerGuid = 1;// player.PlayerGuid;
-			playerInfo.name = "zhang_san";
-			playerInfo.career = 233;
-			playerInfo.level = 666;
-			enterMsg.playerInfo = playerInfo;
-			Broadcast((ushort)PBX.MsgID.gcOtherEnterScene, enterMsg);
+			enterMsg.PlayerInfo = new gcPlayerInfo();
+			var playerInfo = enterMsg.PlayerInfo;
+			playerInfo.PlayerGuid = player.PlayerGuid;
+			playerInfo.Name = "zhang_san";
+			playerInfo.Career = 233;
+			playerInfo.Level = 666;
+			Broadcast(PBX.MsgID.gcOtherEnterScene, enterMsg);
 		}
 
 		public void OnPlayerEnterDone(PlayerObject player)
@@ -79,13 +79,13 @@ namespace Lite
 			foreach (var otherPlayer in mPlayerMap.Values)
 			{
 				gcPlayerInfo playerInfo = new gcPlayerInfo();
-				playerInfo.playerGuid = otherPlayer.PlayerGuid;
-				playerInfo.name = "zhang_san";
-				playerInfo.career = 233;
-				playerInfo.level = 666;
-				nearbyInfo.playerInfoList.Add(playerInfo);
+				playerInfo.PlayerGuid = otherPlayer.PlayerGuid;
+				playerInfo.Name = "zhang_san";
+				playerInfo.Career = 233;
+				playerInfo.Level = 666;
+				nearbyInfo.PlayerInfoList.Add(playerInfo);
 			}
-			player.SendPacket((ushort)PBX.MsgID.gcNearbyPlayerInfo, nearbyInfo);
+			player.SendPacket(PBX.MsgID.gcNearbyPlayerInfo, nearbyInfo);
 		}
 
 	}

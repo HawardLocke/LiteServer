@@ -38,9 +38,9 @@ namespace Lite
 			base.OnDestroy();
 		}
 
-		public void SendPacket(ushort msgId, ProtoBuf.IExtensible msg)
+		public void SendPacket(PBX.MsgID msgId, Google.Protobuf.IMessage msg)
 		{
-			this.SendPacket(msgId, Protocol.ProtoUtil.ToByteArray(msg));
+			this.SendPacket((ushort)msgId, Google.Protobuf.MessageExtensions.ToByteArray(msg));
 		}
 
 		private void SendPacket(ushort msgId, byte[] bytes)
