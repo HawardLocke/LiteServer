@@ -1,6 +1,8 @@
 
 using System;
-using Google.Protobuf;
+using System.IO;
+using ProtoBuf;
+using Lite.Protocol;
 
 
 namespace Lite
@@ -16,26 +18,27 @@ namespace Lite
 
 		int OncgLogin(ClientSession session, byte[] bytes)
 		{
-			cgLogin loginMsg = cgLogin.Parser.ParseFrom(bytes);
-			Log.Info(string.Format("recv Login,{0},{1}.", loginMsg.Account, loginMsg.Password));
+			cgLogin loginMsg = ProtoUtil.ParseFrom<cgLogin>(bytes);
+			//cgLogin loginMsg = cgLogin.Parser.ParseFrom(bytes);
+			Log.Info(string.Format("recv Login,{0},{1}.", loginMsg.account, loginMsg.password));
 
 			gcLoginRet loginRet = new gcLoginRet
 			{
-				Result = 0
+				result = 0
 			};
-			session.SendPacket(PBX.MsgID.gcLoginRet, loginRet);
+			session.SendPacket((ushort)PBX.MsgID.gcLoginRet, loginRet);
 
 			return 0;
 		}
 
 		int OncgEnterGame(ClientSession session, byte[] bytes)
 		{
-			cgEnterGame recvMsg = cgEnterGame.Parser.ParseFrom(bytes);
-			Log.Info(string.Format("recv EnterGame,{0}.", recvMsg.RoleIndex));
+			cgEnterGame recvMsg = ProtoUtil.ParseFrom<cgEnterGame>(bytes); //cgEnterGame.Parser.ParseFrom(bytes);
+			Log.Info(string.Format("recv EnterGame,{0}.", recvMsg.roleIndex));
 
 			gcEnterGameRet enterRet = new gcEnterGameRet();
-			enterRet.Result = 0;
-			session.SendPacket(PBX.MsgID.gcEnterGameRet, enterRet);
+			enterRet.result = 0;
+			session.SendPacket((ushort)PBX.MsgID.gcEnterGameRet, enterRet);
 
 			// new player
 			var playerMgr = LiteFacade.GetManager<PlayerManager>();
@@ -49,9 +52,10 @@ namespace Lite
 			var sceneMgr = LiteFacade.GetManager<SceneManager>();
 			var targetScene = sceneMgr.MainScene;
 			targetScene.AddPlayer(playerGuid, player);
+
 			gcEnterScene enterSceneMsg = new gcEnterScene();
-			enterSceneMsg.SceneId = sceneMgr.MainScene.SceneID;
-			player.SendPacket(PBX.MsgID.gcEnterScene, enterSceneMsg);
+			enterSceneMsg.sceneId = targetScene.SceneID;
+			player.SendPacket((ushort)PBX.MsgID.gcEnterScene, enterSceneMsg);
 
 			return 0;
 		}

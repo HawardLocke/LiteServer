@@ -50,16 +50,11 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Google.Protobuf, Version=3.1.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Reference\Google.Protobuf.dll</HintPath>
-    </Reference>
     <Reference Include="log4net">
       <HintPath>Reference\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Reference\MySql.Data.dll</HintPath>
+    <Reference Include="protobuf-net">
+      <HintPath>Reference\protobuf-net.dll</HintPath>
     </Reference>
     <Reference Include="SuperSocket.Common">
       <HintPath>Reference\SuperSocket.Common.dll</HintPath>
@@ -117,10 +112,11 @@
     <Compile Include="Source\Logic\MsgHandler\LoginHandler.cs" />
     <Compile Include="Source\Logic\MsgHandler\MsgHandlerManager.cs" />
     <Compile Include="Source\Logic\MsgHandler\SceneHandler.cs" />
-    <Compile Include="Source\Logic\Protocol\Chat.cs" />
-    <Compile Include="Source\Logic\Protocol\Login.cs" />
-    <Compile Include="Source\Logic\Protocol\MsgID.cs" />
-    <Compile Include="Source\Logic\Protocol\Scene.cs" />
+    <Compile Include="Source\Logic\Protocol\auto_gen\chat_pb.cs" />
+    <Compile Include="Source\Logic\Protocol\auto_gen\login_pb.cs" />
+    <Compile Include="Source\Logic\Protocol\auto_gen\MsgID.cs" />
+    <Compile Include="Source\Logic\Protocol\auto_gen\scene_pb.cs" />
+    <Compile Include="Source\Logic\Protocol\ProtoUtil.cs" />
     <Compile Include="Source\Logic\Template\auto_gen\Npc0_Data.cs" />
     <Compile Include="Source\Logic\Template\TemplateRegister.cs" />
     <Compile Include="Source\Logic\Util\ConfigUtil.cs" />
