@@ -10,7 +10,7 @@ using Lite.Utility;
 namespace Lite
 {
 
-	class GameServer : BaseServer
+	class GameServer : Network.BaseServer
 	{
 		private LoopTimer configTimer;
 		private LoopTimer tickTimer;
@@ -20,7 +20,7 @@ namespace Lite
 			base.OnStarted();
 
 			ConfigUtil.LoadConfig();
-			// frame work
+			// framework
 			LiteFacade.Instance.Create();
 			TemplateRegister.RegisterALL();
 			LiteFacade.Instance.Init();

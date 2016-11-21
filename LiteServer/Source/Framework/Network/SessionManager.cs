@@ -4,11 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lite
+namespace Lite.Network
 {
 	class SessionManager : IManager
 	{
-		private Dictionary<long, ClientSession> sessionMap = new Dictionary<long,ClientSession>();
+		private Dictionary<long, ClientSession> sessionMap;
+
+		public override void Init()
+		{
+			sessionMap = new Dictionary<long, ClientSession>();
+		}
+
+		public override void Destroy()
+		{
+
+		}
 
 		public void AddSession(ClientSession session)
 		{

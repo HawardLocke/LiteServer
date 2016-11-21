@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using ProtoBuf;
 using Lite.Protocol;
+using Lite.Network;
 
 
 namespace Lite

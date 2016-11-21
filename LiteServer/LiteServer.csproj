@@ -86,6 +86,10 @@
     <Compile Include="Source\Framework\Entity\EntityObject.cs" />
     <Compile Include="Source\Framework\Entity\PawnObject.cs" />
     <Compile Include="Source\Framework\Entity\PlayerObject.cs" />
+    <Compile Include="Source\Framework\Event\IEvent.cs" />
+    <Compile Include="Source\Framework\Event\EventManger.cs" />
+    <Compile Include="Source\Framework\Event\IEventListener.cs" />
+    <Compile Include="Source\Framework\Event\InternalEvents.cs" />
     <Compile Include="Source\Framework\Http\HttpServer.cs" />
     <Compile Include="Source\Framework\Http\HttpService.cs" />
     <Compile Include="Source\Framework\LiteFacade.cs" />

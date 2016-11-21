@@ -1,6 +1,6 @@
 
 
-namespace Lite
+namespace Lite.Network
 {
 	public sealed class Packet
 	{

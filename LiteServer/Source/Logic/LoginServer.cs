@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Lite
 {
 
-	class LoginServer : BaseServer
+	class LoginServer : Network.BaseServer
 	{
 		protected override void OnStarted()
 		{

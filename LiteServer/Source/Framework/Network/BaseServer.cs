@@ -5,7 +5,7 @@ using SuperSocket.SocketBase;
 using SuperSocket.SocketBase.Config;
 using SuperSocket.SocketBase.Protocol;
 
-namespace Lite
+namespace Lite.Network
 {
 	class BaseServer : AppServer<ClientSession, BinaryRequestInfo>
 	{
@@ -40,6 +40,7 @@ namespace Lite
 
 		protected virtual void OnSessionConnected(ClientSession session)
 		{
+			LiteFacade.PushEvent();
 			LiteFacade.GetManager<SessionManager>().AddSession(session);
 		}
 

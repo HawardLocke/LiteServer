@@ -4,6 +4,6 @@ namespace Lite
 {
 	public interface IMessage
 	{
-		void OnMessage(ClientSession session, ByteBuffer buffer);
+		void OnMessage(Network.ClientSession session, ByteBuffer buffer);
 	}
 }

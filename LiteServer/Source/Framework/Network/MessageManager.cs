@@ -8,16 +8,16 @@ using SuperSocket.SocketBase;
 using SuperSocket.SocketBase.Protocol;
 
 
-namespace Lite
+namespace Lite.Network
 {
-	using MsgFunc = Func<ClientSession,byte[],int>;
+	using MsgHandler = Func<ClientSession,byte[],int>;
 
 	class MessageManager : IManager
 	{
 		
-		private Dictionary<ushort, MsgFunc> mHandlerMap = new Dictionary<ushort, MsgFunc>();
+		private Dictionary<ushort, MsgHandler> mHandlerMap = new Dictionary<ushort, MsgHandler>();
 
-		public void RegisterHandler(ushort msgId, MsgFunc handler)
+		public void RegisterHandler(ushort msgId, MsgHandler handler)
 		{
 			mHandlerMap.Add(msgId, handler);
 		}
@@ -29,7 +29,7 @@ namespace Lite
 				ByteBuffer buffer = new ByteBuffer(requestInfo.Body);
 				ushort msgId = buffer.ReadShort();
 
-				MsgFunc func = null;
+				MsgHandler func = null;
 				mHandlerMap.TryGetValue(msgId, out func);
 				if (func != null)
 				{

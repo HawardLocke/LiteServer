@@ -7,7 +7,7 @@ using SuperSocket.SocketBase.Command;
 using SuperSocket.SocketBase.Protocol;
 
 
-namespace Lite
+namespace Lite.Network
 {
 	public class ClientSession : AppSession<ClientSession, BinaryRequestInfo>
 	{
