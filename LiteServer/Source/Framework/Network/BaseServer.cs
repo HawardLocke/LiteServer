@@ -40,7 +40,7 @@ namespace Lite.Network
 
 		protected virtual void OnSessionConnected(ClientSession session)
 		{
-			LiteFacade.PushEvent();
+			//LiteFacade.PushEvent();
 			LiteFacade.GetManager<SessionManager>().AddSession(session);
 		}
 

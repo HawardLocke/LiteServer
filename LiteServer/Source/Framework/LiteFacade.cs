@@ -49,10 +49,10 @@ namespace Lite
 		// quick methods
 		public static void PushEvent(InternalEvent id, IEvent evt)
 		{
-			JObject jsonRoot = new JObject();
+			//JObject jsonRoot = new JObject();
 			//jsonRoot["uid"] = uid;
-			string str = JsonConvert.SerializeObject(jsonRoot);
-			GetManager<EventManager>().PushEvent(evt);
+			//string str = JsonConvert.SerializeObject(jsonRoot);
+			//GetManager<EventManager>().PushEvent(evt);
 		}
 
 	}

@@ -53,6 +53,9 @@
     <Reference Include="log4net">
       <HintPath>Reference\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Reference\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="protobuf-net">
       <HintPath>Reference\protobuf-net.dll</HintPath>
     </Reference>

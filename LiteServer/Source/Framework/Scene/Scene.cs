@@ -66,12 +66,19 @@ namespace Lite
 		{
 			Log.Info("Player Enter Scene.");
 			gcOtherEnterScene enterMsg = new gcOtherEnterScene();
-			var playerInfo = new gcPlayerInfo();
-			playerInfo.playerGuid = 1;// player.PlayerGuid;
+			enterMsg.ret = 99;
+			enterMsg.guid = (int)player.PlayerGuid;
+			//gcEnterScene info = new gcEnterScene();
+			//info.sceneId = 99999;
+			//enterMsg.info = info;
+			/*var playerInfo = new gcPlayerInfo();
+			playerInfo.playerGuid = player.PlayerGuid;
 			playerInfo.name = "zhang_san";
 			playerInfo.career = 233;
 			playerInfo.level = 666;
-			enterMsg.playerInfo = playerInfo;
+			playerInfo.x = 666;
+			playerInfo.y = 666;
+			enterMsg.playerInfo = playerInfo;*/
 			Broadcast((ushort)PBX.MsgID.gcOtherEnterScene, enterMsg);
 		}
 
@@ -81,10 +88,12 @@ namespace Lite
 			foreach (var otherPlayer in mPlayerMap.Values)
 			{
 				gcPlayerInfo playerInfo = new gcPlayerInfo();
-				playerInfo.playerGuid = otherPlayer.PlayerGuid;
+				playerInfo.playerGuid = 1;// otherPlayer.PlayerGuid;
 				playerInfo.name = "zhang_san";
 				playerInfo.career = 233;
 				playerInfo.level = 666;
+				playerInfo.x = 666;
+				playerInfo.y = 666;
 				nearbyInfo.playerInfoList.Add(playerInfo);
 			}
 			player.SendPacket((ushort)PBX.MsgID.gcNearbyPlayerInfo, nearbyInfo);
