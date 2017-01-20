@@ -7,5 +7,7 @@ namespace Lite
 
 		public virtual void Destroy() { }
 
+		public virtual void Update() { }
+
 	}
 }

@@ -14,17 +14,23 @@ namespace Entitas {
             return CreatePool("Core", CoreComponentIds.TotalComponents, CoreComponentIds.componentNames, CoreComponentIds.componentTypes);
         }
 
+        public static Pool CreateGameObjectsPool() {
+            return CreatePool("GameObjects", GameObjectsComponentIds.TotalComponents, GameObjectsComponentIds.componentNames, GameObjectsComponentIds.componentTypes);
+        }
+
         public static Pool CreateMetaPool() {
             return CreatePool("Meta", MetaComponentIds.TotalComponents, MetaComponentIds.componentNames, MetaComponentIds.componentTypes);
         }
 
-        public Pool[] allPools { get { return new [] { core, meta }; } }
+        public Pool[] allPools { get { return new [] { core, gameObjects, meta }; } }
 
         public Pool core;
+        public Pool gameObjects;
         public Pool meta;
 
         public void SetAllPools() {
             core = CreateCorePool();
+            gameObjects = CreateGameObjectsPool();
             meta = CreateMetaPool();
         }
     }

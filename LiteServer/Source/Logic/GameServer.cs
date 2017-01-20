@@ -22,11 +22,9 @@ namespace Lite
 			GameTimer.Start();
 
 			ConfigUtil.LoadConfig();
-			// framework
-			LiteFacade.Instance.Create();
-			TemplateRegister.RegisterALL();
+			
 			LiteFacade.Instance.Init();
-			// logic
+			
 			MsgHandlerManager.Instance.Init();
 
 			// timers

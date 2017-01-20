@@ -4,14 +4,17 @@ using System.Reflection;
 using Entitas;
 using Entitas.CodeGenerator;
 
-namespace CodeGenerator {
+namespace CodeGenerator
+{
 
-    class MainClass {
+	class MainClass
+	{
 
-        public static void Main(string[] args) {
+		public static void Main(string[] args)
+		{
 
-            // All code generators that should be used
-            var codeGenerators = new ICodeGenerator[] {
+			// All code generators that should be used
+			var codeGenerators = new ICodeGenerator[] {
                 new ComponentIndicesGenerator(),
                 new ComponentExtensionsGenerator(),
                 new PoolAttributesGenerator(),
@@ -19,39 +22,41 @@ namespace CodeGenerator {
                 new BlueprintsGenerator()
             };
 
-            // Specify all pools
-            var poolNames = new[] { "Core", "Meta" };
+			// Specify all pools
+			var poolNames = new[] { "Core", "Meta", "gameObjects" };
 
-            // Specify all blueprints
-            var blueprintNames = new string[0];
+			// Specify all blueprints
+			var blueprintNames = new string[0];
 
-            generate(
-                codeGenerators,
-                poolNames,
-                blueprintNames,
-				"../../Source/Logic/Component/Generated/"
-            );
-        }
+			generate(
+				codeGenerators,
+				poolNames,
+				blueprintNames,
+				"../../Source/Logic/Ecs/Generated/"
+			);
+		}
 
-        static void generate(ICodeGenerator[] codeGenerators,
-                             string[] poolNames,
-                             string[] blueprintNames,
-                             string path) {
+		static void generate(ICodeGenerator[] codeGenerators,
+							 string[] poolNames,
+							 string[] blueprintNames,
+							 string path)
+		{
 
-            var assembly = Assembly.GetAssembly(typeof(Entity));
-            var provider = new TypeReflectionProvider(assembly.GetTypes(), poolNames, blueprintNames);
+			var assembly = Assembly.GetAssembly(typeof(Entity));
+			var provider = new TypeReflectionProvider(assembly.GetTypes(), poolNames, blueprintNames);
 
-            var generatedFiles = Entitas.CodeGenerator.CodeGenerator.Generate(provider, path, codeGenerators);
+			var generatedFiles = Entitas.CodeGenerator.CodeGenerator.Generate(provider, path, codeGenerators);
 
-            foreach(var file in generatedFiles) {
-                Console.WriteLine(file.generatorName + ": " + file.fileName);
-            }
+			foreach (var file in generatedFiles)
+			{
+				Console.WriteLine(file.generatorName + ": " + file.fileName);
+			}
 
-            var totalGeneratedFiles = generatedFiles.Select(file => file.fileName).Distinct().Count();
+			var totalGeneratedFiles = generatedFiles.Select(file => file.fileName).Distinct().Count();
 
-            Console.WriteLine("");
-            Console.WriteLine("Generated " + totalGeneratedFiles + " files.");
-            Console.Read();
-        }
-    }
+			Console.WriteLine("");
+			Console.WriteLine("Generated " + totalGeneratedFiles + " files.");
+			Console.Read();
+		}
+	}
 }

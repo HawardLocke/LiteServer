@@ -12,17 +12,17 @@ namespace Entitas {
 
     public partial class Entity {
 
-        public VelocityComponent velocity { get { return (VelocityComponent)GetComponent(CoreComponentIds.Velocity); } }
+        public Lite.VelocityComponent velocity { get { return (Lite.VelocityComponent)GetComponent(CoreComponentIds.Velocity); } }
         public bool hasVelocity { get { return HasComponent(CoreComponentIds.Velocity); } }
 
         public Entity AddVelocity(Lite.Vector2 newValue) {
-            var component = CreateComponent<VelocityComponent>(CoreComponentIds.Velocity);
+            var component = CreateComponent<Lite.VelocityComponent>(CoreComponentIds.Velocity);
             component.value = newValue;
             return AddComponent(CoreComponentIds.Velocity, component);
         }
 
         public Entity ReplaceVelocity(Lite.Vector2 newValue) {
-            var component = CreateComponent<VelocityComponent>(CoreComponentIds.Velocity);
+            var component = CreateComponent<Lite.VelocityComponent>(CoreComponentIds.Velocity);
             component.value = newValue;
             ReplaceComponent(CoreComponentIds.Velocity, component);
             return this;
@@ -43,6 +43,23 @@ namespace Entitas {
                 if(_matcherVelocity == null) {
                     var matcher = (Matcher)Matcher.AllOf(CoreComponentIds.Velocity);
                     matcher.componentNames = CoreComponentIds.componentNames;
+                    _matcherVelocity = matcher;
+                }
+
+                return _matcherVelocity;
+            }
+        }
+    }
+
+    public partial class GameObjectsMatcher {
+
+        static IMatcher _matcherVelocity;
+
+        public static IMatcher Velocity {
+            get {
+                if(_matcherVelocity == null) {
+                    var matcher = (Matcher)Matcher.AllOf(GameObjectsComponentIds.Velocity);
+                    matcher.componentNames = GameObjectsComponentIds.componentNames;
                     _matcherVelocity = matcher;
                 }
 

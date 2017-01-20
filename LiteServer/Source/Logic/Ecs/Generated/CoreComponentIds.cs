@@ -8,18 +8,18 @@
 //------------------------------------------------------------------------------
 public static class CoreComponentIds {
 
-    public const int Position = 0;
+    public const int Transform = 0;
     public const int Velocity = 1;
 
     public const int TotalComponents = 2;
 
     public static readonly string[] componentNames = {
-        "Position",
+        "Transform",
         "Velocity"
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(PositionComponent),
-        typeof(VelocityComponent)
+        typeof(Lite.TransformComponent),
+        typeof(Lite.VelocityComponent)
     };
 }

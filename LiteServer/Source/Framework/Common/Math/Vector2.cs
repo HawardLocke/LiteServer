@@ -17,7 +17,11 @@ namespace Lite
 			this.x = x; this.y = y;
 		}
 
-		public static Vector2 Zero()
+		public static Vector2 zero { get { return new Vector2(0, 0); } }
+
+		public static Vector2 one { get { return new Vector2(1, 1); } }
+
+		/*public static Vector2 Zero()
 		{
 			return new Vector2(0, 0);
 		}
@@ -25,7 +29,7 @@ namespace Lite
 		public static Vector2 One()
 		{
 			return new Vector2(1, 1);
-		}
+		}*/
 
 		public static Vector2 operator +(Vector2 vec1, Vector2 vec2)
 		{
