@@ -19,6 +19,8 @@ namespace Lite
 		{
 			base.OnStarted();
 
+			GameTimer.Start();
+
 			ConfigUtil.LoadConfig();
 			// framework
 			LiteFacade.Instance.Create();
@@ -43,11 +45,11 @@ namespace Lite
 			LiteFacade.Instance.Destroy();
 		}
 
-		private void Tick(int dms)
+		private void Tick(int ms)
 		{
-			//Log.Warn(""+dms);
-			LiteFacade.GetManager<SceneManager>().Tick(dms);
-			LiteFacade.GetManager<EntityManager>().Tick(dms);
+			LiteFacade.Instance.Tick();
+			//Log.Warn(""+ms);
+			
 		}
 
 

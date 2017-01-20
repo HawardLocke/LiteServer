@@ -42,21 +42,21 @@ namespace Lite
 			session.SendPacket((ushort)PBX.MsgID.gcEnterGameRet, enterRet);
 
 			// new player
-			var playerMgr = LiteFacade.GetManager<PlayerManager>();
-			long playerGuid = GuidGenerator.GetLong();
-			session.PlayerGuid = playerGuid;
-			int entityId = LiteFacade.GetManager<EntityManager>().GenEntityID();
-			PlayerObject player = new PlayerObject(entityId, playerGuid, session.SessionGuid);
-			playerMgr.AddPlayer(player);
-
-			// test : enter default scene
-			var sceneMgr = LiteFacade.GetManager<SceneManager>();
-			var targetScene = sceneMgr.MainScene;
-			targetScene.AddPlayer(playerGuid, player);
-
-			gcEnterScene enterSceneMsg = new gcEnterScene();
-			enterSceneMsg.sceneId = targetScene.SceneID;
-			player.SendPacket((ushort)PBX.MsgID.gcEnterScene, enterSceneMsg);
+// 			var playerMgr = LiteFacade.GetManager<PlayerManager>();
+// 			long playerGuid = GuidGenerator.GetLong();
+// 			session.PlayerGuid = playerGuid;
+// 			int entityId = LiteFacade.GetManager<EntityManager>().GenEntityID();
+// 			PlayerObject player = new PlayerObject(entityId, playerGuid, session.SessionGuid);
+// 			playerMgr.AddPlayer(player);
+// 
+// 			// test : enter default scene
+// 			var sceneMgr = LiteFacade.GetManager<SceneManager>();
+// 			var targetScene = sceneMgr.MainScene;
+// 			targetScene.AddPlayer(playerGuid, player);
+// 
+// 			gcEnterScene enterSceneMsg = new gcEnterScene();
+// 			enterSceneMsg.sceneId = targetScene.SceneID;
+// 			player.SendPacket((ushort)PBX.MsgID.gcEnterScene, enterSceneMsg);
 
 			return 0;
 		}

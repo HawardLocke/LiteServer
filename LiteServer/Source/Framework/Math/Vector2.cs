@@ -1,6 +1,6 @@
 
 
-namespace Lite.Math
+namespace Lite
 {
 	public struct Vector2
 	{

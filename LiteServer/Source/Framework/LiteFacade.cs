@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using Lite;
-using Lite.Message;
-using Lite.Service;
+using Entitas;
 using Lite.Event;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+
 
 
 namespace Lite
@@ -15,16 +11,22 @@ namespace Lite
 	{
 		private static Dictionary<Type, IManager> managerMap;
 
+		private Systems systems;
+
 		public void Create()
 		{
 			managerMap = new Dictionary<Type, IManager>();
 			managerMap.Add(typeof(Network.SessionManager), new Network.SessionManager());
 			managerMap.Add(typeof(Event.EventManager), new Event.EventManager());
-			managerMap.Add(typeof(EntityManager), new EntityManager());
 			managerMap.Add(typeof(Network.MessageManager), new Network.MessageManager());
 			managerMap.Add(typeof(TemplateManager), new TemplateManager());
-			managerMap.Add(typeof(SceneManager), new SceneManager());
-			managerMap.Add(typeof(PlayerManager), new PlayerManager());
+			//managerMap.Add(typeof(SceneManager), new SceneManager());
+			//managerMap.Add(typeof(PlayerManager), new PlayerManager());
+
+		/*	 var pools = Pools.sharedInstance;
+        pools.SetAllPools();
+        pools.AddEntityIndices();
+			systems = */
 		}
 		
 		public void Init()
@@ -39,20 +41,16 @@ namespace Lite
 		{
 		}
 
+		public void Tick()
+		{
+			
+		}
+
 		public static T GetManager<T>() where T : IManager
 		{
 			IManager mgr = null;
 			managerMap.TryGetValue(typeof(T), out mgr);
 			return mgr as T;
-		}
-
-		// quick methods
-		public static void PushEvent(InternalEvent id, IEvent evt)
-		{
-			//JObject jsonRoot = new JObject();
-			//jsonRoot["uid"] = uid;
-			//string str = JsonConvert.SerializeObject(jsonRoot);
-			//GetManager<EventManager>().PushEvent(evt);
 		}
 
 	}

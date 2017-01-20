@@ -16,11 +16,11 @@ namespace Lite
 
 		int OnEnterSceneOk(ClientSession session, byte[] bytes)
 		{
-			var playerMgr = LiteFacade.GetManager<PlayerManager>();
-			var sceneMgr = LiteFacade.GetManager<SceneManager>();
-			PlayerObject player = playerMgr.GetPlayer(session.PlayerGuid);
-			Scene scene = sceneMgr.GetScene(player.SceneID);
-			scene.OnPlayerEnterDone(player);
+// 			var playerMgr = LiteFacade.GetManager<PlayerManager>();
+// 			var sceneMgr = LiteFacade.GetManager<SceneManager>();
+// 			PlayerObject player = playerMgr.GetPlayer(session.PlayerGuid);
+// 			Scene scene = sceneMgr.GetScene(player.SceneID);
+// 			scene.OnPlayerEnterDone(player);
 			// sync enviroment and nearby players.
 
 			return 0;

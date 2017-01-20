@@ -1,3 +1,5 @@
 LiteServer/obj/
 LiteServer/bin/Debug/
 Protobuilder/
+CodeGenerator/obj/
+CodeGenerator/bin/
