@@ -40,13 +40,15 @@ namespace Lite.Network
 
 		protected virtual void OnSessionConnected(ClientSession session)
 		{
-			//LiteFacade.PushEvent();
-			LiteFacade.GetManager<SessionManager>().AddSession(session);
+			if (!LiteFacade.GetManager<SessionManager>().AddSession(session))
+			{
+				session.Close(CloseReason.ApplicationError);
+			}
 		}
 
 		protected virtual void OnSessionDisconnected(ClientSession session, CloseReason reason)
 		{
-			LiteFacade.GetManager<SessionManager>().RemoveSession(session.sessionGuid);
+			LiteFacade.GetManager<SessionManager>().RemoveSession(session);
 		}
 
 		protected virtual void OnRequestReceived(ClientSession session, BinaryRequestInfo requestInfo)

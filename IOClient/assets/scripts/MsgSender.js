@@ -4,7 +4,9 @@ const Protocol = require('Protocol');
 
 var MsgType = {
 	// c->s
-	csLogin:1001,
+	csLogin:2001,
+	scLoginRet:2002,
+
 	csJoin:1002,
 	csMove:1003,
 	csPing:1004,
@@ -37,7 +39,7 @@ var MsgSender = {
         var login = new Protocol.IOGame.csLogin();
         login.account = name;
         login.password = pswd;
-		Network.send(MsgType.csLogin, login.encodeAB());
+		Network.send(MsgType.csLogin, login);
 	},
 
 	join:function(){

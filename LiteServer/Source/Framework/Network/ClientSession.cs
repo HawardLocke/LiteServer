@@ -12,7 +12,10 @@ namespace Lite.Network
 	public class ClientSession : AppSession<ClientSession, BinaryRequestInfo>, IClientSession
 	{
 		public long sessionGuid { get; set; }
+
 		public long playerGuid { get; set; }
+
+		public System.Net.IPAddress ipAddress { get { return RemoteEndPoint.Address; } }
 
 		protected override void OnSessionStarted()
 		{
@@ -34,7 +37,7 @@ namespace Lite.Network
 			//this.Send("Unknow request");
 		}
 
-		public void SendPacket(ushort msgId, ProtoBuf.IExtensible msg)
+		public void SendPacket(int msgId, ProtoBuf.IExtensible msg)
 		{
 			byte[] data = null;
 			using (var stream = new MemoryStream())
@@ -43,10 +46,10 @@ namespace Lite.Network
 				stream.Flush();
 				data = stream.ToArray();
 			}
-			this.SendPacket((ushort)msgId, data);
+			this.SendPacket(msgId, data);
 		}
 
-		public void SendPacket(ushort msgId, byte[] bytes)
+		public void SendPacket(int msgId, byte[] bytes)
 		{
 			ByteBuffer buffer = new ByteBuffer();
 			buffer.WriteBytes(bytes);
@@ -56,7 +59,7 @@ namespace Lite.Network
 			{
 				ms.Position = 0;
 				BinaryWriter writer = new BinaryWriter(ms);
-				ushort msglen = (ushort)(message.Length + sizeof(ushort));
+				int msglen = message.Length + sizeof(int);
 				writer.Write(msglen);
 				writer.Write(msgId);
 				writer.Write(message);

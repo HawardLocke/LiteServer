@@ -19,15 +19,29 @@ namespace Lite
 
 		int OncgLogin(IClientSession session, byte[] bytes)
 		{
-			cgLogin loginMsg = ProtoUtil.ParseFrom<cgLogin>(bytes);
-			//cgLogin loginMsg = cgLogin.Parser.ParseFrom(bytes);
+			//cgLogin loginMsg = ProtoUtil.ParseFrom<cgLogin>(bytes);
+
+			cgLogin loginMsg = new cgLogin
+			{
+				account = "Locke",
+				password = "******"
+			};
+
+			byte[] data = null;
+			using (var stream = new MemoryStream())
+			{
+				ProtoBuf.Serializer.Serialize(stream, loginMsg);
+				stream.Flush();
+				data = stream.ToArray();
+			}
+
 			Log.Info(string.Format("recv Login,{0},{1}.", loginMsg.account, loginMsg.password));
 
 			gcLoginRet loginRet = new gcLoginRet
 			{
 				result = 0
 			};
-			session.SendPacket((ushort)PBX.MsgID.gcLoginRet, loginRet);
+			session.SendPacket((int)PBX.MsgID.gcLoginRet, loginRet);
 
 			return 0;
 		}
@@ -39,7 +53,7 @@ namespace Lite
 
 			gcEnterGameRet enterRet = new gcEnterGameRet();
 			enterRet.result = 0;
-			session.SendPacket((ushort)PBX.MsgID.gcEnterGameRet, enterRet);
+			session.SendPacket((int)PBX.MsgID.gcEnterGameRet, enterRet);
 
 			// new player
 // 			var playerMgr = LiteFacade.GetManager<PlayerManager>();

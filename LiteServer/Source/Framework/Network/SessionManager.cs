@@ -8,8 +8,8 @@ namespace Lite.Network
 {
 	class SessionManager : IManager
 	{
-		private Dictionary<long, ClientSession> sessionMap = new Dictionary<long, ClientSession>();
-		private Dictionary<long, WebClientSession> wsSessionMap = new Dictionary<long, WebClientSession>();
+		private Dictionary<long, IClientSession> sessionMap = new Dictionary<long, IClientSession>();
+		private HashSet<string> connectedAddress = new HashSet<string>();
 
 		public override void Init()
 		{
@@ -21,50 +21,34 @@ namespace Lite.Network
 
 		}
 
-		public void AddSession(ClientSession session)
+		public bool AddSession(IClientSession session)
 		{
-			if (sessionMap.ContainsValue(session))
+			string ip = session.ipAddress.ToString();
+			if (connectedAddress.Contains(ip))
 			{
-				return;
+				Log.Error("ipaddress repeated !");
+				return false;
 			}
+
 			long uid = GuidGenerator.GetLong();
 			session.sessionGuid = uid;
-			sessionMap.Add(uid, session);
+			sessionMap.Add(session.sessionGuid, session);
+			connectedAddress.Add(ip);
 			Log.Info(string.Format("new session. total {0}.", sessionMap.Count));
+
+			return true;
 		}
 
-		public void AddSession(WebClientSession session)
+		public void RemoveSession(IClientSession session)
 		{
-			if (wsSessionMap.ContainsValue(session))
-			{
-				return;
-			}
-			long uid = GuidGenerator.GetLong();
-			session.sessionGuid = uid;
-			wsSessionMap.Add(uid, session);
-			Log.Info(string.Format("new session. total {0}.", wsSessionMap.Count));
-		}
-
-		public void RemoveSession(long uid)
-		{
+			long uid = session.sessionGuid;
 			if (sessionMap.ContainsKey(uid))
 			{
 				sessionMap.Remove(uid);
+				connectedAddress.Remove(session.ipAddress.ToString());
 				Log.Info(string.Format("remove session. total {0}.", sessionMap.Count));
 			}
-			else if (wsSessionMap.ContainsKey(uid))
-			{
-				wsSessionMap.Remove(uid);
-				Log.Info(string.Format("remove session. total {0}.", wsSessionMap.Count));
-			}
 		}
-
-		/*public ClientSession Get(long uid)
-		{
-			ClientSession session = null;
-			sessionMap.TryGetValue(uid, out session);
-			return session;
-		}*/
 
 	}
 }

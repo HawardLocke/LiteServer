@@ -1,17 +1,16 @@
-syntax = "proto3";
 
 package IOGame;
 
 
 message csLogin
 {
-	string account = 1;
-	string password = 2;
+	required string account = 1;
+	required string password = 2;
 }
 
 message scLoginRet
 {
-	int32 result = 1;
+	required int32 result = 1;
 }
 
 message csLogout
@@ -21,15 +20,15 @@ message csLogout
 
 message scLogoutRet
 {
-	int32 result = 1;
+	required int32 result = 1;
 }
 
 message csEnterGame
 {
-	int32 roleIndex = 1;
+	required int32 roleIndex = 1;
 }
 
 message scEnterGameRet
 {
-	int32 result = 1;
+	required int32 result = 1;
 }

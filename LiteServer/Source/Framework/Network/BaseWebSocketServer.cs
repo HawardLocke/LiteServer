@@ -35,16 +35,22 @@ namespace Lite.Network
 
 		protected virtual void OnSessionConnected(WebClientSession session)
 		{
-			LiteFacade.GetManager<SessionManager>().AddSession(session);
+			Log.Warn("connect");
+			if (!LiteFacade.GetManager<SessionManager>().AddSession(session))
+			{
+				session.Close(CloseReason.ApplicationError);
+			}
 		}
 
 		protected virtual void OnSessionDisconnected(WebClientSession session, CloseReason reason)
 		{
-			LiteFacade.GetManager<SessionManager>().RemoveSession(session.sessionGuid);
+			Log.Warn("disconnect");
+			LiteFacade.GetManager<SessionManager>().RemoveSession(session);
 		}
 
 		protected virtual void OnDataReceived(WebClientSession session, byte[] requestInfo)
 		{
+			Log.Warn("recv data");
 			LiteFacade.GetManager<MessageManager>().HandlerMessage(session, requestInfo);
 		}
 

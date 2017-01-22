@@ -1,15 +1,20 @@
 
+using System.Net;
+
 namespace Lite.Network
 {
 
 	public interface IClientSession
 	{
 		long sessionGuid { get; set; }
+
 		long playerGuid { get; set; }
 
-		void SendPacket(ushort msgId, ProtoBuf.IExtensible msg);
+		IPAddress ipAddress { get; }
 
-		void SendPacket(ushort msgId, byte[] bytes);
+		void SendPacket(int msgId, ProtoBuf.IExtensible msg);
+
+		void SendPacket(int msgId, byte[] bytes);
 
 	}
 

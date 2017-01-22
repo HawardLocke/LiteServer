@@ -14,10 +14,10 @@ namespace Lite.Network
 
 	class MessageManager : IManager
 	{
-		
-		private Dictionary<ushort, MsgHandler> mHandlerMap = new Dictionary<ushort, MsgHandler>();
 
-		public void RegisterHandler(ushort msgId, MsgHandler handler)
+		private Dictionary<int, MsgHandler> mHandlerMap = new Dictionary<int, MsgHandler>();
+
+		public void RegisterHandler(int msgId, MsgHandler handler)
 		{
 			mHandlerMap.Add(msgId, handler);
 		}
@@ -48,7 +48,7 @@ namespace Lite.Network
 			try
 			{
 				ByteBuffer buffer = new ByteBuffer(requestInfo);
-				ushort msgId = buffer.ReadShort();
+				int msgId = buffer.ReadInt();
 
 				MsgHandler func = null;
 				mHandlerMap.TryGetValue(msgId, out func);

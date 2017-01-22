@@ -26,8 +26,8 @@ cc.Class({
 
     OnStartButtonTouch:function(event) {
 		var button = event.detail;
-        cc.log('click');
-        Network.init();
+        //cc.log('click');
+        Network.ConnectServer();
         MsgSender.name = this.nameInput.string;
         MsgSender.pswd = this.codeInput.string;
 	}
