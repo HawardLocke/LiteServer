@@ -71,6 +71,9 @@
     <Reference Include="SuperSocket.SocketEngine">
       <HintPath>Reference\SuperSocket.SocketEngine.dll</HintPath>
     </Reference>
+    <Reference Include="SuperSocket.WebSocket">
+      <HintPath>Reference\SuperSocket.WebSocket.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -159,13 +162,16 @@
     <Compile Include="Source\Framework\Entitas\Systems.cs" />
     <Compile Include="Source\Framework\Http\HttpServer.cs" />
     <Compile Include="Source\Framework\Http\HttpService.cs" />
-    <Compile Include="Source\Framework\Network\BaseServer.cs" />
+    <Compile Include="Source\Framework\Network\BaseSocketServer.cs" />
+    <Compile Include="Source\Framework\Network\BaseWebSocketServer.cs" />
     <Compile Include="Source\Framework\Network\ByteBuffer.cs" />
     <Compile Include="Source\Framework\Network\ClientReceiveFilter.cs" />
     <Compile Include="Source\Framework\Network\ClientSession.cs" />
+    <Compile Include="Source\Framework\Network\IClientSession.cs" />
     <Compile Include="Source\Framework\Network\MessageManager.cs" />
     <Compile Include="Source\Framework\Network\Packet.cs" />
     <Compile Include="Source\Framework\Network\SessionManager.cs" />
+    <Compile Include="Source\Framework\Network\WebClientSession.cs" />
     <Compile Include="Source\Framework\Template\TabReader.cs" />
     <Compile Include="Source\Framework\Template\TemplateData.cs" />
     <Compile Include="Source\Framework\Template\TemplateManager.cs" />

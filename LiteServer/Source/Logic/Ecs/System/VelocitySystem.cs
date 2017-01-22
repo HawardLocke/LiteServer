@@ -18,7 +18,7 @@ namespace Lite
 
 		public void Execute()
 		{
-			Log.Warn("vel");
+			//Log.Warn("vel");
 			foreach (var group in _movableGroups)
 			{
 				foreach (var e in group.GetEntities())

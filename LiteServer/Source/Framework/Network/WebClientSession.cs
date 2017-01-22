@@ -1,15 +1,16 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Text;
 using Lite.Utility;
 using SuperSocket.SocketBase;
 using SuperSocket.SocketBase.Command;
 using SuperSocket.SocketBase.Protocol;
+using SuperSocket.WebSocket;
 
 
 namespace Lite.Network
 {
-	public class ClientSession : AppSession<ClientSession, BinaryRequestInfo>, IClientSession
+	public class WebClientSession : WebSocketSession<WebClientSession>, IClientSession
 	{
 		public long sessionGuid { get; set; }
 		public long playerGuid { get; set; }
@@ -27,11 +28,6 @@ namespace Lite.Network
 		protected override void HandleException(Exception e)
 		{
 			//this.Send("Application error: {0}", e.Message);
-		}
-
-		protected override void HandleUnknownRequest(BinaryRequestInfo requestInfo)
-		{
-			//this.Send("Unknow request");
 		}
 
 		public void SendPacket(ushort msgId, ProtoBuf.IExtensible msg)

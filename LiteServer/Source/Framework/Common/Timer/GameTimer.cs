@@ -7,11 +7,11 @@ namespace Lite
 	public class GameTimer
 	{
 		private static long startTick = 0;
-		private static long lastTick = 0;
+		//private static long lastTick = 0;
 
 		public static void Start()
 		{
-			startTick = DateTime.Now.Ticks;
+			//startTick = DateTime.Now.Ticks;
 		}
 
 		// in milliseconds

@@ -10,7 +10,7 @@ using SuperSocket.SocketBase.Protocol;
 
 namespace Lite.Network
 {
-	using MsgHandler = Func<ClientSession,byte[],int>;
+	using MsgHandler = Func<IClientSession,byte[],int>;
 
 	class MessageManager : IManager
 	{
@@ -38,6 +38,27 @@ namespace Lite.Network
 				}
 			}
 			catch(Exception e)
+			{
+				Log.Error(e.ToString());
+			}
+		}
+
+		public void HandlerMessage(WebClientSession session, byte[] requestInfo)
+		{
+			try
+			{
+				ByteBuffer buffer = new ByteBuffer(requestInfo);
+				ushort msgId = buffer.ReadShort();
+
+				MsgHandler func = null;
+				mHandlerMap.TryGetValue(msgId, out func);
+				if (func != null)
+				{
+					byte[] bytes = buffer.ReadBytes();
+					func(session, bytes);
+				}
+			}
+			catch (Exception e)
 			{
 				Log.Error(e.ToString());
 			}

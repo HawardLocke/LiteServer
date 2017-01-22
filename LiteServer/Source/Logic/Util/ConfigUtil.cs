@@ -26,7 +26,7 @@ namespace Lite
 		{
 			try
 			{
-				Log.Info("loading/updating config...");
+				//Log.Info("loading/updating config...");
 
 				ServerTickTime = Int32.Parse(GetValue("ServerTickTime"));
 				ConfigUpdateTime = Int32.Parse(GetValue("ConfigUpdateTime"));
@@ -38,7 +38,7 @@ namespace Lite
 				WebUrl = GetValue("WebUrl");
 				ZeromqUri = GetValue("ZeromqUri");
 
-				Log.Info("load/update config done.");
+				//Log.Info("load/update config done.");
 			}
 			catch(Exception e)
 			{

@@ -17,7 +17,7 @@ namespace Lite
 			msgMgr.RegisterHandler((ushort)PBX.MsgID.cgEnterGame, OncgEnterGame);
 		}
 
-		int OncgLogin(ClientSession session, byte[] bytes)
+		int OncgLogin(IClientSession session, byte[] bytes)
 		{
 			cgLogin loginMsg = ProtoUtil.ParseFrom<cgLogin>(bytes);
 			//cgLogin loginMsg = cgLogin.Parser.ParseFrom(bytes);
@@ -32,7 +32,7 @@ namespace Lite
 			return 0;
 		}
 
-		int OncgEnterGame(ClientSession session, byte[] bytes)
+		int OncgEnterGame(IClientSession session, byte[] bytes)
 		{
 			cgEnterGame recvMsg = ProtoUtil.ParseFrom<cgEnterGame>(bytes); //cgEnterGame.Parser.ParseFrom(bytes);
 			Log.Info(string.Format("recv EnterGame,{0}.", recvMsg.roleIndex));

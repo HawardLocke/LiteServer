@@ -7,10 +7,10 @@ using SuperSocket.SocketBase.Protocol;
 
 namespace Lite.Network
 {
-	class BaseServer : AppServer<ClientSession, BinaryRequestInfo>
+	class BaseSocketServer : AppServer<ClientSession, BinaryRequestInfo>
 	{
 
-		public BaseServer()
+		public BaseSocketServer()
 			: base(new DefaultReceiveFilterFactory<ClientReceiveFilter, BinaryRequestInfo>())
 		{
 		}
@@ -46,7 +46,7 @@ namespace Lite.Network
 
 		protected virtual void OnSessionDisconnected(ClientSession session, CloseReason reason)
 		{
-			LiteFacade.GetManager<SessionManager>().RemoveSession(session.SessionGuid);
+			LiteFacade.GetManager<SessionManager>().RemoveSession(session.sessionGuid);
 		}
 
 		protected virtual void OnRequestReceived(ClientSession session, BinaryRequestInfo requestInfo)

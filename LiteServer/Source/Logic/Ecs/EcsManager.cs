@@ -18,7 +18,7 @@ namespace Lite
 			systems.Initialize();
 
 			//
-			test();
+			//test();
 		}
 
 		public override void Destroy()
@@ -32,7 +32,7 @@ namespace Lite
 			systems.Cleanup();
 		}
 
-		public void GetSystem()
+		//public void GetSystem()
 
 		private void test()
 		{

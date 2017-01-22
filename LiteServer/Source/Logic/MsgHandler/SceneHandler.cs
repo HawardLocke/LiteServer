@@ -14,7 +14,7 @@ namespace Lite
 			msgMgr.RegisterHandler((ushort)PBX.MsgID.cgMoveTo, OnMoveTo);
 		}
 
-		int OnEnterSceneOk(ClientSession session, byte[] bytes)
+		int OnEnterSceneOk(IClientSession session, byte[] bytes)
 		{
 // 			var playerMgr = LiteFacade.GetManager<PlayerManager>();
 // 			var sceneMgr = LiteFacade.GetManager<SceneManager>();
@@ -26,7 +26,7 @@ namespace Lite
 			return 0;
 		}
 
-		int OnMoveTo(ClientSession session, byte[] bytes)
+		int OnMoveTo(IClientSession session, byte[] bytes)
 		{
 			// notify nearby players.
 

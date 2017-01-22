@@ -10,7 +10,7 @@ using Lite.Utility;
 namespace Lite
 {
 
-	class GameServer : Network.BaseServer
+	class GameServer : Network.BaseWebSocketServer
 	{
 		private LoopTimer configTimer;
 		private LoopTimer tickTimer;
