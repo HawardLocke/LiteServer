@@ -17,6 +17,19 @@ cc.Class({
 		this.codeInput = cc.find("Canvas/userInfo/pswdEdit").getComponent(cc.EditBox);
 		this.nameInput.string = 'Locke';
 		this.codeInput.string = '******';
+cc.log('..........on load');
+        // test google
+        var login_pb = require('./protobuf/login_pb');
+        var login = new login_pb.cgLogin();
+        login.setAccount(this.nameInput.string);
+        login.setPassword(this.codeInput.string);
+        // Serializes to a UInt8Array.
+var bytes = login.serializeBinary();
+
+var login2 = login_pb.cgLogin.deserializeBinary(bytes);
+cc.log(login2.getAccount());
+cc.log(login2.getPassword());
+cc.log('..........on load 2333');
     },
 
     // called every frame, uncomment this function to activate update callback
