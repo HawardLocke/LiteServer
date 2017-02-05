@@ -1,3 +1,6 @@
+
+const Game = require('Game');
+
 cc.Class({
     extends: cc.Component,
 
@@ -7,8 +10,9 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
-        var Protocol = require('Protocol');
-        Protocol.Init();
+        Game.Init();
+        //var Protocol = require('Protocol');
+        //Protocol.Init();
     },
 
     // called every frame, uncomment this function to activate update callback

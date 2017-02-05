@@ -35,7 +35,7 @@ namespace Lite.Network
 
 		protected virtual void OnSessionConnected(WebClientSession session)
 		{
-			Log.Warn("connect");
+			//Log.Warn("connect");
 			if (!LiteFacade.GetManager<SessionManager>().AddSession(session))
 			{
 				session.Close(CloseReason.ApplicationError);
@@ -44,13 +44,13 @@ namespace Lite.Network
 
 		protected virtual void OnSessionDisconnected(WebClientSession session, CloseReason reason)
 		{
-			Log.Warn("disconnect");
+			//Log.Warn("disconnect");
 			LiteFacade.GetManager<SessionManager>().RemoveSession(session);
 		}
 
 		protected virtual void OnDataReceived(WebClientSession session, byte[] requestInfo)
 		{
-			Log.Warn("recv data");
+			//Log.Warn("recv data");
 			LiteFacade.GetManager<MessageManager>().HandlerMessage(session, requestInfo);
 		}
 

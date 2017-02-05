@@ -64,7 +64,7 @@ namespace Lite
 			playerInfo.y = 666;
 			enterMsg.playerInfo = playerInfo;*/
 
-			//Broadcast((ushort)PBX.MsgID.gcOtherEnterScene, enterMsg);
+			//Broadcast((ushort)MsgID.gcOtherEnterScene, enterMsg);
 		}
 
 		public void OnPlayerEnterDone()
@@ -81,7 +81,7 @@ namespace Lite
 				playerInfo.y = 666;
 				nearbyInfo.playerInfoList.Add(playerInfo);
 			}
-			player.SendPacket((ushort)PBX.MsgID.gcNearbyPlayerInfo, nearbyInfo);*/
+			player.SendPacket((ushort)MsgID.gcNearbyPlayerInfo, nearbyInfo);*/
 		}
 
 	}

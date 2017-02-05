@@ -30,7 +30,7 @@ namespace Lite.Utility
 		{
 			ByteBuffer buffer = new ByteBuffer(requestInfo.Body);
 			int commandId = buffer.ReadShort();
-			PBX.MsgID msgId = (PBX.MsgID)commandId;
+			MsgID msgId = (MsgID)commandId;
 			Console.WriteLine("OnRequestReceived : " + msgId);
 
 			byte[] bytes = buffer.ReadBytes();
@@ -47,7 +47,7 @@ namespace Lite.Utility
 
 			byte[] bytesRet = Google.Protobuf.MessageExtensions.ToByteArray(loginRet);
 
-			SendMessage(session, PBX.MsgID.Login, bytesRet);
+			SendMessage(session, MsgID.Login, bytesRet);
 		}*/
 	}
 }

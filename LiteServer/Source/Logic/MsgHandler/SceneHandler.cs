@@ -1,4 +1,5 @@
 
+using Protocol;
 using Lite.Network;
 
 
@@ -10,8 +11,8 @@ namespace Lite
 		public void Register()
 		{
 			var msgMgr = LiteFacade.GetManager<MessageManager>();
-			msgMgr.RegisterHandler((ushort)PBX.MsgID.cgEnterSceneDone, OnEnterSceneOk);
-			msgMgr.RegisterHandler((ushort)PBX.MsgID.cgMoveTo, OnMoveTo);
+			msgMgr.RegisterHandler((ushort)MsgID.cgEnterSceneDone, OnEnterSceneOk);
+			msgMgr.RegisterHandler((ushort)MsgID.cgMoveTo, OnMoveTo);
 		}
 
 		int OnEnterSceneOk(IClientSession session, byte[] bytes)

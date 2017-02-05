@@ -34,6 +34,12 @@ namespace Lite.Network
 			//this.Send("Application error: {0}", e.Message);
 		}
 
+		public void SendPacket(int msgId, Google.Protobuf.IMessage msg)
+		{
+			byte[] data = Google.Protobuf.MessageExtensions.ToByteArray(msg);
+			this.SendPacket(msgId, data);
+		}
+
 		public void SendPacket(int msgId, ProtoBuf.IExtensible msg)
 		{
 			byte[] data = null;
@@ -48,21 +54,22 @@ namespace Lite.Network
 
 		public void SendPacket(int msgId, byte[] bytes)
 		{
-			ByteBuffer buffer = new ByteBuffer();
-			buffer.WriteBytes(bytes);
-			byte[] message = buffer.ToBytes();
-
-			using (MemoryStream ms = new MemoryStream())
+			if (this.Connected)
 			{
-				ms.Position = 0;
-				BinaryWriter writer = new BinaryWriter(ms);
-				int msglen = message.Length + sizeof(int);
-				writer.Write(msglen);
-				writer.Write(msgId);
-				writer.Write(message);
-				writer.Flush();
-				if (this.Connected)
+				/*ByteBuffer buffer = new ByteBuffer();
+				buffer.WriteBytes(bytes);
+				byte[] message = buffer.ToBytes();*/
+
+				using (MemoryStream ms = new MemoryStream())
 				{
+					ms.Position = 0;
+					BinaryWriter writer = new BinaryWriter(ms);
+					int msglen = bytes.Length/* + sizeof(int)*/;
+					writer.Write(msglen);
+					writer.Write(msgId);
+					writer.Write(bytes);
+					writer.Flush();
+
 					byte[] array = ms.ToArray();
 					this.Send(array, 0, array.Length);
 				}

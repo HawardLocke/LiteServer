@@ -37,6 +37,12 @@ namespace Lite.Network
 			//this.Send("Unknow request");
 		}
 
+		public void SendPacket(int msgId, Google.Protobuf.IMessage msg)
+		{
+			byte[] data = Google.Protobuf.MessageExtensions.ToByteArray(msg);
+			this.SendPacket(msgId, data);
+		}
+
 		public void SendPacket(int msgId, ProtoBuf.IExtensible msg)
 		{
 			byte[] data = null;

@@ -17,7 +17,7 @@ cc.Class({
 		this.codeInput = cc.find("Canvas/userInfo/pswdEdit").getComponent(cc.EditBox);
 		this.nameInput.string = 'Locke';
 		this.codeInput.string = '******';
-cc.log('..........on load');
+/*cc.log('..........on load');
         // test google
         var login_pb = require('./protobuf/login_pb');
         var login = new login_pb.cgLogin();
@@ -29,7 +29,7 @@ var bytes = login.serializeBinary();
 var login2 = login_pb.cgLogin.deserializeBinary(bytes);
 cc.log(login2.getAccount());
 cc.log(login2.getPassword());
-cc.log('..........on load 2333');
+cc.log('..........on load 2333');*/
     },
 
     // called every frame, uncomment this function to activate update callback
@@ -39,10 +39,11 @@ cc.log('..........on load 2333');
 
     OnStartButtonTouch:function(event) {
 		var button = event.detail;
-        //cc.log('click');
-        Network.ConnectServer();
+        //cc.log('click login');
         MsgSender.name = this.nameInput.string;
         MsgSender.pswd = this.codeInput.string;
+        Network.ConnectServer();
+        
 	}
 
 });

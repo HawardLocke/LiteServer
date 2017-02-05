@@ -12,6 +12,8 @@ namespace Lite.Network
 
 		IPAddress ipAddress { get; }
 
+		void SendPacket(int msgId, Google.Protobuf.IMessage msg);
+
 		void SendPacket(int msgId, ProtoBuf.IExtensible msg);
 
 		void SendPacket(int msgId, byte[] bytes);

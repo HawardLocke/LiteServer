@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 using ProtoBuf;
-using Lite.Protocol;
+using Protocol;
 using Lite.Network;
 
 
@@ -13,15 +13,16 @@ namespace Lite
 		public void Register()
 		{
 			var msgMgr = LiteFacade.GetManager<MessageManager>();
-			msgMgr.RegisterHandler((ushort)PBX.MsgID.cgLogin, OncgLogin);
-			msgMgr.RegisterHandler((ushort)PBX.MsgID.cgEnterGame, OncgEnterGame);
+			msgMgr.RegisterHandler((int)MsgID.csLogin, OncsLogin);
+			msgMgr.RegisterHandler((int)MsgID.csEnterGame, OncsEnterGame);
 		}
 
-		int OncgLogin(IClientSession session, byte[] bytes)
+		int OncsLogin(IClientSession session, byte[] bytes)
 		{
-			//cgLogin loginMsg = ProtoUtil.ParseFrom<cgLogin>(bytes);
+			csLogin loginMsg = csLogin.Parser.ParseFrom(bytes);
+			//csLogin loginMsg = ProtoUtil.ParseFrom<csLogin>(bytes);
 
-			cgLogin loginMsg = new cgLogin
+			/*csLogin loginMsg = new csLogin
 			{
 				account = "Locke",
 				password = "******"
@@ -33,27 +34,27 @@ namespace Lite
 				ProtoBuf.Serializer.Serialize(stream, loginMsg);
 				stream.Flush();
 				data = stream.ToArray();
-			}
+			}*/
 
-			Log.Info(string.Format("recv Login,{0},{1}.", loginMsg.account, loginMsg.password));
+			Log.Info(string.Format("recv Login,{0},{1}.", loginMsg.Account, loginMsg.Password));
 
-			gcLoginRet loginRet = new gcLoginRet
+			scLoginRet loginRet = new scLoginRet
 			{
-				result = 0
+				Result = 0
 			};
-			session.SendPacket((int)PBX.MsgID.gcLoginRet, loginRet);
+			session.SendPacket((int)MsgID.scLoginRet, loginRet);
 
 			return 0;
 		}
 
-		int OncgEnterGame(IClientSession session, byte[] bytes)
+		int OncsEnterGame(IClientSession session, byte[] bytes)
 		{
-			cgEnterGame recvMsg = ProtoUtil.ParseFrom<cgEnterGame>(bytes); //cgEnterGame.Parser.ParseFrom(bytes);
-			Log.Info(string.Format("recv EnterGame,{0}.", recvMsg.roleIndex));
+			csEnterGame recvMsg = csEnterGame.Parser.ParseFrom(bytes);
+			Log.Info(string.Format("recv EnterGame,{0}.", recvMsg.RoleIndex));
 
-			gcEnterGameRet enterRet = new gcEnterGameRet();
-			enterRet.result = 0;
-			session.SendPacket((int)PBX.MsgID.gcEnterGameRet, enterRet);
+			scEnterGameRet enterRet = new scEnterGameRet();
+			enterRet.Result = 0;
+			session.SendPacket((int)MsgID.scEnterGameRet, enterRet);
 
 			// new player
 // 			var playerMgr = LiteFacade.GetManager<PlayerManager>();
@@ -68,9 +69,9 @@ namespace Lite
 // 			var targetScene = sceneMgr.MainScene;
 // 			targetScene.AddPlayer(playerGuid, player);
 // 
-// 			gcEnterScene enterSceneMsg = new gcEnterScene();
+// 			scEnterScene enterSceneMsg = new scEnterScene();
 // 			enterSceneMsg.sceneId = targetScene.SceneID;
-// 			player.SendPacket((ushort)PBX.MsgID.gcEnterScene, enterSceneMsg);
+// 			player.SendPacket((ushort)MsgID.scEnterScene, enterSceneMsg);
 
 			return 0;
 		}

@@ -50,6 +50,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Google.Protobuf">
+      <HintPath>Reference\Google.Protobuf.dll</HintPath>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>Reference\log4net.dll</HintPath>
     </Reference>
@@ -208,10 +211,10 @@
     <Compile Include="Source\Logic\MsgHandler\LoginHandler.cs" />
     <Compile Include="Source\Logic\MsgHandler\MsgHandlerManager.cs" />
     <Compile Include="Source\Logic\MsgHandler\SceneHandler.cs" />
-    <Compile Include="Source\Logic\Protocol\auto_gen\chat_pb.cs" />
-    <Compile Include="Source\Logic\Protocol\auto_gen\login_pb.cs" />
+    <Compile Include="Source\Logic\Protocol\auto_gen\Chat.cs" />
+    <Compile Include="Source\Logic\Protocol\auto_gen\Login.cs" />
     <Compile Include="Source\Logic\Protocol\auto_gen\MsgID.cs" />
-    <Compile Include="Source\Logic\Protocol\auto_gen\scene_pb.cs" />
+    <Compile Include="Source\Logic\Protocol\auto_gen\Scene.cs" />
     <Compile Include="Source\Logic\Protocol\ProtoUtil.cs" />
     <Compile Include="Source\Logic\Scene\Scene.cs" />
     <Compile Include="Source\Logic\Scene\SceneManager.cs" />
