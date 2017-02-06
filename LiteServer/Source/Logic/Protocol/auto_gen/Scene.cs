@@ -22,35 +22,62 @@ namespace Protocol {
     static SceneReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJwcm90b3Mvc2NlbmUucHJvdG8SCFByb3RvY29sIh8KDGdjRW50ZXJTY2Vu",
-            "ZRIPCgdzY2VuZUlkGAEgASgFIhIKEGNnRW50ZXJTY2VuZURvbmUiIAoLY2dF",
-            "eGl0U2NlbmUSEQoJcm9sZUluZGV4GAEgASgFIiAKDmdjRXhpdFNjZW5lUmV0",
-            "Eg4KBnJlc3VsdBgBIAEoBSIuChFnY090aGVyRW50ZXJTY2VuZRILCgNyZXQY",
-            "ASABKAUSDAoEZ3VpZBgCIAEoBSIiChJnY05lYXJieVBsYXllckluZm8SDAoE",
-            "ZnVjaxgBIAEoCSIrCghjZ01vdmVUbxIJCgF4GAEgASgCEgkKAXkYAiABKAIS",
-            "CQoBehgDIAEoAiIgCghnY01vdmVUbxIJCgF4GAEgASgCEgkKAXkYAiABKAJi",
-            "BnByb3RvMw=="));
+            "ChJwcm90b3Mvc2NlbmUucHJvdG8SCFByb3RvY29sIlYKDnNjTW92ZW1lbnRJ",
+            "bmZvEgkKAXgYASABKAISCQoBeRgCIAEoAhIKCgJ2eBgDIAEoAhIKCgJ2eRgE",
+            "IAEoAhIKCgJmeBgFIAEoAhIKCgJmeRgGIAEoAiJmCgxzY1BsYXllckluZm8S",
+            "DAoEZ3VpZBgBIAEoAxIMCgRuYW1lGAIgASgJEioKCG1vdmVtZW50GAMgASgL",
+            "MhguUHJvdG9jb2wuc2NNb3ZlbWVudEluZm8SDgoGZW5lcmd5GAYgASgFIiwK",
+            "C3NjU2NlbmVJbmZvEg0KBXdpZHRoGAEgASgFEg4KBmhlaWdodBgCIAEoBSI4",
+            "ChBzY0VuZXJneUJhbGxJbmZvEg4KBmVuZXJneRgBIAEoBRIJCgF4GAIgASgC",
+            "EgkKAXkYAyABKAIicwoMc2NCdWxsZXRJbmZvEioKCG1vdmVtZW50GAEgASgL",
+            "MhguUHJvdG9jb2wuc2NNb3ZlbWVudEluZm8SEgoKcGxheWVyR3VpZBgCIAEo",
+            "AxIQCghidWxsZXRJZBgDIAEoBRIRCgl0aW1lc3RhbXAYBCABKAMiCAoGY3NK",
+            "b2luIkkKDnNjUGxheWVySm9pbmVkEioKCnBsYXllckluZm8YASABKAsyFi5Q",
+            "cm90b2NvbC5zY1BsYXllckluZm8SCwoDZXh0GAIgASgJIhwKDHNjUGxheWVy",
+            "UXVpdBIMCgRndWlkGAEgASgDIiUKDWNzTW92ZVRvd2FyZHMSCQoBeBgBIAEo",
+            "AhIJCgF5GAIgASgCIjoKDHNjUGxheWVyTW92ZRIqCghtb3ZlbWVudBgBIAEo",
+            "CzIYLlByb3RvY29sLnNjTW92ZW1lbnRJbmZvIhwKBmNzUGluZxISCgpjbGll",
+            "bnRUaW1lGAEgASgDIj4KBnNjUGluZxIRCglwaW5nQ291bnQYASABKAUSDQoF",
+            "ZGVsYXkYAiABKAUSEgoKc2VydmVyVGltZRgDIAEoAyIlChNjc0NvbGxlY3RF",
+            "bmVyZ3lCYWxsEg4KBmJhbGxJZBgBIAEoBSI5ChNzY0NvbGxlY3RFbmVyZ3lC",
+            "YWxsEhIKCnBsYXllckd1aWQYASABKAMSDgoGYmFsbElkGAIgASgFIjcKDnNj",
+            "RW5lcmd5Q2hhbmdlEhIKCnBsYXllckd1aWQYASABKAMSEQoJbmV3RW5lcmd5",
+            "GAIgASgFIh8KB2NzU2hvb3QSCQoBeBgBIAEoAhIJCgF5GAIgASgCIl0KB3Nj",
+            "U2hvb3QSEgoKcGxheWVyR3VpZBgBIAEoAxIQCghidWxsZXRJZBgCIAEoBRIJ",
+            "CgF4GAMgASgCEgkKAXkYBCABKAISCgoCdngYBSABKAISCgoCdnkYBiABKAIi",
+            "QwoLc2NIaXRQbGF5ZXISEgoKcGxheWVyR3VpZBgBIAEoAxIQCghidWxsZXRJ",
+            "ZBgCIAEoBRIOCgZkYW1hZ2UYAyABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.gcEnterScene), global::Protocol.gcEnterScene.Parser, new[]{ "SceneId" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.cgEnterSceneDone), global::Protocol.cgEnterSceneDone.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.cgExitScene), global::Protocol.cgExitScene.Parser, new[]{ "RoleIndex" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.gcExitSceneRet), global::Protocol.gcExitSceneRet.Parser, new[]{ "Result" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.gcOtherEnterScene), global::Protocol.gcOtherEnterScene.Parser, new[]{ "Ret", "Guid" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.gcNearbyPlayerInfo), global::Protocol.gcNearbyPlayerInfo.Parser, new[]{ "Fuck" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.cgMoveTo), global::Protocol.cgMoveTo.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.gcMoveTo), global::Protocol.gcMoveTo.Parser, new[]{ "X", "Y" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.scMovementInfo), global::Protocol.scMovementInfo.Parser, new[]{ "X", "Y", "Vx", "Vy", "Fx", "Fy" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.scPlayerInfo), global::Protocol.scPlayerInfo.Parser, new[]{ "Guid", "Name", "Movement", "Energy" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.scSceneInfo), global::Protocol.scSceneInfo.Parser, new[]{ "Width", "Height" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.scEnergyBallInfo), global::Protocol.scEnergyBallInfo.Parser, new[]{ "Energy", "X", "Y" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.scBulletInfo), global::Protocol.scBulletInfo.Parser, new[]{ "Movement", "PlayerGuid", "BulletId", "Timestamp" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.csJoin), global::Protocol.csJoin.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.scPlayerJoined), global::Protocol.scPlayerJoined.Parser, new[]{ "PlayerInfo", "Ext" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.scPlayerQuit), global::Protocol.scPlayerQuit.Parser, new[]{ "Guid" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.csMoveTowards), global::Protocol.csMoveTowards.Parser, new[]{ "X", "Y" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.scPlayerMove), global::Protocol.scPlayerMove.Parser, new[]{ "Movement" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.csPing), global::Protocol.csPing.Parser, new[]{ "ClientTime" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.scPing), global::Protocol.scPing.Parser, new[]{ "PingCount", "Delay", "ServerTime" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.csCollectEnergyBall), global::Protocol.csCollectEnergyBall.Parser, new[]{ "BallId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.scCollectEnergyBall), global::Protocol.scCollectEnergyBall.Parser, new[]{ "PlayerGuid", "BallId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.scEnergyChange), global::Protocol.scEnergyChange.Parser, new[]{ "PlayerGuid", "NewEnergy" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.csShoot), global::Protocol.csShoot.Parser, new[]{ "X", "Y" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.scShoot), global::Protocol.scShoot.Parser, new[]{ "PlayerGuid", "BulletId", "X", "Y", "Vx", "Vy" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.scHitPlayer), global::Protocol.scHitPlayer.Parser, new[]{ "PlayerGuid", "BulletId", "Damage" }, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
-  public sealed partial class gcEnterScene : pb::IMessage<gcEnterScene> {
-    private static readonly pb::MessageParser<gcEnterScene> _parser = new pb::MessageParser<gcEnterScene>(() => new gcEnterScene());
+  public sealed partial class scMovementInfo : pb::IMessage<scMovementInfo> {
+    private static readonly pb::MessageParser<scMovementInfo> _parser = new pb::MessageParser<scMovementInfo>(() => new scMovementInfo());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<gcEnterScene> Parser { get { return _parser; } }
+    public static pb::MessageParser<scMovementInfo> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -63,724 +90,25 @@ namespace Protocol {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public gcEnterScene() {
+    public scMovementInfo() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public gcEnterScene(gcEnterScene other) : this() {
-      sceneId_ = other.sceneId_;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public gcEnterScene Clone() {
-      return new gcEnterScene(this);
-    }
-
-    /// <summary>Field number for the "sceneId" field.</summary>
-    public const int SceneIdFieldNumber = 1;
-    private int sceneId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int SceneId {
-      get { return sceneId_; }
-      set {
-        sceneId_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as gcEnterScene);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(gcEnterScene other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (SceneId != other.SceneId) return false;
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (SceneId != 0) hash ^= SceneId.GetHashCode();
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (SceneId != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(SceneId);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (SceneId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SceneId);
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(gcEnterScene other) {
-      if (other == null) {
-        return;
-      }
-      if (other.SceneId != 0) {
-        SceneId = other.SceneId;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-          case 8: {
-            SceneId = input.ReadInt32();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class cgEnterSceneDone : pb::IMessage<cgEnterSceneDone> {
-    private static readonly pb::MessageParser<cgEnterSceneDone> _parser = new pb::MessageParser<cgEnterSceneDone>(() => new cgEnterSceneDone());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<cgEnterSceneDone> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.SceneReflection.Descriptor.MessageTypes[1]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public cgEnterSceneDone() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public cgEnterSceneDone(cgEnterSceneDone other) : this() {
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public cgEnterSceneDone Clone() {
-      return new cgEnterSceneDone(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as cgEnterSceneDone);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(cgEnterSceneDone other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(cgEnterSceneDone other) {
-      if (other == null) {
-        return;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class cgExitScene : pb::IMessage<cgExitScene> {
-    private static readonly pb::MessageParser<cgExitScene> _parser = new pb::MessageParser<cgExitScene>(() => new cgExitScene());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<cgExitScene> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.SceneReflection.Descriptor.MessageTypes[2]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public cgExitScene() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public cgExitScene(cgExitScene other) : this() {
-      roleIndex_ = other.roleIndex_;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public cgExitScene Clone() {
-      return new cgExitScene(this);
-    }
-
-    /// <summary>Field number for the "roleIndex" field.</summary>
-    public const int RoleIndexFieldNumber = 1;
-    private int roleIndex_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int RoleIndex {
-      get { return roleIndex_; }
-      set {
-        roleIndex_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as cgExitScene);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(cgExitScene other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (RoleIndex != other.RoleIndex) return false;
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (RoleIndex != 0) hash ^= RoleIndex.GetHashCode();
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (RoleIndex != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(RoleIndex);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (RoleIndex != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RoleIndex);
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(cgExitScene other) {
-      if (other == null) {
-        return;
-      }
-      if (other.RoleIndex != 0) {
-        RoleIndex = other.RoleIndex;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-          case 8: {
-            RoleIndex = input.ReadInt32();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class gcExitSceneRet : pb::IMessage<gcExitSceneRet> {
-    private static readonly pb::MessageParser<gcExitSceneRet> _parser = new pb::MessageParser<gcExitSceneRet>(() => new gcExitSceneRet());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<gcExitSceneRet> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.SceneReflection.Descriptor.MessageTypes[3]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public gcExitSceneRet() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public gcExitSceneRet(gcExitSceneRet other) : this() {
-      result_ = other.result_;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public gcExitSceneRet Clone() {
-      return new gcExitSceneRet(this);
-    }
-
-    /// <summary>Field number for the "result" field.</summary>
-    public const int ResultFieldNumber = 1;
-    private int result_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Result {
-      get { return result_; }
-      set {
-        result_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as gcExitSceneRet);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(gcExitSceneRet other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Result != other.Result) return false;
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Result != 0) hash ^= Result.GetHashCode();
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Result != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(Result);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Result != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Result);
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(gcExitSceneRet other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Result != 0) {
-        Result = other.Result;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-          case 8: {
-            Result = input.ReadInt32();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class gcOtherEnterScene : pb::IMessage<gcOtherEnterScene> {
-    private static readonly pb::MessageParser<gcOtherEnterScene> _parser = new pb::MessageParser<gcOtherEnterScene>(() => new gcOtherEnterScene());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<gcOtherEnterScene> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.SceneReflection.Descriptor.MessageTypes[4]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public gcOtherEnterScene() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public gcOtherEnterScene(gcOtherEnterScene other) : this() {
-      ret_ = other.ret_;
-      guid_ = other.guid_;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public gcOtherEnterScene Clone() {
-      return new gcOtherEnterScene(this);
-    }
-
-    /// <summary>Field number for the "ret" field.</summary>
-    public const int RetFieldNumber = 1;
-    private int ret_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Ret {
-      get { return ret_; }
-      set {
-        ret_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "guid" field.</summary>
-    public const int GuidFieldNumber = 2;
-    private int guid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Guid {
-      get { return guid_; }
-      set {
-        guid_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as gcOtherEnterScene);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(gcOtherEnterScene other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Ret != other.Ret) return false;
-      if (Guid != other.Guid) return false;
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Ret != 0) hash ^= Ret.GetHashCode();
-      if (Guid != 0) hash ^= Guid.GetHashCode();
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Ret != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(Ret);
-      }
-      if (Guid != 0) {
-        output.WriteRawTag(16);
-        output.WriteInt32(Guid);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Ret != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Ret);
-      }
-      if (Guid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Guid);
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(gcOtherEnterScene other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Ret != 0) {
-        Ret = other.Ret;
-      }
-      if (other.Guid != 0) {
-        Guid = other.Guid;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-          case 8: {
-            Ret = input.ReadInt32();
-            break;
-          }
-          case 16: {
-            Guid = input.ReadInt32();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class gcNearbyPlayerInfo : pb::IMessage<gcNearbyPlayerInfo> {
-    private static readonly pb::MessageParser<gcNearbyPlayerInfo> _parser = new pb::MessageParser<gcNearbyPlayerInfo>(() => new gcNearbyPlayerInfo());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<gcNearbyPlayerInfo> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.SceneReflection.Descriptor.MessageTypes[5]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public gcNearbyPlayerInfo() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public gcNearbyPlayerInfo(gcNearbyPlayerInfo other) : this() {
-      fuck_ = other.fuck_;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public gcNearbyPlayerInfo Clone() {
-      return new gcNearbyPlayerInfo(this);
-    }
-
-    /// <summary>Field number for the "fuck" field.</summary>
-    public const int FuckFieldNumber = 1;
-    private string fuck_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Fuck {
-      get { return fuck_; }
-      set {
-        fuck_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as gcNearbyPlayerInfo);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(gcNearbyPlayerInfo other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Fuck != other.Fuck) return false;
-      return true;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Fuck.Length != 0) hash ^= Fuck.GetHashCode();
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Fuck.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Fuck);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Fuck.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Fuck);
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(gcNearbyPlayerInfo other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Fuck.Length != 0) {
-        Fuck = other.Fuck;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            input.SkipLastField();
-            break;
-          case 10: {
-            Fuck = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class cgMoveTo : pb::IMessage<cgMoveTo> {
-    private static readonly pb::MessageParser<cgMoveTo> _parser = new pb::MessageParser<cgMoveTo>(() => new cgMoveTo());
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<cgMoveTo> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Protocol.SceneReflection.Descriptor.MessageTypes[6]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public cgMoveTo() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public cgMoveTo(cgMoveTo other) : this() {
+    public scMovementInfo(scMovementInfo other) : this() {
       x_ = other.x_;
       y_ = other.y_;
-      z_ = other.z_;
+      vx_ = other.vx_;
+      vy_ = other.vy_;
+      fx_ = other.fx_;
+      fy_ = other.fy_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public cgMoveTo Clone() {
-      return new cgMoveTo(this);
+    public scMovementInfo Clone() {
+      return new scMovementInfo(this);
     }
 
     /// <summary>Field number for the "x" field.</summary>
@@ -805,24 +133,57 @@ namespace Protocol {
       }
     }
 
-    /// <summary>Field number for the "z" field.</summary>
-    public const int ZFieldNumber = 3;
-    private float z_;
+    /// <summary>Field number for the "vx" field.</summary>
+    public const int VxFieldNumber = 3;
+    private float vx_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float Z {
-      get { return z_; }
+    public float Vx {
+      get { return vx_; }
       set {
-        z_ = value;
+        vx_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "vy" field.</summary>
+    public const int VyFieldNumber = 4;
+    private float vy_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Vy {
+      get { return vy_; }
+      set {
+        vy_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "fx" field.</summary>
+    public const int FxFieldNumber = 5;
+    private float fx_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Fx {
+      get { return fx_; }
+      set {
+        fx_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "fy" field.</summary>
+    public const int FyFieldNumber = 6;
+    private float fy_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Fy {
+      get { return fy_; }
+      set {
+        fy_ = value;
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as cgMoveTo);
+      return Equals(other as scMovementInfo);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(cgMoveTo other) {
+    public bool Equals(scMovementInfo other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -831,7 +192,10 @@ namespace Protocol {
       }
       if (X != other.X) return false;
       if (Y != other.Y) return false;
-      if (Z != other.Z) return false;
+      if (Vx != other.Vx) return false;
+      if (Vy != other.Vy) return false;
+      if (Fx != other.Fx) return false;
+      if (Fy != other.Fy) return false;
       return true;
     }
 
@@ -840,7 +204,10 @@ namespace Protocol {
       int hash = 1;
       if (X != 0F) hash ^= X.GetHashCode();
       if (Y != 0F) hash ^= Y.GetHashCode();
-      if (Z != 0F) hash ^= Z.GetHashCode();
+      if (Vx != 0F) hash ^= Vx.GetHashCode();
+      if (Vy != 0F) hash ^= Vy.GetHashCode();
+      if (Fx != 0F) hash ^= Fx.GetHashCode();
+      if (Fy != 0F) hash ^= Fy.GetHashCode();
       return hash;
     }
 
@@ -859,9 +226,21 @@ namespace Protocol {
         output.WriteRawTag(21);
         output.WriteFloat(Y);
       }
-      if (Z != 0F) {
+      if (Vx != 0F) {
         output.WriteRawTag(29);
-        output.WriteFloat(Z);
+        output.WriteFloat(Vx);
+      }
+      if (Vy != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(Vy);
+      }
+      if (Fx != 0F) {
+        output.WriteRawTag(45);
+        output.WriteFloat(Fx);
+      }
+      if (Fy != 0F) {
+        output.WriteRawTag(53);
+        output.WriteFloat(Fy);
       }
     }
 
@@ -874,14 +253,23 @@ namespace Protocol {
       if (Y != 0F) {
         size += 1 + 4;
       }
-      if (Z != 0F) {
+      if (Vx != 0F) {
+        size += 1 + 4;
+      }
+      if (Vy != 0F) {
+        size += 1 + 4;
+      }
+      if (Fx != 0F) {
+        size += 1 + 4;
+      }
+      if (Fy != 0F) {
         size += 1 + 4;
       }
       return size;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(cgMoveTo other) {
+    public void MergeFrom(scMovementInfo other) {
       if (other == null) {
         return;
       }
@@ -891,8 +279,17 @@ namespace Protocol {
       if (other.Y != 0F) {
         Y = other.Y;
       }
-      if (other.Z != 0F) {
-        Z = other.Z;
+      if (other.Vx != 0F) {
+        Vx = other.Vx;
+      }
+      if (other.Vy != 0F) {
+        Vy = other.Vy;
+      }
+      if (other.Fx != 0F) {
+        Fx = other.Fx;
+      }
+      if (other.Fy != 0F) {
+        Fy = other.Fy;
       }
     }
 
@@ -913,7 +310,19 @@ namespace Protocol {
             break;
           }
           case 29: {
-            Z = input.ReadFloat();
+            Vx = input.ReadFloat();
+            break;
+          }
+          case 37: {
+            Vy = input.ReadFloat();
+            break;
+          }
+          case 45: {
+            Fx = input.ReadFloat();
+            break;
+          }
+          case 53: {
+            Fy = input.ReadFloat();
             break;
           }
         }
@@ -922,10 +331,982 @@ namespace Protocol {
 
   }
 
-  public sealed partial class gcMoveTo : pb::IMessage<gcMoveTo> {
-    private static readonly pb::MessageParser<gcMoveTo> _parser = new pb::MessageParser<gcMoveTo>(() => new gcMoveTo());
+  public sealed partial class scPlayerInfo : pb::IMessage<scPlayerInfo> {
+    private static readonly pb::MessageParser<scPlayerInfo> _parser = new pb::MessageParser<scPlayerInfo>(() => new scPlayerInfo());
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<gcMoveTo> Parser { get { return _parser; } }
+    public static pb::MessageParser<scPlayerInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.SceneReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scPlayerInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scPlayerInfo(scPlayerInfo other) : this() {
+      guid_ = other.guid_;
+      name_ = other.name_;
+      Movement = other.movement_ != null ? other.Movement.Clone() : null;
+      energy_ = other.energy_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scPlayerInfo Clone() {
+      return new scPlayerInfo(this);
+    }
+
+    /// <summary>Field number for the "guid" field.</summary>
+    public const int GuidFieldNumber = 1;
+    private long guid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Guid {
+      get { return guid_; }
+      set {
+        guid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 2;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "movement" field.</summary>
+    public const int MovementFieldNumber = 3;
+    private global::Protocol.scMovementInfo movement_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.scMovementInfo Movement {
+      get { return movement_; }
+      set {
+        movement_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "energy" field.</summary>
+    public const int EnergyFieldNumber = 6;
+    private int energy_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Energy {
+      get { return energy_; }
+      set {
+        energy_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as scPlayerInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(scPlayerInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Guid != other.Guid) return false;
+      if (Name != other.Name) return false;
+      if (!object.Equals(Movement, other.Movement)) return false;
+      if (Energy != other.Energy) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Guid != 0L) hash ^= Guid.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (movement_ != null) hash ^= Movement.GetHashCode();
+      if (Energy != 0) hash ^= Energy.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Guid != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(Guid);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (movement_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Movement);
+      }
+      if (Energy != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(Energy);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Guid != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Guid);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (movement_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Movement);
+      }
+      if (Energy != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Energy);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(scPlayerInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Guid != 0L) {
+        Guid = other.Guid;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.movement_ != null) {
+        if (movement_ == null) {
+          movement_ = new global::Protocol.scMovementInfo();
+        }
+        Movement.MergeFrom(other.Movement);
+      }
+      if (other.Energy != 0) {
+        Energy = other.Energy;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Guid = input.ReadInt64();
+            break;
+          }
+          case 18: {
+            Name = input.ReadString();
+            break;
+          }
+          case 26: {
+            if (movement_ == null) {
+              movement_ = new global::Protocol.scMovementInfo();
+            }
+            input.ReadMessage(movement_);
+            break;
+          }
+          case 48: {
+            Energy = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class scSceneInfo : pb::IMessage<scSceneInfo> {
+    private static readonly pb::MessageParser<scSceneInfo> _parser = new pb::MessageParser<scSceneInfo>(() => new scSceneInfo());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<scSceneInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.SceneReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scSceneInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scSceneInfo(scSceneInfo other) : this() {
+      width_ = other.width_;
+      height_ = other.height_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scSceneInfo Clone() {
+      return new scSceneInfo(this);
+    }
+
+    /// <summary>Field number for the "width" field.</summary>
+    public const int WidthFieldNumber = 1;
+    private int width_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Width {
+      get { return width_; }
+      set {
+        width_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "height" field.</summary>
+    public const int HeightFieldNumber = 2;
+    private int height_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Height {
+      get { return height_; }
+      set {
+        height_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as scSceneInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(scSceneInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Width != other.Width) return false;
+      if (Height != other.Height) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Width != 0) hash ^= Width.GetHashCode();
+      if (Height != 0) hash ^= Height.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Width != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Width);
+      }
+      if (Height != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Height);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Width != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Width);
+      }
+      if (Height != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Height);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(scSceneInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Width != 0) {
+        Width = other.Width;
+      }
+      if (other.Height != 0) {
+        Height = other.Height;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Width = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            Height = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class scEnergyBallInfo : pb::IMessage<scEnergyBallInfo> {
+    private static readonly pb::MessageParser<scEnergyBallInfo> _parser = new pb::MessageParser<scEnergyBallInfo>(() => new scEnergyBallInfo());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<scEnergyBallInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.SceneReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scEnergyBallInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scEnergyBallInfo(scEnergyBallInfo other) : this() {
+      energy_ = other.energy_;
+      x_ = other.x_;
+      y_ = other.y_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scEnergyBallInfo Clone() {
+      return new scEnergyBallInfo(this);
+    }
+
+    /// <summary>Field number for the "energy" field.</summary>
+    public const int EnergyFieldNumber = 1;
+    private int energy_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Energy {
+      get { return energy_; }
+      set {
+        energy_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "x" field.</summary>
+    public const int XFieldNumber = 2;
+    private float x_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float X {
+      get { return x_; }
+      set {
+        x_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "y" field.</summary>
+    public const int YFieldNumber = 3;
+    private float y_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Y {
+      get { return y_; }
+      set {
+        y_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as scEnergyBallInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(scEnergyBallInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Energy != other.Energy) return false;
+      if (X != other.X) return false;
+      if (Y != other.Y) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Energy != 0) hash ^= Energy.GetHashCode();
+      if (X != 0F) hash ^= X.GetHashCode();
+      if (Y != 0F) hash ^= Y.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Energy != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Energy);
+      }
+      if (X != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(X);
+      }
+      if (Y != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(Y);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Energy != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Energy);
+      }
+      if (X != 0F) {
+        size += 1 + 4;
+      }
+      if (Y != 0F) {
+        size += 1 + 4;
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(scEnergyBallInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Energy != 0) {
+        Energy = other.Energy;
+      }
+      if (other.X != 0F) {
+        X = other.X;
+      }
+      if (other.Y != 0F) {
+        Y = other.Y;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Energy = input.ReadInt32();
+            break;
+          }
+          case 21: {
+            X = input.ReadFloat();
+            break;
+          }
+          case 29: {
+            Y = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class scBulletInfo : pb::IMessage<scBulletInfo> {
+    private static readonly pb::MessageParser<scBulletInfo> _parser = new pb::MessageParser<scBulletInfo>(() => new scBulletInfo());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<scBulletInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.SceneReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scBulletInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scBulletInfo(scBulletInfo other) : this() {
+      Movement = other.movement_ != null ? other.Movement.Clone() : null;
+      playerGuid_ = other.playerGuid_;
+      bulletId_ = other.bulletId_;
+      timestamp_ = other.timestamp_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scBulletInfo Clone() {
+      return new scBulletInfo(this);
+    }
+
+    /// <summary>Field number for the "movement" field.</summary>
+    public const int MovementFieldNumber = 1;
+    private global::Protocol.scMovementInfo movement_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.scMovementInfo Movement {
+      get { return movement_; }
+      set {
+        movement_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "playerGuid" field.</summary>
+    public const int PlayerGuidFieldNumber = 2;
+    private long playerGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long PlayerGuid {
+      get { return playerGuid_; }
+      set {
+        playerGuid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "bulletId" field.</summary>
+    public const int BulletIdFieldNumber = 3;
+    private int bulletId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int BulletId {
+      get { return bulletId_; }
+      set {
+        bulletId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "timestamp" field.</summary>
+    public const int TimestampFieldNumber = 4;
+    private long timestamp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Timestamp {
+      get { return timestamp_; }
+      set {
+        timestamp_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as scBulletInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(scBulletInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Movement, other.Movement)) return false;
+      if (PlayerGuid != other.PlayerGuid) return false;
+      if (BulletId != other.BulletId) return false;
+      if (Timestamp != other.Timestamp) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (movement_ != null) hash ^= Movement.GetHashCode();
+      if (PlayerGuid != 0L) hash ^= PlayerGuid.GetHashCode();
+      if (BulletId != 0) hash ^= BulletId.GetHashCode();
+      if (Timestamp != 0L) hash ^= Timestamp.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (movement_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Movement);
+      }
+      if (PlayerGuid != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(PlayerGuid);
+      }
+      if (BulletId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(BulletId);
+      }
+      if (Timestamp != 0L) {
+        output.WriteRawTag(32);
+        output.WriteInt64(Timestamp);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (movement_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Movement);
+      }
+      if (PlayerGuid != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(PlayerGuid);
+      }
+      if (BulletId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BulletId);
+      }
+      if (Timestamp != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Timestamp);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(scBulletInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.movement_ != null) {
+        if (movement_ == null) {
+          movement_ = new global::Protocol.scMovementInfo();
+        }
+        Movement.MergeFrom(other.Movement);
+      }
+      if (other.PlayerGuid != 0L) {
+        PlayerGuid = other.PlayerGuid;
+      }
+      if (other.BulletId != 0) {
+        BulletId = other.BulletId;
+      }
+      if (other.Timestamp != 0L) {
+        Timestamp = other.Timestamp;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            if (movement_ == null) {
+              movement_ = new global::Protocol.scMovementInfo();
+            }
+            input.ReadMessage(movement_);
+            break;
+          }
+          case 16: {
+            PlayerGuid = input.ReadInt64();
+            break;
+          }
+          case 24: {
+            BulletId = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            Timestamp = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class csJoin : pb::IMessage<csJoin> {
+    private static readonly pb::MessageParser<csJoin> _parser = new pb::MessageParser<csJoin>(() => new csJoin());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<csJoin> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.SceneReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public csJoin() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public csJoin(csJoin other) : this() {
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public csJoin Clone() {
+      return new csJoin(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as csJoin);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(csJoin other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(csJoin other) {
+      if (other == null) {
+        return;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class scPlayerJoined : pb::IMessage<scPlayerJoined> {
+    private static readonly pb::MessageParser<scPlayerJoined> _parser = new pb::MessageParser<scPlayerJoined>(() => new scPlayerJoined());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<scPlayerJoined> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.SceneReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scPlayerJoined() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scPlayerJoined(scPlayerJoined other) : this() {
+      PlayerInfo = other.playerInfo_ != null ? other.PlayerInfo.Clone() : null;
+      ext_ = other.ext_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scPlayerJoined Clone() {
+      return new scPlayerJoined(this);
+    }
+
+    /// <summary>Field number for the "playerInfo" field.</summary>
+    public const int PlayerInfoFieldNumber = 1;
+    private global::Protocol.scPlayerInfo playerInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.scPlayerInfo PlayerInfo {
+      get { return playerInfo_; }
+      set {
+        playerInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ext" field.</summary>
+    public const int ExtFieldNumber = 2;
+    private string ext_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Ext {
+      get { return ext_; }
+      set {
+        ext_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as scPlayerJoined);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(scPlayerJoined other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(PlayerInfo, other.PlayerInfo)) return false;
+      if (Ext != other.Ext) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (playerInfo_ != null) hash ^= PlayerInfo.GetHashCode();
+      if (Ext.Length != 0) hash ^= Ext.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (playerInfo_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(PlayerInfo);
+      }
+      if (Ext.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Ext);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (playerInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PlayerInfo);
+      }
+      if (Ext.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Ext);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(scPlayerJoined other) {
+      if (other == null) {
+        return;
+      }
+      if (other.playerInfo_ != null) {
+        if (playerInfo_ == null) {
+          playerInfo_ = new global::Protocol.scPlayerInfo();
+        }
+        PlayerInfo.MergeFrom(other.PlayerInfo);
+      }
+      if (other.Ext.Length != 0) {
+        Ext = other.Ext;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            if (playerInfo_ == null) {
+              playerInfo_ = new global::Protocol.scPlayerInfo();
+            }
+            input.ReadMessage(playerInfo_);
+            break;
+          }
+          case 18: {
+            Ext = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class scPlayerQuit : pb::IMessage<scPlayerQuit> {
+    private static readonly pb::MessageParser<scPlayerQuit> _parser = new pb::MessageParser<scPlayerQuit>(() => new scPlayerQuit());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<scPlayerQuit> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -938,21 +1319,138 @@ namespace Protocol {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public gcMoveTo() {
+    public scPlayerQuit() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public gcMoveTo(gcMoveTo other) : this() {
+    public scPlayerQuit(scPlayerQuit other) : this() {
+      guid_ = other.guid_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scPlayerQuit Clone() {
+      return new scPlayerQuit(this);
+    }
+
+    /// <summary>Field number for the "guid" field.</summary>
+    public const int GuidFieldNumber = 1;
+    private long guid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Guid {
+      get { return guid_; }
+      set {
+        guid_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as scPlayerQuit);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(scPlayerQuit other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Guid != other.Guid) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Guid != 0L) hash ^= Guid.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Guid != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(Guid);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Guid != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Guid);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(scPlayerQuit other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Guid != 0L) {
+        Guid = other.Guid;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Guid = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class csMoveTowards : pb::IMessage<csMoveTowards> {
+    private static readonly pb::MessageParser<csMoveTowards> _parser = new pb::MessageParser<csMoveTowards>(() => new csMoveTowards());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<csMoveTowards> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.SceneReflection.Descriptor.MessageTypes[8]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public csMoveTowards() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public csMoveTowards(csMoveTowards other) : this() {
       x_ = other.x_;
       y_ = other.y_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public gcMoveTo Clone() {
-      return new gcMoveTo(this);
+    public csMoveTowards Clone() {
+      return new csMoveTowards(this);
     }
 
     /// <summary>Field number for the "x" field.</summary>
@@ -979,11 +1477,11 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as gcMoveTo);
+      return Equals(other as csMoveTowards);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(gcMoveTo other) {
+    public bool Equals(csMoveTowards other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1033,7 +1531,7 @@ namespace Protocol {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(gcMoveTo other) {
+    public void MergeFrom(csMoveTowards other) {
       if (other == null) {
         return;
       }
@@ -1059,6 +1557,1401 @@ namespace Protocol {
           }
           case 21: {
             Y = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class scPlayerMove : pb::IMessage<scPlayerMove> {
+    private static readonly pb::MessageParser<scPlayerMove> _parser = new pb::MessageParser<scPlayerMove>(() => new scPlayerMove());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<scPlayerMove> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.SceneReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scPlayerMove() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scPlayerMove(scPlayerMove other) : this() {
+      Movement = other.movement_ != null ? other.Movement.Clone() : null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scPlayerMove Clone() {
+      return new scPlayerMove(this);
+    }
+
+    /// <summary>Field number for the "movement" field.</summary>
+    public const int MovementFieldNumber = 1;
+    private global::Protocol.scMovementInfo movement_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Protocol.scMovementInfo Movement {
+      get { return movement_; }
+      set {
+        movement_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as scPlayerMove);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(scPlayerMove other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Movement, other.Movement)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (movement_ != null) hash ^= Movement.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (movement_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Movement);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (movement_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Movement);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(scPlayerMove other) {
+      if (other == null) {
+        return;
+      }
+      if (other.movement_ != null) {
+        if (movement_ == null) {
+          movement_ = new global::Protocol.scMovementInfo();
+        }
+        Movement.MergeFrom(other.Movement);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            if (movement_ == null) {
+              movement_ = new global::Protocol.scMovementInfo();
+            }
+            input.ReadMessage(movement_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class csPing : pb::IMessage<csPing> {
+    private static readonly pb::MessageParser<csPing> _parser = new pb::MessageParser<csPing>(() => new csPing());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<csPing> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.SceneReflection.Descriptor.MessageTypes[10]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public csPing() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public csPing(csPing other) : this() {
+      clientTime_ = other.clientTime_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public csPing Clone() {
+      return new csPing(this);
+    }
+
+    /// <summary>Field number for the "clientTime" field.</summary>
+    public const int ClientTimeFieldNumber = 1;
+    private long clientTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long ClientTime {
+      get { return clientTime_; }
+      set {
+        clientTime_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as csPing);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(csPing other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ClientTime != other.ClientTime) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ClientTime != 0L) hash ^= ClientTime.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ClientTime != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(ClientTime);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ClientTime != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(ClientTime);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(csPing other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ClientTime != 0L) {
+        ClientTime = other.ClientTime;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            ClientTime = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class scPing : pb::IMessage<scPing> {
+    private static readonly pb::MessageParser<scPing> _parser = new pb::MessageParser<scPing>(() => new scPing());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<scPing> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.SceneReflection.Descriptor.MessageTypes[11]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scPing() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scPing(scPing other) : this() {
+      pingCount_ = other.pingCount_;
+      delay_ = other.delay_;
+      serverTime_ = other.serverTime_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scPing Clone() {
+      return new scPing(this);
+    }
+
+    /// <summary>Field number for the "pingCount" field.</summary>
+    public const int PingCountFieldNumber = 1;
+    private int pingCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PingCount {
+      get { return pingCount_; }
+      set {
+        pingCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "delay" field.</summary>
+    public const int DelayFieldNumber = 2;
+    private int delay_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Delay {
+      get { return delay_; }
+      set {
+        delay_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "serverTime" field.</summary>
+    public const int ServerTimeFieldNumber = 3;
+    private long serverTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long ServerTime {
+      get { return serverTime_; }
+      set {
+        serverTime_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as scPing);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(scPing other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PingCount != other.PingCount) return false;
+      if (Delay != other.Delay) return false;
+      if (ServerTime != other.ServerTime) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PingCount != 0) hash ^= PingCount.GetHashCode();
+      if (Delay != 0) hash ^= Delay.GetHashCode();
+      if (ServerTime != 0L) hash ^= ServerTime.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (PingCount != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(PingCount);
+      }
+      if (Delay != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Delay);
+      }
+      if (ServerTime != 0L) {
+        output.WriteRawTag(24);
+        output.WriteInt64(ServerTime);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (PingCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PingCount);
+      }
+      if (Delay != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Delay);
+      }
+      if (ServerTime != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(ServerTime);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(scPing other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PingCount != 0) {
+        PingCount = other.PingCount;
+      }
+      if (other.Delay != 0) {
+        Delay = other.Delay;
+      }
+      if (other.ServerTime != 0L) {
+        ServerTime = other.ServerTime;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            PingCount = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            Delay = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            ServerTime = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class csCollectEnergyBall : pb::IMessage<csCollectEnergyBall> {
+    private static readonly pb::MessageParser<csCollectEnergyBall> _parser = new pb::MessageParser<csCollectEnergyBall>(() => new csCollectEnergyBall());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<csCollectEnergyBall> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.SceneReflection.Descriptor.MessageTypes[12]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public csCollectEnergyBall() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public csCollectEnergyBall(csCollectEnergyBall other) : this() {
+      ballId_ = other.ballId_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public csCollectEnergyBall Clone() {
+      return new csCollectEnergyBall(this);
+    }
+
+    /// <summary>Field number for the "ballId" field.</summary>
+    public const int BallIdFieldNumber = 1;
+    private int ballId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int BallId {
+      get { return ballId_; }
+      set {
+        ballId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as csCollectEnergyBall);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(csCollectEnergyBall other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (BallId != other.BallId) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (BallId != 0) hash ^= BallId.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (BallId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(BallId);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (BallId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BallId);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(csCollectEnergyBall other) {
+      if (other == null) {
+        return;
+      }
+      if (other.BallId != 0) {
+        BallId = other.BallId;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            BallId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class scCollectEnergyBall : pb::IMessage<scCollectEnergyBall> {
+    private static readonly pb::MessageParser<scCollectEnergyBall> _parser = new pb::MessageParser<scCollectEnergyBall>(() => new scCollectEnergyBall());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<scCollectEnergyBall> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.SceneReflection.Descriptor.MessageTypes[13]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scCollectEnergyBall() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scCollectEnergyBall(scCollectEnergyBall other) : this() {
+      playerGuid_ = other.playerGuid_;
+      ballId_ = other.ballId_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scCollectEnergyBall Clone() {
+      return new scCollectEnergyBall(this);
+    }
+
+    /// <summary>Field number for the "playerGuid" field.</summary>
+    public const int PlayerGuidFieldNumber = 1;
+    private long playerGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long PlayerGuid {
+      get { return playerGuid_; }
+      set {
+        playerGuid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ballId" field.</summary>
+    public const int BallIdFieldNumber = 2;
+    private int ballId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int BallId {
+      get { return ballId_; }
+      set {
+        ballId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as scCollectEnergyBall);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(scCollectEnergyBall other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PlayerGuid != other.PlayerGuid) return false;
+      if (BallId != other.BallId) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PlayerGuid != 0L) hash ^= PlayerGuid.GetHashCode();
+      if (BallId != 0) hash ^= BallId.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (PlayerGuid != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(PlayerGuid);
+      }
+      if (BallId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(BallId);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (PlayerGuid != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(PlayerGuid);
+      }
+      if (BallId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BallId);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(scCollectEnergyBall other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PlayerGuid != 0L) {
+        PlayerGuid = other.PlayerGuid;
+      }
+      if (other.BallId != 0) {
+        BallId = other.BallId;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            PlayerGuid = input.ReadInt64();
+            break;
+          }
+          case 16: {
+            BallId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class scEnergyChange : pb::IMessage<scEnergyChange> {
+    private static readonly pb::MessageParser<scEnergyChange> _parser = new pb::MessageParser<scEnergyChange>(() => new scEnergyChange());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<scEnergyChange> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.SceneReflection.Descriptor.MessageTypes[14]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scEnergyChange() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scEnergyChange(scEnergyChange other) : this() {
+      playerGuid_ = other.playerGuid_;
+      newEnergy_ = other.newEnergy_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scEnergyChange Clone() {
+      return new scEnergyChange(this);
+    }
+
+    /// <summary>Field number for the "playerGuid" field.</summary>
+    public const int PlayerGuidFieldNumber = 1;
+    private long playerGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long PlayerGuid {
+      get { return playerGuid_; }
+      set {
+        playerGuid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "newEnergy" field.</summary>
+    public const int NewEnergyFieldNumber = 2;
+    private int newEnergy_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int NewEnergy {
+      get { return newEnergy_; }
+      set {
+        newEnergy_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as scEnergyChange);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(scEnergyChange other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PlayerGuid != other.PlayerGuid) return false;
+      if (NewEnergy != other.NewEnergy) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PlayerGuid != 0L) hash ^= PlayerGuid.GetHashCode();
+      if (NewEnergy != 0) hash ^= NewEnergy.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (PlayerGuid != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(PlayerGuid);
+      }
+      if (NewEnergy != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(NewEnergy);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (PlayerGuid != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(PlayerGuid);
+      }
+      if (NewEnergy != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(NewEnergy);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(scEnergyChange other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PlayerGuid != 0L) {
+        PlayerGuid = other.PlayerGuid;
+      }
+      if (other.NewEnergy != 0) {
+        NewEnergy = other.NewEnergy;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            PlayerGuid = input.ReadInt64();
+            break;
+          }
+          case 16: {
+            NewEnergy = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class csShoot : pb::IMessage<csShoot> {
+    private static readonly pb::MessageParser<csShoot> _parser = new pb::MessageParser<csShoot>(() => new csShoot());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<csShoot> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.SceneReflection.Descriptor.MessageTypes[15]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public csShoot() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public csShoot(csShoot other) : this() {
+      x_ = other.x_;
+      y_ = other.y_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public csShoot Clone() {
+      return new csShoot(this);
+    }
+
+    /// <summary>Field number for the "x" field.</summary>
+    public const int XFieldNumber = 1;
+    private float x_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float X {
+      get { return x_; }
+      set {
+        x_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "y" field.</summary>
+    public const int YFieldNumber = 2;
+    private float y_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Y {
+      get { return y_; }
+      set {
+        y_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as csShoot);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(csShoot other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (X != other.X) return false;
+      if (Y != other.Y) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (X != 0F) hash ^= X.GetHashCode();
+      if (Y != 0F) hash ^= Y.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (X != 0F) {
+        output.WriteRawTag(13);
+        output.WriteFloat(X);
+      }
+      if (Y != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(Y);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (X != 0F) {
+        size += 1 + 4;
+      }
+      if (Y != 0F) {
+        size += 1 + 4;
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(csShoot other) {
+      if (other == null) {
+        return;
+      }
+      if (other.X != 0F) {
+        X = other.X;
+      }
+      if (other.Y != 0F) {
+        Y = other.Y;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 13: {
+            X = input.ReadFloat();
+            break;
+          }
+          case 21: {
+            Y = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class scShoot : pb::IMessage<scShoot> {
+    private static readonly pb::MessageParser<scShoot> _parser = new pb::MessageParser<scShoot>(() => new scShoot());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<scShoot> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.SceneReflection.Descriptor.MessageTypes[16]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scShoot() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scShoot(scShoot other) : this() {
+      playerGuid_ = other.playerGuid_;
+      bulletId_ = other.bulletId_;
+      x_ = other.x_;
+      y_ = other.y_;
+      vx_ = other.vx_;
+      vy_ = other.vy_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scShoot Clone() {
+      return new scShoot(this);
+    }
+
+    /// <summary>Field number for the "playerGuid" field.</summary>
+    public const int PlayerGuidFieldNumber = 1;
+    private long playerGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long PlayerGuid {
+      get { return playerGuid_; }
+      set {
+        playerGuid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "bulletId" field.</summary>
+    public const int BulletIdFieldNumber = 2;
+    private int bulletId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int BulletId {
+      get { return bulletId_; }
+      set {
+        bulletId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "x" field.</summary>
+    public const int XFieldNumber = 3;
+    private float x_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float X {
+      get { return x_; }
+      set {
+        x_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "y" field.</summary>
+    public const int YFieldNumber = 4;
+    private float y_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Y {
+      get { return y_; }
+      set {
+        y_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "vx" field.</summary>
+    public const int VxFieldNumber = 5;
+    private float vx_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Vx {
+      get { return vx_; }
+      set {
+        vx_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "vy" field.</summary>
+    public const int VyFieldNumber = 6;
+    private float vy_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Vy {
+      get { return vy_; }
+      set {
+        vy_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as scShoot);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(scShoot other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PlayerGuid != other.PlayerGuid) return false;
+      if (BulletId != other.BulletId) return false;
+      if (X != other.X) return false;
+      if (Y != other.Y) return false;
+      if (Vx != other.Vx) return false;
+      if (Vy != other.Vy) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PlayerGuid != 0L) hash ^= PlayerGuid.GetHashCode();
+      if (BulletId != 0) hash ^= BulletId.GetHashCode();
+      if (X != 0F) hash ^= X.GetHashCode();
+      if (Y != 0F) hash ^= Y.GetHashCode();
+      if (Vx != 0F) hash ^= Vx.GetHashCode();
+      if (Vy != 0F) hash ^= Vy.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (PlayerGuid != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(PlayerGuid);
+      }
+      if (BulletId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(BulletId);
+      }
+      if (X != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(X);
+      }
+      if (Y != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(Y);
+      }
+      if (Vx != 0F) {
+        output.WriteRawTag(45);
+        output.WriteFloat(Vx);
+      }
+      if (Vy != 0F) {
+        output.WriteRawTag(53);
+        output.WriteFloat(Vy);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (PlayerGuid != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(PlayerGuid);
+      }
+      if (BulletId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BulletId);
+      }
+      if (X != 0F) {
+        size += 1 + 4;
+      }
+      if (Y != 0F) {
+        size += 1 + 4;
+      }
+      if (Vx != 0F) {
+        size += 1 + 4;
+      }
+      if (Vy != 0F) {
+        size += 1 + 4;
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(scShoot other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PlayerGuid != 0L) {
+        PlayerGuid = other.PlayerGuid;
+      }
+      if (other.BulletId != 0) {
+        BulletId = other.BulletId;
+      }
+      if (other.X != 0F) {
+        X = other.X;
+      }
+      if (other.Y != 0F) {
+        Y = other.Y;
+      }
+      if (other.Vx != 0F) {
+        Vx = other.Vx;
+      }
+      if (other.Vy != 0F) {
+        Vy = other.Vy;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            PlayerGuid = input.ReadInt64();
+            break;
+          }
+          case 16: {
+            BulletId = input.ReadInt32();
+            break;
+          }
+          case 29: {
+            X = input.ReadFloat();
+            break;
+          }
+          case 37: {
+            Y = input.ReadFloat();
+            break;
+          }
+          case 45: {
+            Vx = input.ReadFloat();
+            break;
+          }
+          case 53: {
+            Vy = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class scHitPlayer : pb::IMessage<scHitPlayer> {
+    private static readonly pb::MessageParser<scHitPlayer> _parser = new pb::MessageParser<scHitPlayer>(() => new scHitPlayer());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<scHitPlayer> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Protocol.SceneReflection.Descriptor.MessageTypes[17]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scHitPlayer() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scHitPlayer(scHitPlayer other) : this() {
+      playerGuid_ = other.playerGuid_;
+      bulletId_ = other.bulletId_;
+      damage_ = other.damage_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scHitPlayer Clone() {
+      return new scHitPlayer(this);
+    }
+
+    /// <summary>Field number for the "playerGuid" field.</summary>
+    public const int PlayerGuidFieldNumber = 1;
+    private long playerGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long PlayerGuid {
+      get { return playerGuid_; }
+      set {
+        playerGuid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "bulletId" field.</summary>
+    public const int BulletIdFieldNumber = 2;
+    private int bulletId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int BulletId {
+      get { return bulletId_; }
+      set {
+        bulletId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "damage" field.</summary>
+    public const int DamageFieldNumber = 3;
+    private int damage_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Damage {
+      get { return damage_; }
+      set {
+        damage_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as scHitPlayer);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(scHitPlayer other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PlayerGuid != other.PlayerGuid) return false;
+      if (BulletId != other.BulletId) return false;
+      if (Damage != other.Damage) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PlayerGuid != 0L) hash ^= PlayerGuid.GetHashCode();
+      if (BulletId != 0) hash ^= BulletId.GetHashCode();
+      if (Damage != 0) hash ^= Damage.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (PlayerGuid != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(PlayerGuid);
+      }
+      if (BulletId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(BulletId);
+      }
+      if (Damage != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Damage);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (PlayerGuid != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(PlayerGuid);
+      }
+      if (BulletId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BulletId);
+      }
+      if (Damage != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Damage);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(scHitPlayer other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PlayerGuid != 0L) {
+        PlayerGuid = other.PlayerGuid;
+      }
+      if (other.BulletId != 0) {
+        BulletId = other.BulletId;
+      }
+      if (other.Damage != 0) {
+        Damage = other.Damage;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            PlayerGuid = input.ReadInt64();
+            break;
+          }
+          case 16: {
+            BulletId = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            Damage = input.ReadInt32();
             break;
           }
         }

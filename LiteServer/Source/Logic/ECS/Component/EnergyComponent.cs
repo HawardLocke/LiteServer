@@ -6,7 +6,7 @@ namespace Lite
 	[GameObjects]
 	public sealed class EnergyComponent : IComponent
 	{
-		public int energy;
+		public int value;
 	}
 
 }

@@ -15,15 +15,15 @@ namespace Entitas {
         public Lite.EnergyComponent energy { get { return (Lite.EnergyComponent)GetComponent(GameObjectsComponentIds.Energy); } }
         public bool hasEnergy { get { return HasComponent(GameObjectsComponentIds.Energy); } }
 
-        public Entity AddEnergy(int newEnergy) {
+        public Entity AddEnergy(int newValue) {
             var component = CreateComponent<Lite.EnergyComponent>(GameObjectsComponentIds.Energy);
-            component.energy = newEnergy;
+            component.value = newValue;
             return AddComponent(GameObjectsComponentIds.Energy, component);
         }
 
-        public Entity ReplaceEnergy(int newEnergy) {
+        public Entity ReplaceEnergy(int newValue) {
             var component = CreateComponent<Lite.EnergyComponent>(GameObjectsComponentIds.Energy);
-            component.energy = newEnergy;
+            component.value = newValue;
             ReplaceComponent(GameObjectsComponentIds.Energy, component);
             return this;
         }

@@ -54,7 +54,7 @@ namespace Lite
 
 		
 
-		public void Broadcast(ushort msgId, ProtoBuf.IExtensible msg)
+		public void Broadcast(ushort msgId, byte[] buffer)
 		{
 			/*foreach(var player in mPlayerMap.Values)
 			{

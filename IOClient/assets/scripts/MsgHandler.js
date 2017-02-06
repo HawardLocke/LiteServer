@@ -12,6 +12,17 @@ var MsgHandler = {
 
 	Init:function(){
 		this.registHandler(MsgID.scLoginRet, this.onLoginRet);
+
+		this.registHandler(MsgID.scPlayerJoined, this.onPlayerJoined);
+		this.registHandler(MsgID.scPlayerQuit, this.onPlayerQuit);
+		this.registHandler(MsgID.scPlayerMove, this.onPlayerMove);
+
+		this.registHandler(MsgID.scPing, this.onPing);
+		this.registHandler(MsgID.scCollectEnergyBall, this.onCollectEnergyBall);
+		this.registHandler(MsgID.scEnergyChange, this.onEnergyChanged);
+		this.registHandler(MsgID.scShoot, this.onPlayerShoot);
+		this.registHandler(MsgID.scHitPlayer, this.onHitPlayer);
+
 	},
 
 	registHandler:function(msgID, handler){
@@ -38,7 +49,41 @@ var MsgHandler = {
 	onLoginRet:function(bytes){
 		var loginRet = login_pb.scLoginRet.deserializeBinary(bytes);
 		cc.log('----login ret ' + loginRet.getResult());
-	}
+		// change scene if succeed.
+		//cc.director.loadScene('MyScene', onSceneLaunched);
+	},
+
+	onPlayerJoined:function(bytes){
+		var recvdMsg = scene_pb.scPlayerJoined.deserializeBinary(bytes);
+	},
+
+	onPlayerQuit:function(bytes){
+		var recvdMsg = scene_pb.scPlayerQuit.deserializeBinary(bytes);
+	},
+
+	onPlayerMove:function(bytes){
+		var recvdMsg = scene_pb.scPlayerMove.deserializeBinary(bytes);
+	},
+
+	onPing:function(bytes){
+		var recvdMsg = scene_pb.scPing.deserializeBinary(bytes);
+	},
+
+	onCollectEnergyBall:function(bytes){
+		var recvdMsg = scene_pb.scCollectEnergyBall.deserializeBinary(bytes);
+	},
+
+	onEnergyChanged:function(bytes){
+		var recvdMsg = scene_pb.scEnergyChange.deserializeBinary(bytes);
+	},
+
+	onPlayerShoot:function(bytes){
+		var recvdMsg = scene_pb.scShoot.deserializeBinary(bytes);
+	},
+
+	onHitPlayer:function(bytes){
+		var recvdMsg = scene_pb.scHitPlayer.deserializeBinary(bytes);
+	},
 
 };
 
