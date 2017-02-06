@@ -8,33 +8,30 @@
 //------------------------------------------------------------------------------
 public static class GameObjectsComponentIds {
 
-    public const int Transform = 0;
-    public const int Velocity = 1;
-    public const int Broadcast = 2;
-    public const int EnergyBall = 3;
-    public const int Player = 4;
-    public const int SceneObject = 5;
-    public const int Shoot = 6;
+    public const int RigidBody = 0;
+    public const int Transform = 1;
+    public const int Velocity = 2;
+    public const int EnergyCollector = 3;
+    public const int Energy = 4;
+    public const int PlayerInfo = 5;
 
-    public const int TotalComponents = 7;
+    public const int TotalComponents = 6;
 
     public static readonly string[] componentNames = {
+        "RigidBody",
         "Transform",
         "Velocity",
-        "Broadcast",
-        "EnergyBall",
-        "Player",
-        "SceneObject",
-        "Shoot"
+        "EnergyCollector",
+        "Energy",
+        "PlayerInfo"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Lite.RigidBodyComponent),
         typeof(Lite.TransformComponent),
         typeof(Lite.VelocityComponent),
-        typeof(Lite.BroadcastComponent),
-        typeof(Lite.EnergyBallComponent),
-        typeof(Lite.PlayerComponent),
-        typeof(Lite.SceneObjectComponent),
-        typeof(Lite.ShootComponent)
+        typeof(Lite.EnergyCollectorComponent),
+        typeof(Lite.EnergyComponent),
+        typeof(Lite.PlayerInfoComponent)
     };
 }

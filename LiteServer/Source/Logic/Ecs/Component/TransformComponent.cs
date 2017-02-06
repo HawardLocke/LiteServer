@@ -7,7 +7,7 @@ namespace Lite
 	public sealed class TransformComponent : IComponent
 	{
 		public Vector2 position;
-		public float angle;
+		public float rotation;
 	}
 
 }

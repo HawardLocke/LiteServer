@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 namespace Lite
 {
-	class LiteFacade : Singleton<LiteFacade>
+	class AppFacade : Singleton<AppFacade>
 	{
 		private static Dictionary<Type, IManager> managerMap = new Dictionary<Type, IManager>();
 		private static List<IManager> managerList = new List<IManager>();
-
+		private static List<IManager> rapidManagerList = new List<IManager>();
 		
 		public void Init()
 		{
@@ -16,25 +16,37 @@ namespace Lite
 			_addManager(typeof(Network.SessionManager), new Network.SessionManager());
 			_addManager(typeof(Event.EventManager), new Event.EventManager());
 			_addManager(typeof(Network.MessageManager), new Network.MessageManager());
+			
+			_addManager(typeof(ECSManager), new ECSManager(), true);
+			_addManager(typeof(EntityManager), new EntityManager());
+
 			_addManager(typeof(SceneManager), new SceneManager());
-			_addManager(typeof(EcsManager), new EcsManager());
 
 			TemplateRegister.RegisterALL();
 
-			foreach (var mgr in managerList)
-				mgr.Init();
-			
+			foreach (var mgr in managerMap)
+				mgr.Value.Init();
+
+			GameTimer.Start();
 		}
 
 		public void Destroy()
 		{
-			foreach (var mgr in managerList)
-				mgr.Destroy();
+			foreach (var mgr in managerMap)
+				mgr.Value.Destroy();
 		}
 
 		public void Tick()
 		{
 			foreach (var mgr in managerList)
+				mgr.Update();
+		}
+
+		public void RapidTick()
+		{
+			GameTimer.Tick();
+
+			foreach (var mgr in rapidManagerList)
 				mgr.Update();
 		}
 
@@ -45,10 +57,13 @@ namespace Lite
 			return mgr as T;
 		}
 
-		private void _addManager(Type tp, IManager mgr)
+		private void _addManager(Type tp, IManager mgr, bool rapid = false)
 		{
 			managerMap.Add(tp, mgr);
-			managerList.Add(mgr);
+			if (rapid)
+				rapidManagerList.Add(mgr);
+			else
+				managerList.Add(mgr);
 		}
 
 	}

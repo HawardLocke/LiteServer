@@ -32,7 +32,7 @@ namespace CodeGenerator
 				codeGenerators,
 				poolNames,
 				blueprintNames,
-				"../../Source/Logic/Ecs/Generated/"
+				"../../Source/Logic/ECS/Generated/"
 			);
 		}
 

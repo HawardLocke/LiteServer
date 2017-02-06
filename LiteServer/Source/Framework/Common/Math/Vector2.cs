@@ -21,24 +21,34 @@ namespace Lite
 
 		public static Vector2 one { get { return new Vector2(1, 1); } }
 
-		/*public static Vector2 Zero()
-		{
-			return new Vector2(0, 0);
-		}
-
-		public static Vector2 One()
-		{
-			return new Vector2(1, 1);
-		}*/
-
 		public static Vector2 operator +(Vector2 vec1, Vector2 vec2)
 		{
 			return new Vector2(vec1.x + vec2.x, vec1.y + vec2.y);
 		}
 
-		public static Vector2 operator -(Vector2 vec1, Vector2 vec)
+		public static Vector2 operator -(Vector2 vec1, Vector2 vec2)
 		{
-			return new Vector2(vec1.x - vec.x, vec1.y - vec.y);
+			return new Vector2(vec1.x - vec2.x, vec1.y - vec2.y);
+		}
+
+		public static Vector2 operator *(Vector2 vec, int n)
+		{
+			return new Vector2(vec.x*n, vec.y*n);
+		}
+
+		public static Vector2 operator *(Vector2 vec, float n)
+		{
+			return new Vector2(vec.x*n, vec.y*n);
+		}
+
+		public static Vector2 operator /(Vector2 vec, int n)
+		{
+			return new Vector2(vec.x/n, vec.y/n);
+		}
+
+		public static Vector2 operator /(Vector2 vec, float n)
+		{
+			return new Vector2(vec.x/n, vec.y/n);
 		}
 
 		public float Length()

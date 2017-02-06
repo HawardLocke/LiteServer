@@ -3,7 +3,7 @@ using Entitas;
 
 namespace Lite
 {
-	public class EcsManager : IManager
+	public class ECSManager : IManager
 	{
 		Systems systems;
 
@@ -13,12 +13,13 @@ namespace Lite
 			pools.SetAllPools();
 
 			systems = new Systems()
-				.Add(pools.CreateSystem(new VelocitySystem()));
+				.Add(pools.CreateSystem(new VelocitySystem()))
+				.Add(pools.CreateSystem(new RigidBodySystem()))
+				.Add(pools.CreateSystem(new EnergyCollectorSystem()))
+				;
 
 			systems.Initialize();
 
-			//
-			//test();
 		}
 
 		public override void Destroy()
@@ -32,14 +33,6 @@ namespace Lite
 			systems.Cleanup();
 		}
 
-		//public void GetSystem()
-
-		private void test()
-		{
-			Pools.sharedInstance.core.CreateEntity()
-			   .AddTransform(Vector2.zero, 0)
-			   .AddVelocity(Vector2.zero);
-		}
 
 	}
 }

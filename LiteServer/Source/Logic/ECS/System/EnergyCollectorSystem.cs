@@ -2,16 +2,15 @@
 
 namespace Lite
 {
-	public sealed class VelocitySystem : ISetPools, IExecuteSystem
+	public sealed class EnergyCollectorSystem : ISetPools, IExecuteSystem
 	{
 
 		Group[] _relatedGroups;
 
 		public void SetPools(Pools pools)
 		{
-			var matcher = Matcher.AllOf(CoreMatcher.Velocity, CoreMatcher.Transform);
+			var matcher = Matcher.AllOf(GameObjectsMatcher.Energy, GameObjectsMatcher.EnergyCollector);
 			_relatedGroups = new[] {
-				pools.core.GetGroup(matcher),
 				pools.gameObjects.GetGroup(matcher)
 			};
 		}
@@ -24,8 +23,9 @@ namespace Lite
 			{
 				foreach (var e in group.GetEntities())
 				{
-					var pos = e.transform.position;
-					e.ReplaceTransform(pos + e.velocity.value * dt, e.transform.rotation);
+					//e.energyCollector.radius;
+					//e.energyCollector.speed;
+					//check region around and collect
 				}
 			}
 		}

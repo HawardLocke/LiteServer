@@ -15,17 +15,17 @@ namespace Entitas {
         public Lite.TransformComponent transform { get { return (Lite.TransformComponent)GetComponent(CoreComponentIds.Transform); } }
         public bool hasTransform { get { return HasComponent(CoreComponentIds.Transform); } }
 
-        public Entity AddTransform(Lite.Vector2 newPosition, float newAngle) {
+        public Entity AddTransform(Lite.Vector2 newPosition, float newRotation) {
             var component = CreateComponent<Lite.TransformComponent>(CoreComponentIds.Transform);
             component.position = newPosition;
-            component.angle = newAngle;
+            component.rotation = newRotation;
             return AddComponent(CoreComponentIds.Transform, component);
         }
 
-        public Entity ReplaceTransform(Lite.Vector2 newPosition, float newAngle) {
+        public Entity ReplaceTransform(Lite.Vector2 newPosition, float newRotation) {
             var component = CreateComponent<Lite.TransformComponent>(CoreComponentIds.Transform);
             component.position = newPosition;
-            component.angle = newAngle;
+            component.rotation = newRotation;
             ReplaceComponent(CoreComponentIds.Transform, component);
             return this;
         }

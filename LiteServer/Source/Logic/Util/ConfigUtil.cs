@@ -10,6 +10,7 @@ namespace Lite
 	{
 		// timers
 		public static int ServerTickTime = 200;
+		public static int ServerRapidTickTime = 30;
 		public static int ConfigUpdateTime = 60*1000;
 
 		// redis
@@ -29,6 +30,7 @@ namespace Lite
 				//Log.Info("loading/updating config...");
 
 				ServerTickTime = Int32.Parse(GetValue("ServerTickTime"));
+				ServerRapidTickTime = Int32.Parse(GetValue("ServerRapidTickTime"));
 				ConfigUpdateTime = Int32.Parse(GetValue("ConfigUpdateTime"));
 
 				RedisHost = GetValue("RedisHost");

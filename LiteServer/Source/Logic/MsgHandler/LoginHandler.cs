@@ -12,7 +12,7 @@ namespace Lite
 	{
 		public void Register()
 		{
-			var msgMgr = LiteFacade.GetManager<MessageManager>();
+			var msgMgr = AppFacade.GetManager<MessageManager>();
 			msgMgr.RegisterHandler((int)MsgID.csLogin, OncsLogin);
 			msgMgr.RegisterHandler((int)MsgID.csEnterGame, OncsEnterGame);
 		}

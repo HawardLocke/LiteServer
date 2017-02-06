@@ -14,6 +14,7 @@ namespace Lite
 	{
 		private LoopTimer configTimer;
 		private LoopTimer tickTimer;
+		private LoopTimer rapidTickTimer;
 
 		protected override void OnStarted()
 		{
@@ -23,7 +24,7 @@ namespace Lite
 
 			ConfigUtil.LoadConfig();
 			
-			LiteFacade.Instance.Init();
+			AppFacade.Instance.Init();
 			
 			MsgHandlerManager.Instance.Init();
 
@@ -32,6 +33,8 @@ namespace Lite
 			this.configTimer.Start();
 			this.tickTimer = new LoopTimer(ConfigUtil.ServerTickTime, Tick);
 			this.tickTimer.Start();
+			this.rapidTickTimer = new LoopTimer(ConfigUtil.ServerRapidTickTime, RapidTick);
+			this.rapidTickTimer.Start();
 		}
 
 		protected override void OnStopped()
@@ -39,17 +42,22 @@ namespace Lite
 			base.OnStopped();
 
 			this.tickTimer.Stop();
+			this.rapidTickTimer.Stop();
 
-			LiteFacade.Instance.Destroy();
+			AppFacade.Instance.Destroy();
 		}
 
 		private void Tick(int ms)
 		{
-			LiteFacade.Instance.Tick();
+			AppFacade.Instance.Tick();
 			//Log.Warn(""+ms);
-			
 		}
 
+		private void RapidTick(int ms)
+		{
+			AppFacade.Instance.RapidTick();
+			//Log.Warn("" + ms);
+		}
 
 	}
 

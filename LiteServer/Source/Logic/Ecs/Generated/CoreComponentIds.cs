@@ -8,17 +8,20 @@
 //------------------------------------------------------------------------------
 public static class CoreComponentIds {
 
-    public const int Transform = 0;
-    public const int Velocity = 1;
+    public const int RigidBody = 0;
+    public const int Transform = 1;
+    public const int Velocity = 2;
 
-    public const int TotalComponents = 2;
+    public const int TotalComponents = 3;
 
     public static readonly string[] componentNames = {
+        "RigidBody",
         "Transform",
         "Velocity"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Lite.RigidBodyComponent),
         typeof(Lite.TransformComponent),
         typeof(Lite.VelocityComponent)
     };

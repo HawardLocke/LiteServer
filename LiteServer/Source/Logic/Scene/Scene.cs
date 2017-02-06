@@ -15,6 +15,8 @@ namespace Lite
 	{
 		public int SceneID;
 
+		private Rect rect;
+
 		public Scene()
 		{
 			
@@ -22,6 +24,21 @@ namespace Lite
 
 		public void Init()
 		{
+			float size = 1000;
+			rect = new Rect(-size, -size, size, size);
+
+			// balls
+			var entMgr = AppFacade.GetManager<EntityManager>();
+
+			for (int i = 0; i < 100; i++)
+			{
+				float x = MathUtil.RandClamp() * size;
+				float y = MathUtil.RandClamp() * size;
+
+				int energy = MathUtil.RandInt(1, 20);
+
+				entMgr.CreateEnergyBall(new Vector2(x, y), energy);
+			}
 
 		}
 
