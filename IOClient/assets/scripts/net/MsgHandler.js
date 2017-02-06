@@ -1,10 +1,10 @@
 
 const Network = require('Network');
 
-const MsgID = require('./protobuf/MsgID');
-var login_pb = require('./protobuf/login_pb');
-var scene_pb = require('./protobuf/scene_pb');
-var chat_pb = require('./protobuf/chat_pb');
+const MsgID = require('MsgID');
+const login_pb = require('login_pb');
+const scene_pb = require('scene_pb');
+const chat_pb = require('chat_pb');
 
 var MsgHandler = {
 
@@ -13,6 +13,8 @@ var MsgHandler = {
 	Init:function(){
 		this.registHandler(MsgID.scLoginRet, this.onLoginRet);
 
+		this.registHandler(MsgID.scSceneInfo, this.onSceneInfo);
+		this.registHandler(MsgID.scEnergyBallInfo, this.onEnergyBallInfo);
 		this.registHandler(MsgID.scPlayerJoined, this.onPlayerJoined);
 		this.registHandler(MsgID.scPlayerQuit, this.onPlayerQuit);
 		this.registHandler(MsgID.scPlayerMove, this.onPlayerMove);
@@ -46,11 +48,26 @@ var MsgHandler = {
 		}
 	},
 
+//====================================================================
+
 	onLoginRet:function(bytes){
 		var loginRet = login_pb.scLoginRet.deserializeBinary(bytes);
-		cc.log('----login ret ' + loginRet.getResult());
-		// change scene if succeed.
-		//cc.director.loadScene('MyScene', onSceneLaunched);
+		//cc.log('----login ret ' + loginRet.getResult());
+		var ret = loginRet.getResult();
+		if (ret == 0){
+			cc.director.loadScene('WorldScene');
+		}else{
+			cc.log('--login failed.');
+		}
+	},
+
+	onSceneInfo:function(bytes){
+		var recvdMsg = scene_pb.scSceneInfo.deserializeBinary(bytes);
+		cc.log('--scene info ' + recvdMsg.getWidth());
+	},
+
+	onEnergyBallInfo:function(bytes){
+		var recvdMsg = scene_pb.scEnergyBallInfo.deserializeBinary(bytes);
 	},
 
 	onPlayerJoined:function(bytes){

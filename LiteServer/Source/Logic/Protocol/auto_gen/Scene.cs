@@ -27,33 +27,34 @@ namespace Protocol {
             "IAEoAhIKCgJmeBgFIAEoAhIKCgJmeRgGIAEoAiJmCgxzY1BsYXllckluZm8S",
             "DAoEZ3VpZBgBIAEoAxIMCgRuYW1lGAIgASgJEioKCG1vdmVtZW50GAMgASgL",
             "MhguUHJvdG9jb2wuc2NNb3ZlbWVudEluZm8SDgoGZW5lcmd5GAYgASgFIiwK",
-            "C3NjU2NlbmVJbmZvEg0KBXdpZHRoGAEgASgFEg4KBmhlaWdodBgCIAEoBSI4",
-            "ChBzY0VuZXJneUJhbGxJbmZvEg4KBmVuZXJneRgBIAEoBRIJCgF4GAIgASgC",
-            "EgkKAXkYAyABKAIicwoMc2NCdWxsZXRJbmZvEioKCG1vdmVtZW50GAEgASgL",
-            "MhguUHJvdG9jb2wuc2NNb3ZlbWVudEluZm8SEgoKcGxheWVyR3VpZBgCIAEo",
-            "AxIQCghidWxsZXRJZBgDIAEoBRIRCgl0aW1lc3RhbXAYBCABKAMiCAoGY3NK",
-            "b2luIkkKDnNjUGxheWVySm9pbmVkEioKCnBsYXllckluZm8YASABKAsyFi5Q",
-            "cm90b2NvbC5zY1BsYXllckluZm8SCwoDZXh0GAIgASgJIhwKDHNjUGxheWVy",
-            "UXVpdBIMCgRndWlkGAEgASgDIiUKDWNzTW92ZVRvd2FyZHMSCQoBeBgBIAEo",
-            "AhIJCgF5GAIgASgCIjoKDHNjUGxheWVyTW92ZRIqCghtb3ZlbWVudBgBIAEo",
-            "CzIYLlByb3RvY29sLnNjTW92ZW1lbnRJbmZvIhwKBmNzUGluZxISCgpjbGll",
-            "bnRUaW1lGAEgASgDIj4KBnNjUGluZxIRCglwaW5nQ291bnQYASABKAUSDQoF",
-            "ZGVsYXkYAiABKAUSEgoKc2VydmVyVGltZRgDIAEoAyIlChNjc0NvbGxlY3RF",
-            "bmVyZ3lCYWxsEg4KBmJhbGxJZBgBIAEoBSI5ChNzY0NvbGxlY3RFbmVyZ3lC",
-            "YWxsEhIKCnBsYXllckd1aWQYASABKAMSDgoGYmFsbElkGAIgASgFIjcKDnNj",
-            "RW5lcmd5Q2hhbmdlEhIKCnBsYXllckd1aWQYASABKAMSEQoJbmV3RW5lcmd5",
-            "GAIgASgFIh8KB2NzU2hvb3QSCQoBeBgBIAEoAhIJCgF5GAIgASgCIl0KB3Nj",
-            "U2hvb3QSEgoKcGxheWVyR3VpZBgBIAEoAxIQCghidWxsZXRJZBgCIAEoBRIJ",
-            "CgF4GAMgASgCEgkKAXkYBCABKAISCgoCdngYBSABKAISCgoCdnkYBiABKAIi",
-            "QwoLc2NIaXRQbGF5ZXISEgoKcGxheWVyR3VpZBgBIAEoAxIQCghidWxsZXRJ",
-            "ZBgCIAEoBRIOCgZkYW1hZ2UYAyABKAViBnByb3RvMw=="));
+            "C3NjU2NlbmVJbmZvEg0KBXdpZHRoGAEgASgFEg4KBmhlaWdodBgCIAEoBSJI",
+            "ChBzY0VuZXJneUJhbGxJbmZvEg4KBmJhbGxJZBgBIAEoBRIOCgZlbmVyZ3kY",
+            "AiABKAUSCQoBeBgDIAEoAhIJCgF5GAQgASgCInMKDHNjQnVsbGV0SW5mbxIq",
+            "Cghtb3ZlbWVudBgBIAEoCzIYLlByb3RvY29sLnNjTW92ZW1lbnRJbmZvEhIK",
+            "CnBsYXllckd1aWQYAiABKAMSEAoIYnVsbGV0SWQYAyABKAUSEQoJdGltZXN0",
+            "YW1wGAQgASgDIggKBmNzSm9pbiJJCg5zY1BsYXllckpvaW5lZBIqCgpwbGF5",
+            "ZXJJbmZvGAEgASgLMhYuUHJvdG9jb2wuc2NQbGF5ZXJJbmZvEgsKA2V4dBgC",
+            "IAEoCSIcCgxzY1BsYXllclF1aXQSDAoEZ3VpZBgBIAEoAyIlCg1jc01vdmVU",
+            "b3dhcmRzEgkKAXgYASABKAISCQoBeRgCIAEoAiI6CgxzY1BsYXllck1vdmUS",
+            "KgoIbW92ZW1lbnQYASABKAsyGC5Qcm90b2NvbC5zY01vdmVtZW50SW5mbyIc",
+            "CgZjc1BpbmcSEgoKY2xpZW50VGltZRgBIAEoAyI+CgZzY1BpbmcSEQoJcGlu",
+            "Z0NvdW50GAEgASgFEg0KBWRlbGF5GAIgASgFEhIKCnNlcnZlclRpbWUYAyAB",
+            "KAMiJQoTY3NDb2xsZWN0RW5lcmd5QmFsbBIOCgZiYWxsSWQYASABKAUiOQoT",
+            "c2NDb2xsZWN0RW5lcmd5QmFsbBISCgpwbGF5ZXJHdWlkGAEgASgDEg4KBmJh",
+            "bGxJZBgCIAEoBSI3Cg5zY0VuZXJneUNoYW5nZRISCgpwbGF5ZXJHdWlkGAEg",
+            "ASgDEhEKCW5ld0VuZXJneRgCIAEoBSIfCgdjc1Nob290EgkKAXgYASABKAIS",
+            "CQoBeRgCIAEoAiJdCgdzY1Nob290EhIKCnBsYXllckd1aWQYASABKAMSEAoI",
+            "YnVsbGV0SWQYAiABKAUSCQoBeBgDIAEoAhIJCgF5GAQgASgCEgoKAnZ4GAUg",
+            "ASgCEgoKAnZ5GAYgASgCIkMKC3NjSGl0UGxheWVyEhIKCnBsYXllckd1aWQY",
+            "ASABKAMSEAoIYnVsbGV0SWQYAiABKAUSDgoGZGFtYWdlGAMgASgFYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.scMovementInfo), global::Protocol.scMovementInfo.Parser, new[]{ "X", "Y", "Vx", "Vy", "Fx", "Fy" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.scPlayerInfo), global::Protocol.scPlayerInfo.Parser, new[]{ "Guid", "Name", "Movement", "Energy" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.scSceneInfo), global::Protocol.scSceneInfo.Parser, new[]{ "Width", "Height" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.scEnergyBallInfo), global::Protocol.scEnergyBallInfo.Parser, new[]{ "Energy", "X", "Y" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.scEnergyBallInfo), global::Protocol.scEnergyBallInfo.Parser, new[]{ "BallId", "Energy", "X", "Y" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.scBulletInfo), global::Protocol.scBulletInfo.Parser, new[]{ "Movement", "PlayerGuid", "BulletId", "Timestamp" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.csJoin), global::Protocol.csJoin.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Protocol.scPlayerJoined), global::Protocol.scPlayerJoined.Parser, new[]{ "PlayerInfo", "Ext" }, null, null, null),
@@ -707,6 +708,7 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public scEnergyBallInfo(scEnergyBallInfo other) : this() {
+      ballId_ = other.ballId_;
       energy_ = other.energy_;
       x_ = other.x_;
       y_ = other.y_;
@@ -717,8 +719,19 @@ namespace Protocol {
       return new scEnergyBallInfo(this);
     }
 
+    /// <summary>Field number for the "ballId" field.</summary>
+    public const int BallIdFieldNumber = 1;
+    private int ballId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int BallId {
+      get { return ballId_; }
+      set {
+        ballId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "energy" field.</summary>
-    public const int EnergyFieldNumber = 1;
+    public const int EnergyFieldNumber = 2;
     private int energy_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Energy {
@@ -729,7 +742,7 @@ namespace Protocol {
     }
 
     /// <summary>Field number for the "x" field.</summary>
-    public const int XFieldNumber = 2;
+    public const int XFieldNumber = 3;
     private float x_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float X {
@@ -740,7 +753,7 @@ namespace Protocol {
     }
 
     /// <summary>Field number for the "y" field.</summary>
-    public const int YFieldNumber = 3;
+    public const int YFieldNumber = 4;
     private float y_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float Y {
@@ -763,6 +776,7 @@ namespace Protocol {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (BallId != other.BallId) return false;
       if (Energy != other.Energy) return false;
       if (X != other.X) return false;
       if (Y != other.Y) return false;
@@ -772,6 +786,7 @@ namespace Protocol {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
+      if (BallId != 0) hash ^= BallId.GetHashCode();
       if (Energy != 0) hash ^= Energy.GetHashCode();
       if (X != 0F) hash ^= X.GetHashCode();
       if (Y != 0F) hash ^= Y.GetHashCode();
@@ -785,16 +800,20 @@ namespace Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Energy != 0) {
+      if (BallId != 0) {
         output.WriteRawTag(8);
+        output.WriteInt32(BallId);
+      }
+      if (Energy != 0) {
+        output.WriteRawTag(16);
         output.WriteInt32(Energy);
       }
       if (X != 0F) {
-        output.WriteRawTag(21);
+        output.WriteRawTag(29);
         output.WriteFloat(X);
       }
       if (Y != 0F) {
-        output.WriteRawTag(29);
+        output.WriteRawTag(37);
         output.WriteFloat(Y);
       }
     }
@@ -802,6 +821,9 @@ namespace Protocol {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
+      if (BallId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BallId);
+      }
       if (Energy != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Energy);
       }
@@ -818,6 +840,9 @@ namespace Protocol {
     public void MergeFrom(scEnergyBallInfo other) {
       if (other == null) {
         return;
+      }
+      if (other.BallId != 0) {
+        BallId = other.BallId;
       }
       if (other.Energy != 0) {
         Energy = other.Energy;
@@ -839,14 +864,18 @@ namespace Protocol {
             input.SkipLastField();
             break;
           case 8: {
+            BallId = input.ReadInt32();
+            break;
+          }
+          case 16: {
             Energy = input.ReadInt32();
             break;
           }
-          case 21: {
+          case 29: {
             X = input.ReadFloat();
             break;
           }
-          case 29: {
+          case 37: {
             Y = input.ReadFloat();
             break;
           }

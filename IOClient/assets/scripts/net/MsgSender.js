@@ -2,38 +2,11 @@
 const Network = require('Network');
 //const Protocol = require('Protocol');
 
-const MsgID = require('./protobuf/MsgID');
-var login_pb = require('./protobuf/login_pb');
-var scene_pb = require('./protobuf/scene_pb');
-var chat_pb = require('./protobuf/chat_pb');
+const MsgID = require('MsgID');
+const login_pb = require('login_pb');
+const scene_pb = require('scene_pb');
+const chat_pb = require('chat_pb');
 
-/*var MsgID = {
-	// c->s
-	csLogin:2001,
-	scLoginRet:2002,
-
-	csJoin:1002,
-	csMove:1003,
-	csPing:1004,
-	csEatEnegyBall: 1005,
-	csShoot:1006,
-	csHitPlayer:1007,
-	// s->c
-	scError:2000,
-	scNewPlayer:2001,
-	scJoined:2002,
-	scWorldInfo:2003,
-	scDeletePlayer:2004,
-	scMove:2005,
-	scPlayerInfo:2006,
-	scPing:2007,
-	scEnegyInfo:2008,
-	scEatEnegyBall: 2009,
-	scEnegyChange:2010,
-	scShoot:2011,
-	scBulletInfo:2012,
-	scHitPlayer:2013
-};*/
 
 var MsgSender = {
 
@@ -51,8 +24,9 @@ var MsgSender = {
 		this._send(MsgID.csLogin, login);
 	},
 
-	join:function(){
-		Network.send([MsgID.cgJoin]);
+	SendJoin:function(){
+		var msg = new scene_pb.csJoin();
+		this._send(MsgID.csJoin, msg);
 	},
 
 	move:function(degree,dirx, diry, posx, posy, vx, vy){

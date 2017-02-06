@@ -24,10 +24,32 @@ namespace Lite
 		{
 			//csJoin request = csJoin.Parser.ParseFrom(bytes);
 
+			// send world info
+			scSceneInfo sceneInfo = new scSceneInfo();
+			sceneInfo.Width = 1000;
+			sceneInfo.Height = 1000;
+			session.SendPacket((int)MsgID.scSceneInfo, sceneInfo);
+
+			// send energy balls
+			var entMgr = AppFacade.GetManager<EntityManager>();
+			//entMgr.FindEntity
+			var ballMatcher = Matcher.AllOf(GameObjectsMatcher.EnergyBall);
+			var ballGroup = Pools.sharedInstance.gameObjects.GetGroup(ballMatcher);
+			foreach (var e in ballGroup.GetEntities())
+			{
+				scEnergyBallInfo ballInfo = new scEnergyBallInfo();
+				ballInfo.BallId = e.creationIndex;
+				ballInfo.Energy = e.energy.value;
+				ballInfo.X = e.transform.position.x;
+				ballInfo.Y = e.transform.position.y;
+				session.SendPacket((int)MsgID.scEnergyBallInfo, ballInfo);
+			}
+
+			// self player
 			long newGuid = GuidGenerator.GetLong();
 			session.playerGuid = newGuid;
 
-			var entMgr = AppFacade.GetManager<EntityManager>();
+			
 			var ent = entMgr.CreatePlayer(newGuid, "ShenMe?", Vector2.zero, 10, Vector2.zero, 15, 3, 5);
 
 

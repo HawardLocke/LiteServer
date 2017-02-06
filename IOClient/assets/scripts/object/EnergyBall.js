@@ -6,6 +6,7 @@ var EnegyBall = cc.Class({
 	extends:BaseObject,
 
 	ctor:function(){
+		this.id = 0;
 		this.enegy = 0;
 	},
 
@@ -14,8 +15,10 @@ var EnegyBall = cc.Class({
 		this.id = id;
 		this.enegy = enegy;
 
-		var draw = new cc.DrawNode();
-		draw.drawDot(cc.p(0,0), enegy, cc.color(255,255,0,255));
+		var draw = new cc.Node();
+		var graph = draw.addComponent(cc.Graphics);
+		graph.circle(0,0,enegy);
+		//draw.drawDot(cc.p(0,0), enegy, cc.color(255,255,0,255));
 		this.avatarBody.addChild(draw, 0);
 	},
 

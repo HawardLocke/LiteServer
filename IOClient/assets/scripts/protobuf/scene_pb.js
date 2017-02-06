@@ -783,9 +783,10 @@ proto.Protocol.scEnergyBallInfo.prototype.toObject = function(opt_includeInstanc
  */
 proto.Protocol.scEnergyBallInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
-    energy: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    x: +jspb.Message.getFieldWithDefault(msg, 2, 0.0),
-    y: +jspb.Message.getFieldWithDefault(msg, 3, 0.0)
+    ballid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    energy: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    x: +jspb.Message.getFieldWithDefault(msg, 3, 0.0),
+    y: +jspb.Message.getFieldWithDefault(msg, 4, 0.0)
   };
 
   if (includeInstance) {
@@ -824,13 +825,17 @@ proto.Protocol.scEnergyBallInfo.deserializeBinaryFromReader = function(msg, read
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setEnergy(value);
+      msg.setBallid(value);
       break;
     case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setEnergy(value);
+      break;
+    case 3:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setX(value);
       break;
-    case 3:
+    case 4:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setY(value);
       break;
@@ -872,72 +877,94 @@ proto.Protocol.scEnergyBallInfo.prototype.serializeBinary = function() {
  */
 proto.Protocol.scEnergyBallInfo.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getEnergy();
+  f = this.getBallid();
   if (f !== 0) {
     writer.writeInt32(
       1,
       f
     );
   }
-  f = this.getX();
-  if (f !== 0.0) {
-    writer.writeFloat(
+  f = this.getEnergy();
+  if (f !== 0) {
+    writer.writeInt32(
       2,
       f
     );
   }
-  f = this.getY();
+  f = this.getX();
   if (f !== 0.0) {
     writer.writeFloat(
       3,
       f
     );
   }
+  f = this.getY();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      4,
+      f
+    );
+  }
 };
 
 
 /**
- * optional int32 energy = 1;
+ * optional int32 ballId = 1;
  * @return {number}
  */
-proto.Protocol.scEnergyBallInfo.prototype.getEnergy = function() {
+proto.Protocol.scEnergyBallInfo.prototype.getBallid = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /** @param {number} value */
-proto.Protocol.scEnergyBallInfo.prototype.setEnergy = function(value) {
+proto.Protocol.scEnergyBallInfo.prototype.setBallid = function(value) {
   jspb.Message.setField(this, 1, value);
 };
 
 
 /**
- * optional float x = 2;
+ * optional int32 energy = 2;
  * @return {number}
  */
-proto.Protocol.scEnergyBallInfo.prototype.getX = function() {
-  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 2, 0.0));
+proto.Protocol.scEnergyBallInfo.prototype.getEnergy = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /** @param {number} value */
-proto.Protocol.scEnergyBallInfo.prototype.setX = function(value) {
+proto.Protocol.scEnergyBallInfo.prototype.setEnergy = function(value) {
   jspb.Message.setField(this, 2, value);
 };
 
 
 /**
- * optional float y = 3;
+ * optional float x = 3;
  * @return {number}
  */
-proto.Protocol.scEnergyBallInfo.prototype.getY = function() {
+proto.Protocol.scEnergyBallInfo.prototype.getX = function() {
   return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 3, 0.0));
 };
 
 
 /** @param {number} value */
-proto.Protocol.scEnergyBallInfo.prototype.setY = function(value) {
+proto.Protocol.scEnergyBallInfo.prototype.setX = function(value) {
   jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * optional float y = 4;
+ * @return {number}
+ */
+proto.Protocol.scEnergyBallInfo.prototype.getY = function() {
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 4, 0.0));
+};
+
+
+/** @param {number} value */
+proto.Protocol.scEnergyBallInfo.prototype.setY = function(value) {
+  jspb.Message.setField(this, 4, value);
 };
 
 

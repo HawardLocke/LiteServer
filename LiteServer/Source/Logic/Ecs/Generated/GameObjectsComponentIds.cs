@@ -11,16 +11,18 @@ public static class GameObjectsComponentIds {
     public const int RigidBody = 0;
     public const int Transform = 1;
     public const int Velocity = 2;
-    public const int EnergyCollector = 3;
-    public const int Energy = 4;
-    public const int PlayerInfo = 5;
+    public const int EnergyBall = 3;
+    public const int EnergyCollector = 4;
+    public const int Energy = 5;
+    public const int PlayerInfo = 6;
 
-    public const int TotalComponents = 6;
+    public const int TotalComponents = 7;
 
     public static readonly string[] componentNames = {
         "RigidBody",
         "Transform",
         "Velocity",
+        "EnergyBall",
         "EnergyCollector",
         "Energy",
         "PlayerInfo"
@@ -30,6 +32,7 @@ public static class GameObjectsComponentIds {
         typeof(Lite.RigidBodyComponent),
         typeof(Lite.TransformComponent),
         typeof(Lite.VelocityComponent),
+        typeof(Lite.EnergyBallComponent),
         typeof(Lite.EnergyCollectorComponent),
         typeof(Lite.EnergyComponent),
         typeof(Lite.PlayerInfoComponent)

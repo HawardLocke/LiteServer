@@ -53,6 +53,7 @@ namespace Lite
 		{
 			Pools pools = Pools.sharedInstance;
 			Entity ent = pools.gameObjects.CreateEntity()
+				.IsEnergyBall(true)
 				.AddTransform(position, 0)
 				.AddRigidBody(1, Vector2.zero, Vector2.zero)
 				.AddEnergy(energy)
